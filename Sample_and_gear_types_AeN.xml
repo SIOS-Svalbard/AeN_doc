@@ -1,4 +1,5 @@
-<root version="1.0">
+<?xml version='1.0' encoding='UTF8'?>
+<root>
   <group id="Water">
     <gear id="Bucket"/>
     <gear id="Niskin bottle">

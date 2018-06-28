@@ -17,7 +17,6 @@ sheet = sheet[:, 1:-1]
 print(sheet)
 f = "Sample_and_gear_types_AeN.xml"
 root = xml.Element('root')
-root.set('version', '1.0')
 
 for idx in range(len(sheet[0, :])):
     if not sheet[0, idx]:
@@ -42,4 +41,4 @@ for ii, el in enumerate(sheet[0, :]):
                     xml.SubElement(sample, 'subsample').text = '0'
 
 xml.ElementTree(root).write(
-    f, method='xml', encoding='utf8', pretty_print=True)
+    f, method='xml', encoding='utf8', pretty_print=True, xml_declaration=True,)
