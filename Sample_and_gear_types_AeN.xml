@@ -1,0 +1,987 @@
+<root version="1.0">
+  <group id="Water">
+    <gear id="Bucket"/>
+    <gear id="Niskin bottle">
+      <sample id="Ammonium">
+        <long_name>Ammonium</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Bacterial prod">
+        <long_name>Bacterial production</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Barium">
+        <long_name>Barium</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Biogenic silica">
+        <long_name>Biogenic silica</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Bromoform">
+        <long_name>Bromoform</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="C-DOM">
+        <long_name>C-DOM</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Chl a">
+        <long_name>Chlorophyll a</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="deltaO18">
+        <long_name>deltaO18</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="DIC/AT">
+        <long_name>DIC/AT</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="DNA protists/bact">
+        <long_name>DNA protists/bacteria</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="DOC production">
+        <long_name>DOC production</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="DOC/DON">
+        <long_name>DOC/DON</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Ecotoxicology">
+        <long_name>Ecotoxicology</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Fluo ex spec">
+        <long_name>Fluorescence excitation spectrum</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Grazing on bacteria">
+        <long_name>Grazing on bacteria</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="HPLC Pigments">
+        <long_name>HPLC Pigments</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Methane">
+        <long_name>Methane</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Microalgal culturing">
+        <long_name>Microalgal culturing</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Mycosporine amin">
+        <long_name>Mycosporine-like aminoacids</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Nutrients">
+        <long_name>Nutrients</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Oxygen">
+        <long_name>Oxygen</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Particulate abs">
+        <long_name>Particulate absorption</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="pH">
+        <long_name>pH</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="PicoNanoEpifluo">
+        <long_name>PicoNanoEpifluorenscens</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="PicoNanoFlowcyt">
+        <long_name>PicoNanoFlowcytometry</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="PicoNanoImagFlow">
+        <long_name>PicoNanoImagingFlow</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Pigments">
+        <long_name>Pigments</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="POC/PON">
+        <long_name>POC/PON</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Primary production">
+        <long_name>Primary production</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Prokaryote RNA">
+        <long_name>Prokaryote RNA</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Protist community">
+        <long_name>Protist community</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Protist RNA">
+        <long_name>Protist RNA</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Protists micros&lt;10um">
+        <long_name>Protists microscopy &lt; 10 um</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Protozoop flow">
+        <long_name>Protozooplankton flow</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Protozoop HPLC">
+        <long_name>Protozooplankton HPLC</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Protozoop microscopy">
+        <long_name>Protozooplankton microscopy</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Salinity">
+        <long_name>Salinity</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="SEM coccolithophores">
+        <long_name>SEM coccolithophores</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="TOC">
+        <long_name>TOC</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Trace elements">
+        <long_name>Trace elements</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Viral concentration">
+        <long_name>Viral concentration</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Viral prod and decay">
+        <long_name>Viral production and decay</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Virus DNA">
+        <long_name>Virus DNA</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="XRF">
+        <long_name>XRF</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+  </group>
+  <group id="Ice">
+    <gear id="Ice corer 9 cm">
+      <sample id="Ice core">
+        <long_name>Ice core</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Ice core section">
+        <long_name>Ice core section</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Bacterial prod">
+        <long_name>Bacterial production</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Chl a">
+        <long_name>Chlorophyll a</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Iron">
+        <long_name>Iron</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Microalgal culturing">
+        <long_name>Microalgal culturing</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="PicoNanoEpifluo">
+        <long_name>PicoNanoEpifluorenscens</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="PicoNanoFlowcyt">
+        <long_name>PicoNanoFlowcytometry</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Primary production">
+        <long_name>Primary production</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Prokaryote DNA">
+        <long_name>Prokaryote DNA</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Prokaryote RNA">
+        <long_name>Prokaryote RNA</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Protist DNA">
+        <long_name>Protist DNA</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Protists micros&lt;10um">
+        <long_name>Protist microscopy &lt;  um</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Protists micros&gt;10um">
+        <long_name>1 ,Protist microscopy &gt; 10 um</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Protist PCR">
+        <long_name>Protist PCR</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Silicate incorp">
+        <long_name>Silicate incorporation</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Virus DNA">
+        <long_name>Virus DNA</long_name>
+        <subsample>1</subsample>
+      </sample>
+    </gear>
+    <gear id="Ice corer 12 cm">
+      <sample id="Ice core">
+        <long_name>Ice core</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Ice core section">
+        <long_name>Ice core section</long_name>
+        <subsample>1</subsample>
+      </sample>
+    </gear>
+    <gear id="Ice corer 14 cm">
+      <sample id="Ice core">
+        <long_name>Ice core</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Ice core section">
+        <long_name>Ice core section</long_name>
+        <subsample>1</subsample>
+      </sample>
+    </gear>
+    <gear id="Ice corer 18 cm">
+      <sample id="Ice core">
+        <long_name>Ice core</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Ice core section">
+        <long_name>Ice core section</long_name>
+        <subsample>1</subsample>
+      </sample>
+    </gear>
+    <gear id="Ice corer 22 cm">
+      <sample id="Ice core">
+        <long_name>Ice core</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Ice core section">
+        <long_name>Ice core section</long_name>
+        <subsample>1</subsample>
+      </sample>
+    </gear>
+    <gear id="Diving, suction pump">
+      <sample id="Sympagic fauna">
+        <long_name>Sympagic fauna</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+    <gear id="Diving, net">
+      <sample id="Sympagic fauna">
+        <long_name>Sympagic fauna</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+  </group>
+  <group id="Physical_oceanography">
+    <gear id="Acoustics"/>
+    <gear id="AUV"/>
+    <gear id="Hydrobios mini CTD"/>
+    <gear id="Glider"/>
+    <gear id="PAR sensor"/>
+    <gear id="Ship CTD"/>
+    <gear id="Ship water intake"/>
+  </group>
+  <group id="Benthos">
+    <gear id="Beam trawl">
+      <sample id="Taxa lists">
+        <long_name>Taxa lists</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Density/Abundance">
+        <long_name>Density/Abundance</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Biomass">
+        <long_name>Biomass</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+    <gear id="Box core">
+      <sample id="Box core">
+        <long_name>Box core</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Algal pigments">
+        <long_name>Algal pigments</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Barcoding samples">
+        <long_name>Barcoding samples</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Food web samples">
+        <long_name>Food web samples</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Foraminifera exp">
+        <long_name>oraminifera experiment</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Microbes">
+        <long_name>Microbes</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Organic C/N">
+        <long_name>Organic carbon/nitrogen</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="pH">
+        <long_name>pH</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Pore water content">
+        <long_name>Pore water content</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Quanti macrofauna">
+        <long_name>Quantitative macrofauna</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Respiration exp">
+        <long_name>Respiration experiments</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Sed isotopes, C, N">
+        <long_name>Sediment stable isotopes, carbon and nitrogen</long_name>
+        <subsample>1</subsample>
+      </sample>
+    </gear>
+    <gear id="Demersal trawl">
+      <sample id="Taxa lists">
+        <long_name>Taxa lists</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Density/Abundance">
+        <long_name>Density/Abundance</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Biomass">
+        <long_name>Biomass</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+    <gear id="Gemini core">
+      <sample id="Meiofauna">
+        <long_name>Meiofauna</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Paleo">
+        <long_name>Paleo</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+    <gear id="Van Veen grab">
+      <sample id="Taxa lists">
+        <long_name>Taxa lists</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Density/Abundance">
+        <long_name>Density/Abundance</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Biomass">
+        <long_name>Biomass</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+  </group>
+  <group id="Zooplankton">
+    <gear id="Go-Flo"/>
+    <gear id="Echo sounders">
+      <sample id="Macrozoop">
+        <long_name>Macrozooplankton</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+    <gear id="Macrozooplankton trawl">
+      <sample id="Fish larv abun/gut">
+        <long_name>Fish larvae abundance/gut content analyses</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Gel zoop abun">
+        <long_name>Gelationous zooplankton abundance</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Gel zoop tax, EtOH">
+        <long_name>Gelationous zooplankton taxonomy, ethanol</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Gel zoop tax, form">
+        <long_name>Gelationous zooplankton taxonomy, formaldehyde</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop abun">
+        <long_name>Macrozooplankton abundance</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop biomass">
+        <long_name>Macrozooplankton biomass</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop carhyd">
+        <long_name>Macrozooplankton carbohydrat</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop energ">
+        <long_name>Macrozooplankton energetics</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop fatty acid">
+        <long_name>Macrozooplankton fatty acid</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop gonad ">
+        <long_name>Macrozooplankton gonad </long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop hg">
+        <long_name>Macrozooplankton hg</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop isotope">
+        <long_name>Macrozooplankton length</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop length">
+        <long_name>Macrozooplankton nutrition</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop nutrition">
+        <long_name>Macrozooplankton organic pollutio</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop org pol">
+        <long_name>Macrozooplankton protein</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop protein">
+        <long_name>Macrozooplankton stable isotope</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozop stomach">
+        <long_name>Macrozoplankton stomach</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop tax">
+        <long_name>Fish larvae abundance/gut content analyses</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+    <gear id="MIK-net 1500 µm">
+      <sample id="Fish larv abun/gut">
+        <long_name>Fish larvae abundance/gut content analyses</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Gel zoop abun">
+        <long_name>Gelationous zooplankton abundance</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Gel zoop tax, EtOH">
+        <long_name>Gelationous zooplankton taxonomy, ethanol</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Gel zoop tax, form">
+        <long_name>Gelationous zooplankton taxonomy, formaldehyde</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop abun">
+        <long_name>Macrozooplankton abundance</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop biomass">
+        <long_name>Macrozooplankton biomass</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop carhyd">
+        <long_name>Macrozooplankton carbohydrat</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop energ">
+        <long_name>Macrozooplankton energetics</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop fatty acid">
+        <long_name>Macrozooplankton fatty acid</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop gonad ">
+        <long_name>Macrozooplankton gonad </long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop hg">
+        <long_name>Macrozooplankton hg</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop isotope">
+        <long_name>Macrozooplankton length</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop length">
+        <long_name>Macrozooplankton nutrition</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop nutrition">
+        <long_name>Macrozooplankton organic pollutio</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop org pol">
+        <long_name>Macrozooplankton protein</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop protein">
+        <long_name>Macrozooplankton stable isotope</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozop stomach">
+        <long_name>Macrozoplankton stomach</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop tax">
+        <long_name>Fish larvae abundance/gut content analyses</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+    <gear id="Mocness">
+      <sample id="Fish larv abun/gut">
+        <long_name>Fish larvae abundance/gut content analyses</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Gel zoop abun">
+        <long_name>Gelationous zooplankton abundance</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Gel zoop tax, EtOH">
+        <long_name>Gelationous zooplankton taxonomy, ethanol</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Gel zoop tax, form">
+        <long_name>Gelationous zooplankton taxonomy, formaldehyde</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop abun">
+        <long_name>Macrozooplankton abundance</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop biomass">
+        <long_name>Macrozooplankton biomass</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop carhyd">
+        <long_name>Macrozooplankton carbohydrat</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop energ">
+        <long_name>Macrozooplankton energetics</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop fatty acid">
+        <long_name>Macrozooplankton fatty acid</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop gonad ">
+        <long_name>Macrozooplankton gonad </long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop hg">
+        <long_name>Macrozooplankton hg</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop isotope">
+        <long_name>Macrozooplankton length</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop length">
+        <long_name>Macrozooplankton nutrition</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop nutrition">
+        <long_name>Macrozooplankton organic pollutio</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop org pol">
+        <long_name>Macrozooplankton protein</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop protein">
+        <long_name>Macrozooplankton stable isotope</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozop stomach">
+        <long_name>Macrozoplankton stomach</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop tax">
+        <long_name>Fish larvae abundance/gut content analyses</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+    <gear id="Tucker">
+      <sample id="Fish larv abun/gut">
+        <long_name>Fish larvae abundance/gut content analyses</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Gel zoop abun">
+        <long_name>Gelationous zooplankton abundance</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Gel zoop tax, EtOH">
+        <long_name>Gelationous zooplankton taxonomy, ethanol</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Gel zoop tax, form">
+        <long_name>Gelationous zooplankton taxonomy, formaldehyde</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop abun">
+        <long_name>Macrozooplankton abundance</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop biomass">
+        <long_name>Macrozooplankton biomass</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop carhyd">
+        <long_name>Macrozooplankton carbohydrat</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop energ">
+        <long_name>Macrozooplankton energetics</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop fatty acid">
+        <long_name>Macrozooplankton fatty acid</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop gonad ">
+        <long_name>Macrozooplankton gonad </long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop hg">
+        <long_name>Macrozooplankton hg</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop isotope">
+        <long_name>Macrozooplankton length</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop length">
+        <long_name>Macrozooplankton nutrition</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop nutrition">
+        <long_name>Macrozooplankton organic pollutio</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop org pol">
+        <long_name>Macrozooplankton protein</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop protein">
+        <long_name>Macrozooplankton stable isotope</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozop stomach">
+        <long_name>Macrozoplankton stomach</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop tax">
+        <long_name>Fish larvae abundance/gut content analyses</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+    <gear id="Multinet 90 µm"/>
+    <gear id="Multinet midi 180 µm">
+      <sample id="Gel zoop abun">
+        <long_name>Gelatinous zooplankton abundance</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Mesozoop abun">
+        <long_name>Mesozooplankton abundance</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+    <gear id="Multinet midi 64 µm">
+      <sample id="Small mesozoop abun">
+        <long_name>Small mesozooplankton abundance</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="">
+        <long_name>Pteropod shell condition, shell density and size</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="">
+        <long_name>Planktonic foraminifera species abundance and species composition, state of shell dissolution and shell thickness</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+    <gear id="Niskin">
+      <sample id="Microzoop abun,form">
+        <long_name>Microzooplankton abundance, formaldehyde</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Microzoop abun,lugol">
+        <long_name>Microzooplankton abundance, lugol</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+    <gear id="Swim-net 200 µm"/>
+    <gear id="WP2 64 µm"/>
+    <gear id="WP2 180 µm">
+      <sample id="Gel zoop abun">
+        <long_name>Gelationous zooplankton abundance</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Mesozoop mass, live">
+        <long_name>Mesozooplankton biomass, live</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Mesozoop mass, wei">
+        <long_name>Mesozooplankton biomass, weighed</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Mesozoop genetics">
+        <long_name>Mesozooplankton genetics</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+    <gear id="WP3 1000 µm">
+      <sample id="Macrozoop carhyd">
+        <long_name>Macrozooplankton carbohydrat</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop energ">
+        <long_name>Macrozooplankton energetics</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop fatty acid">
+        <long_name>Macrozooplankton fatty acid</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozooplankton hg">
+        <long_name>Macrozooplankton hg</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop fatty acid">
+        <long_name>Macrozooplankton organic pollutio</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop org pol">
+        <long_name>Macrozooplankton protein</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop isotope">
+        <long_name>Macrozooplankton stable isotope</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+  </group>
+  <group id="Paleo/Geology">
+    <gear id="Box corer"/>
+    <gear id="Sediment core">
+      <sample id="">
+        <long_name>Benthic foraminifera</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="">
+        <long_name>Dating</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="">
+        <long_name>Diatoms</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="">
+        <long_name>Dinocysts, ancient DNA</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="">
+        <long_name>HBIs and coccoliths</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="">
+        <long_name>Lithological description</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="">
+        <long_name>magnetic susceptibility </long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="">
+        <long_name>Oxygen profiles</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="">
+        <long_name>pH</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="">
+        <long_name>Planktic foraminifera</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="">
+        <long_name>Pore water</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="">
+        <long_name>Reference</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="">
+        <long_name>Sediment geochemistry</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="">
+        <long_name>Sediment grain size</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="">
+        <long_name>Sedimentology</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="">
+        <long_name>Stable isotopes</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="">
+        <long_name>TOC, TON</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="">
+        <long_name>XRF</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+    <gear id="Van veen grab"/>
+  </group>
+  <group id="Nekton">
+    <gear id="Demersal trawl">
+      <sample id="Taxa lists">
+        <long_name>Taxa lists</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Density/Abundance">
+        <long_name>Density/Abundance</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Biomass">
+        <long_name>Biomass</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+    <gear id="Pelagic trawl">
+      <sample id="Taxa lists">
+        <long_name>Taxa lists</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Density/Abundance">
+        <long_name>Density/Abundance</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Biomass">
+        <long_name>Biomass</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+    <gear id="Tucker trawl">
+      <sample id="Taxa lists">
+        <long_name>Taxa lists</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Density/Abundance">
+        <long_name>Density/Abundance</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Biomass">
+        <long_name>Biomass</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+  </group>
+  <group id="Sediment traps">
+    <gear id="Short-term">
+      <sample id="POC/PON">
+        <long_name>POC/PON</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Protist community">
+        <long_name>Protist community</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Chl a">
+        <long_name>Chlorophyll a</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+    <gear id="Mooring">
+      <sample id="POC/PON">
+        <long_name>POC/PON</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Protist community">
+        <long_name>Protist community</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Chl a">
+        <long_name>Chlorophyll a</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+  </group>
+  <group id="Phytoplankton">
+    <gear id="Phytoplankton net 10 um">
+      <sample id="Protists micros&gt;10um">
+        <long_name>Protists microscopy &gt; 10 um</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Protist PCR">
+        <long_name>Protist PCR</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Microalgal culturing">
+        <long_name>Microalgal culturing</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+    <gear id="Phytoplankton net 20 um">
+      <sample id="Protists micros&gt;20um">
+        <long_name>Protists microscopy &gt; 20 um</long_name>
+        <subsample>0</subsample>
+      </sample>
+    </gear>
+  </group>
+  <group id="Marine mammals">
+    <gear id="Visual observation"/>
+  </group>
+</root>
