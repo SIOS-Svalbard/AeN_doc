@@ -453,51 +453,47 @@
       </sample>
       <sample id="Macrozoop carhyd">
         <long_name>Macrozooplankton carbohydrat</long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop energ">
         <long_name>Macrozooplankton energetics</long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop fatty acid">
         <long_name>Macrozooplankton fatty acid</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Macrozoop genetics ">
+        <long_name>Macrozooplankton genetics</long_name>
         <subsample>0</subsample>
       </sample>
       <sample id="Macrozoop gonad ">
         <long_name>Macrozooplankton gonad </long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop hg">
         <long_name>Macrozooplankton hg</long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop isotope">
-        <long_name>Macrozooplankton length</long_name>
-        <subsample>0</subsample>
-      </sample>
-      <sample id="Macrozoop length">
-        <long_name>Macrozooplankton nutrition</long_name>
-        <subsample>0</subsample>
+        <long_name>Macrozooplankton stable isotope</long_name>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop nutrition">
-        <long_name>Macrozooplankton organic pollutio</long_name>
-        <subsample>0</subsample>
+        <long_name>Macrozooplankton nutrition</long_name>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop org pol">
-        <long_name>Macrozooplankton protein</long_name>
-        <subsample>0</subsample>
+        <long_name>Macrozooplankton organic pollutio</long_name>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop protein">
-        <long_name>Macrozooplankton stable isotope</long_name>
-        <subsample>0</subsample>
+        <long_name>Macrozooplankton protein</long_name>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozop stomach">
         <long_name>Macrozoplankton stomach</long_name>
-        <subsample>0</subsample>
-      </sample>
-      <sample id="Macrozoop tax">
-        <long_name>Fish larvae abundance/gut content analyses</long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
     </gear>
     <gear id="MIK-net 1500 µm">
@@ -527,51 +523,47 @@
       </sample>
       <sample id="Macrozoop carhyd">
         <long_name>Macrozooplankton carbohydrat</long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop energ">
         <long_name>Macrozooplankton energetics</long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop fatty acid">
         <long_name>Macrozooplankton fatty acid</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Macrozoop genetics ">
+        <long_name>Macrozooplankton genetics</long_name>
         <subsample>0</subsample>
       </sample>
       <sample id="Macrozoop gonad ">
         <long_name>Macrozooplankton gonad </long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop hg">
         <long_name>Macrozooplankton hg</long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop isotope">
-        <long_name>Macrozooplankton length</long_name>
-        <subsample>0</subsample>
-      </sample>
-      <sample id="Macrozoop length">
-        <long_name>Macrozooplankton nutrition</long_name>
-        <subsample>0</subsample>
+        <long_name>Macrozooplankton stable isotope</long_name>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop nutrition">
-        <long_name>Macrozooplankton organic pollutio</long_name>
-        <subsample>0</subsample>
+        <long_name>Macrozooplankton nutrition</long_name>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop org pol">
-        <long_name>Macrozooplankton protein</long_name>
-        <subsample>0</subsample>
+        <long_name>Macrozooplankton organic pollutio</long_name>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop protein">
-        <long_name>Macrozooplankton stable isotope</long_name>
-        <subsample>0</subsample>
+        <long_name>Macrozooplankton protein</long_name>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozop stomach">
         <long_name>Macrozoplankton stomach</long_name>
-        <subsample>0</subsample>
-      </sample>
-      <sample id="Macrozoop tax">
-        <long_name>Fish larvae abundance/gut content analyses</long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
     </gear>
     <gear id="Mocness">
@@ -601,51 +593,47 @@
       </sample>
       <sample id="Macrozoop carhyd">
         <long_name>Macrozooplankton carbohydrat</long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop energ">
         <long_name>Macrozooplankton energetics</long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop fatty acid">
         <long_name>Macrozooplankton fatty acid</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Macrozoop genetics ">
+        <long_name>Macrozooplankton genetics</long_name>
         <subsample>0</subsample>
       </sample>
       <sample id="Macrozoop gonad ">
         <long_name>Macrozooplankton gonad </long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop hg">
         <long_name>Macrozooplankton hg</long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop isotope">
-        <long_name>Macrozooplankton length</long_name>
-        <subsample>0</subsample>
-      </sample>
-      <sample id="Macrozoop length">
-        <long_name>Macrozooplankton nutrition</long_name>
-        <subsample>0</subsample>
+        <long_name>Macrozooplankton stable isotope</long_name>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop nutrition">
-        <long_name>Macrozooplankton organic pollutio</long_name>
-        <subsample>0</subsample>
+        <long_name>Macrozooplankton nutrition</long_name>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop org pol">
-        <long_name>Macrozooplankton protein</long_name>
-        <subsample>0</subsample>
+        <long_name>Macrozooplankton organic pollutio</long_name>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop protein">
-        <long_name>Macrozooplankton stable isotope</long_name>
-        <subsample>0</subsample>
+        <long_name>Macrozooplankton protein</long_name>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozop stomach">
         <long_name>Macrozoplankton stomach</long_name>
-        <subsample>0</subsample>
-      </sample>
-      <sample id="Macrozoop tax">
-        <long_name>Fish larvae abundance/gut content analyses</long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
     </gear>
     <gear id="Tucker">
@@ -675,51 +663,47 @@
       </sample>
       <sample id="Macrozoop carhyd">
         <long_name>Macrozooplankton carbohydrat</long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop energ">
         <long_name>Macrozooplankton energetics</long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop fatty acid">
         <long_name>Macrozooplankton fatty acid</long_name>
+        <subsample>1</subsample>
+      </sample>
+      <sample id="Macrozoop genetics ">
+        <long_name>Macrozooplankton genetics</long_name>
         <subsample>0</subsample>
       </sample>
       <sample id="Macrozoop gonad ">
         <long_name>Macrozooplankton gonad </long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop hg">
         <long_name>Macrozooplankton hg</long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop isotope">
-        <long_name>Macrozooplankton length</long_name>
-        <subsample>0</subsample>
-      </sample>
-      <sample id="Macrozoop length">
-        <long_name>Macrozooplankton nutrition</long_name>
-        <subsample>0</subsample>
+        <long_name>Macrozooplankton stable isotope</long_name>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop nutrition">
-        <long_name>Macrozooplankton organic pollutio</long_name>
-        <subsample>0</subsample>
+        <long_name>Macrozooplankton nutrition</long_name>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop org pol">
-        <long_name>Macrozooplankton protein</long_name>
-        <subsample>0</subsample>
+        <long_name>Macrozooplankton organic pollutio</long_name>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop protein">
-        <long_name>Macrozooplankton stable isotope</long_name>
-        <subsample>0</subsample>
+        <long_name>Macrozooplankton protein</long_name>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozop stomach">
         <long_name>Macrozoplankton stomach</long_name>
-        <subsample>0</subsample>
-      </sample>
-      <sample id="Macrozoop tax">
-        <long_name>Fish larvae abundance/gut content analyses</long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
     </gear>
     <gear id="Multinet 90 µm"/>
