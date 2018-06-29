@@ -451,6 +451,10 @@
         <long_name>Macrozooplankton biomass</long_name>
         <subsample>0</subsample>
       </sample>
+      <sample id="Macrozoop ecotox">
+        <long_name>Macrozooplankton ecotox</long_name>
+        <subsample>0</subsample>
+      </sample>
       <sample id="Macrozoop carhyd">
         <long_name>Macrozooplankton carbohydrat</long_name>
         <subsample>1</subsample>
@@ -519,6 +523,10 @@
       </sample>
       <sample id="Macrozoop biomass">
         <long_name>Macrozooplankton biomass</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop ecotox">
+        <long_name>Macrozooplankton ecotox</long_name>
         <subsample>0</subsample>
       </sample>
       <sample id="Macrozoop carhyd">
@@ -591,6 +599,10 @@
         <long_name>Macrozooplankton biomass</long_name>
         <subsample>0</subsample>
       </sample>
+      <sample id="Macrozoop ecotox">
+        <long_name>Macrozooplankton ecotox</long_name>
+        <subsample>0</subsample>
+      </sample>
       <sample id="Macrozoop carhyd">
         <long_name>Macrozooplankton carbohydrat</long_name>
         <subsample>1</subsample>
@@ -659,6 +671,10 @@
       </sample>
       <sample id="Macrozoop biomass">
         <long_name>Macrozooplankton biomass</long_name>
+        <subsample>0</subsample>
+      </sample>
+      <sample id="Macrozoop ecotox">
+        <long_name>Macrozooplankton ecotox</long_name>
         <subsample>0</subsample>
       </sample>
       <sample id="Macrozoop carhyd">
@@ -762,33 +778,37 @@
       </sample>
     </gear>
     <gear id="WP3 1000 µm">
+      <sample id="Macrozoop ecotox">
+        <long_name>Macrozooplankton ecotox</long_name>
+        <subsample>0</subsample>
+      </sample>
       <sample id="Macrozoop carhyd">
         <long_name>Macrozooplankton carbohydrat</long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop energ">
         <long_name>Macrozooplankton energetics</long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop fatty acid">
         <long_name>Macrozooplankton fatty acid</long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozooplankton hg">
         <long_name>Macrozooplankton hg</long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop fatty acid">
         <long_name>Macrozooplankton organic pollutio</long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop org pol">
         <long_name>Macrozooplankton protein</long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
       <sample id="Macrozoop isotope">
         <long_name>Macrozooplankton stable isotope</long_name>
-        <subsample>0</subsample>
+        <subsample>1</subsample>
       </sample>
     </gear>
   </group>
