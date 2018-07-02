@@ -439,20 +439,12 @@
         <long_name>Gelationous zooplankton taxonomy, ethanol</long_name>
         <subsample>0</subsample>
       </sample>
-      <sample id="Gel zoop tax, form">
-        <long_name>Gelationous zooplankton taxonomy, formaldehyde</long_name>
-        <subsample>0</subsample>
-      </sample>
       <sample id="Macrozoop abun">
         <long_name>Macrozooplankton abundance</long_name>
         <subsample>0</subsample>
       </sample>
       <sample id="Macrozoop biomass">
         <long_name>Macrozooplankton biomass</long_name>
-        <subsample>0</subsample>
-      </sample>
-      <sample id="Macrozoop ecotox">
-        <long_name>Macrozooplankton ecotox</long_name>
         <subsample>0</subsample>
       </sample>
       <sample id="Macrozoop carhyd">
@@ -513,20 +505,12 @@
         <long_name>Gelationous zooplankton taxonomy, ethanol</long_name>
         <subsample>0</subsample>
       </sample>
-      <sample id="Gel zoop tax, form">
-        <long_name>Gelationous zooplankton taxonomy, formaldehyde</long_name>
-        <subsample>0</subsample>
-      </sample>
       <sample id="Macrozoop abun">
         <long_name>Macrozooplankton abundance</long_name>
         <subsample>0</subsample>
       </sample>
       <sample id="Macrozoop biomass">
         <long_name>Macrozooplankton biomass</long_name>
-        <subsample>0</subsample>
-      </sample>
-      <sample id="Macrozoop ecotox">
-        <long_name>Macrozooplankton ecotox</long_name>
         <subsample>0</subsample>
       </sample>
       <sample id="Macrozoop carhyd">
@@ -587,20 +571,12 @@
         <long_name>Gelationous zooplankton taxonomy, ethanol</long_name>
         <subsample>0</subsample>
       </sample>
-      <sample id="Gel zoop tax, form">
-        <long_name>Gelationous zooplankton taxonomy, formaldehyde</long_name>
-        <subsample>0</subsample>
-      </sample>
       <sample id="Macrozoop abun">
         <long_name>Macrozooplankton abundance</long_name>
         <subsample>0</subsample>
       </sample>
       <sample id="Macrozoop biomass">
         <long_name>Macrozooplankton biomass</long_name>
-        <subsample>0</subsample>
-      </sample>
-      <sample id="Macrozoop ecotox">
-        <long_name>Macrozooplankton ecotox</long_name>
         <subsample>0</subsample>
       </sample>
       <sample id="Macrozoop carhyd">
@@ -661,20 +637,12 @@
         <long_name>Gelationous zooplankton taxonomy, ethanol</long_name>
         <subsample>0</subsample>
       </sample>
-      <sample id="Gel zoop tax, form">
-        <long_name>Gelationous zooplankton taxonomy, formaldehyde</long_name>
-        <subsample>0</subsample>
-      </sample>
       <sample id="Macrozoop abun">
         <long_name>Macrozooplankton abundance</long_name>
         <subsample>0</subsample>
       </sample>
       <sample id="Macrozoop biomass">
         <long_name>Macrozooplankton biomass</long_name>
-        <subsample>0</subsample>
-      </sample>
-      <sample id="Macrozoop ecotox">
-        <long_name>Macrozooplankton ecotox</long_name>
         <subsample>0</subsample>
       </sample>
       <sample id="Macrozoop carhyd">
