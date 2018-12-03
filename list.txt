@@ -1,0 +1,165 @@
+5m Under ice 10m NET
+5m Under ice VivaFlow
+5m Under ice VivaFlow + IMR1/2
+aDNA
+Algae aggregates
+Arctic eelpout
+Atlantic hookear sculpin
+Atlantic poacher
+Bacteria
+Bigeye sculpin
+Bio bulk
+Biological
+Blood
+Bottom ice
+Box core replicate 1
+Box core replicate 2
+Box core replicate 3
+BP
+Brain
+brine
+Bulk zooplankton
+Capelin
+CARD FISH EPS
+Careproctus
+Chla 10µm
+Chlorophyll a
+CNP
+Cod
+Copepods
+CTD profile
+CTD w/bottles
+Ctenophores
+d13C DIC
+d13C DIC fixed
+dCSP
+dD and d18O
+DIC conc
+DIC/Alk
+Dilution culture from Ice core
+Dilution culture from net
+Dilution culture from VivaFlow
+Dinocysts
+Dissolved trace elements
+DNA
+dO2
+dTEP
+FA
+FC
+FCM
+Fecal pellet
+Filter
+FISH-EPS
+FISH-Mixotrophy
+fixed net sample
+FlowCyto
+For dating
+GC catcher sample
+GC cutter sample
+GC section
+GC section archive half
+GC section working half
+Gelatinous seasnail
+GF/F filter
+Gill
+Gills and Muscle
+Glass vial
+Gonad
+Grain size
+Hindgut
+HPLC Pigments
+Ice core
+Ice core processed on ship
+Ice meiofauna
+IP25
+Isotope (muscle tissue)
+Isotopes
+Juveniles Rep1
+Juveniles Rep2
+Juveniles sieved 250um
+Limacina/Foraminifera
+Liver
+Long rough dab
+Meiofauna
+Melt pond
+Meroplankton
+Mesozooplankton ecotox
+Mesozooplankton genetics
+Mesozooplankton taxonomy
+Microbial
+Microbial biomass production
+Microzoo
+Mixotrophy FISH
+Multicore
+Multicore archive half
+Multicore work half
+Muscle
+Muscle and Spleen
+Muscle, spleen and gills
+MZP profile
+Niskin Bottle
+nutrients
+O18
+Only tissue samples
+Otholites
+Pale eelpout
+Particle Absorption
+PC Bottle
+PC section
+PCR tube
+pCSP
+PET Bottle
+Phytoplankton
+Phytoplankton spores
+Pigments
+Plankton Net
+Plankton sample
+POC/PON/StabIso
+Polar cod
+Polar sculpin
+POM
+Pore water d13C
+Pore water nutrients
+Pore-water ICP
+Porosity
+Profile (40-120m)
+Protists
+pTEP
+Quantitative species records
+Racetracks (80m) & Profile (40-120m)
+RNA
+sea ice
+Sea tadpole
+Seawater
+Sediment
+Sediment incubation
+Sediment slice
+SEM filter
+Silicate
+Spleen
+Spleen, Liver and Gonades
+Spotted snake blenny
+Station
+Sterivex filter
+Stomach
+Test flight
+Threespot eelpout
+TOC
+Total carbon (TC) filter
+Total organic carbon
+Total trace elements
+Trace elements
+Trawl haul
+TS probe
+Twohorn sculpin
+Under ice water
+Virus
+Virus Diversity
+Virus Prod& decay
+VivaFlow
+Water
+Water sample
+Whole fish
+Whole individual
+Whole individuals
+
