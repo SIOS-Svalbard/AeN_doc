@@ -1,0 +1,54 @@
+ARGO
+Beamtrawl
+Box core
+Bucket
+Calypso
+Campelen med fish lift
+Campelen trawl
+Campelen uten fish lift
+Cast away CTD
+CMET Ballons
+CTD
+CTD w/bottles
+EK80
+EM302
+EM710
+GO-FLO
+GO-flow bottle under ice
+GOFLO (5L Teflon Coated)
+Gravity Corer
+Harstad trawl
+Ice
+ice corer 9 cm
+ice orger
+LADCP
+Macroplanktontrawl
+Meltpond
+MIK
+Mooring M1
+Mooring M2
+MP Algae
+MP1
+MP2
+Multicorer
+Multinet
+Multinett180
+Multinett64
+Niskin
+Phytoplankton Net
+RSIP-1
+RSIP-2
+SBP300
+Sediment Trap
+SUMO
+SVP
+Topas40
+Topas40, SBP300
+TS probe
+tube
+UIW
+VMP
+Weather station
+WP2
+WP3
+
