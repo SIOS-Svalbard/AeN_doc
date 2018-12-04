@@ -31,9 +31,8 @@ MP Algae
 MP1
 MP2
 Multicorer
-Multinet
-Multinett180
-Multinett64
+Multinet180
+Multinet64
 Niskin
 Phytoplankton Net
 RSIP-1
