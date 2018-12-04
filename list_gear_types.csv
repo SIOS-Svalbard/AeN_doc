@@ -18,7 +18,7 @@ EM710,Echo Sounder
 GO-FLO,This is the product name
 GOFLO (5L Teflon Coated),Is this the same as GO-FLO?
 GO-flow bottle under ice,Should this be moved to GO-FLO
-Gravity Corer,
+Gravity corer,
 Harstad trawl,
 Ice,Could this be a lump of ice?
 Ice auger,
@@ -35,17 +35,17 @@ Multicorer,
 Multinet180,Alternative Multinet 180 µm
 Multinet64,Alternative Multinet 64 µm
 Niskin,
-Phytoplankton Net,
+Phytoplankton net,
 SBP300,Sesimic echo sounder
 Sediment Trap,
-SUMO,
-SVP,
+SUMO,Drone?
+SVP,Drifter?
 Topas40,Sesimic echo sounder
 "Topas40, SBP300",Sesimic echo sounder
 TS probe,Echo Sounder
-tube,
+tube,?
 UIW,Under Ice water
-VMP,
+VMP,Some ocenographic equipment
 Weather station,
-WP2,
-WP3,
+WP2,Should this be split into 64 µm and 180 µm
+WP3,WP3 1000 µm
