@@ -1,165 +1,158 @@
-5m Under ice 10m NET
-5m Under ice VivaFlow
-5m Under ice VivaFlow + IMR1/2
-aDNA
-Algae aggregates
-Arctic eelpout
-Atlantic hookear sculpin
-Atlantic poacher
-Bacteria
-Bigeye sculpin
-Bio bulk
-Biological
-Blood
-Bottom ice
-Box core replicate 1
-Box core replicate 2
-Box core replicate 3
-BP
-Brain
-brine
-Bulk zooplankton
-Capelin
-CARD FISH EPS
-Careproctus
-Chla 10µm
-Chlorophyll a
-CNP
-Cod
-Copepods
-CTD profile
-CTD w/bottles
-Ctenophores
-d13C DIC
-d13C DIC fixed
-dCSP
-dD and d18O
-DIC conc
-DIC/Alk
-Dilution culture from Ice core
-Dilution culture from net
-Dilution culture from VivaFlow
-Dinocysts
-Dissolved trace elements
-DNA
-dO2
-dTEP
-FA
-FC
-FCM
-Fecal pellet
-Filter
-FISH-EPS
-FISH-Mixotrophy
-fixed net sample
-FlowCyto
-For dating
-GC catcher sample
-GC cutter sample
-GC section
-GC section archive half
-GC section working half
-Gelatinous seasnail
-GF/F filter
-Gill
-Gills and Muscle
-Glass vial
-Gonad
-Grain size
-Hindgut
-HPLC Pigments
-Ice core
-Ice core processed on ship
-Ice meiofauna
-IP25
-Isotope (muscle tissue)
-Isotopes
-Juveniles Rep1
-Juveniles Rep2
-Juveniles sieved 250um
-Limacina/Foraminifera
-Liver
-Long rough dab
-Meiofauna
-Melt pond
-Meroplankton
-Mesozooplankton ecotox
-Mesozooplankton genetics
-Mesozooplankton taxonomy
-Microbial
-Microbial biomass production
-Microzoo
-Mixotrophy FISH
-Multicore
-Multicore archive half
-Multicore work half
-Muscle
-Muscle and Spleen
-Muscle, spleen and gills
-MZP profile
-Niskin Bottle
-nutrients
-O18
-Only tissue samples
-Otholites
-Pale eelpout
-Particle Absorption
-PC Bottle
-PC section
-PCR tube
-pCSP
-PET Bottle
-Phytoplankton
-Phytoplankton spores
-Pigments
-Plankton Net
-Plankton sample
-POC/PON/StabIso
-Polar cod
-Polar sculpin
-POM
-Pore water d13C
-Pore water nutrients
-Pore-water ICP
-Porosity
-Profile (40-120m)
-Protists
-pTEP
-Quantitative species records
-Racetracks (80m) & Profile (40-120m)
-RNA
-sea ice
-Sea tadpole
-Seawater
-Sediment
-Sediment incubation
-Sediment slice
-SEM filter
-Silicate
-Spleen
-Spleen, Liver and Gonades
-Spotted snake blenny
-Station
-Sterivex filter
-Stomach
-Test flight
-Threespot eelpout
-TOC
-Total carbon (TC) filter
-Total organic carbon
-Total trace elements
-Trace elements
-Trawl haul
-TS probe
-Twohorn sculpin
-Under ice water
-Virus
-Virus Diversity
-Virus Prod& decay
-VivaFlow
-Water
-Water sample
-Whole fish
-Whole individual
-Whole individuals
-
+Sample type,Comment
+,
+5m Under ice 10m NET,"Should be splitted into depth (5m), gear (type of net) & sample type (??)"
+5m Under ice VivaFlow,"Should be splitted into depth (5m), gear (Viva Flow) & sample type (??)"
+5m Under ice VivaFlow + IMR1/2,"Should be splitted into depth (5m), gear (Viva Flow) & sample type (??)"
+aDNA,Anchient DNA
+Algae aggregates,
+Arctic eelpout,Sample type (?) instead of species name
+Atlantic hookear sculpin,Sample type (?) instead of species name
+Atlantic poacher,Sample type (?) instead of species name
+Bacteria,Sample type = abundance?
+Bigeye sculpin,Sample type (?) instead of species name
+Bio bulk,?
+Biological,Need to specify
+Blood,Sample type (?) instead of tissue
+Bottom ice,Sample type (?) instead of part of ice core
+BP,?
+Brain,Sample type (?) instead of tissue
+brine,Sample type (?) instead of material
+Bulk zooplankton,Sample type (?) instead of taxa
+Capelin,Sample type (?) instead of species name
+CARD FISH EPS,?
+Careproctus,Sample type (?) instead of species name
+Chlorophyll a,
+CNP,?
+Cod,Sample type (?) instead of taxa
+Copepods,Sample type (?) instead of taxa
+CTD profile,CTD or Hydrography ?
+CTD w/bottles,CTD or Hydrography ?
+Ctenophores,Sample type (?) instead of species name
+d13C DIC,
+dCSP,
+dD and d18O,? (d18 Oxygen)
+DIC conc,Same as DIC/Alkalinity
+DIC/Alk,
+Dilution culture from Ice core,?
+Dilution culture from net,?
+Dilution culture from VivaFlow,?
+Dinocysts,Sample type (?) instead of taxa
+Dissolved trace elements,
+DNA,Is this the same as aDNA?
+dO2,Dissolved oxygen?
+dTEP,?
+FA,?
+FC,?
+FCM,
+Fecal pellet abundance,
+Filter,Sample type instead of filter type
+FISH-EPS,
+FISH-Mixotrophy,
+fixed net sample,Sample type (?) instead of gir and treatment
+Flow cytometry,
+For dating,
+GC catcher sample,
+GC cutter sample,
+GC section,
+GC section archive half,
+GC section working half,
+Gelatinous seasnail,Sample type (?) instead of taxa
+GF/F filter,Sample type (?) instead of filter type
+Gill,Sample type (?) instead of tissue
+Gills and Muscle,Sample type (?) instead of tissue
+Glass vial,Sample type (?) instead of vial type
+Gonad,Sample type (?) instead of tissue
+Grain size,
+Hindgut,Sample type (?) instead of tissue
+HPLC Pigments,
+Ice core,
+Ice meiofauna,
+IP25,
+Isotope (muscle tissue),Stable isotope?
+Isotopes,Stable isotope?
+Juveniles Rep1,Sample type (?) instead of developmental stage
+Juveniles Rep2,Sample type (?) instead of developmental stage
+Juveniles sieved 250um,Sample type (?) instead of developmental stage
+Limacina/Foraminifera,Sample type (?) instead of taxa
+Liver,Sample type (?) instead of tissue
+Long rough dab,Sample type (?) instead of species name
+Meiofauna taxonomy,
+Melt pond,"Sample type (?) instead of ""material"""
+Meroplankton taxonomy,Should taxa and sample type be splitted in different fileds
+Mesozooplankton ecotoxology,Should taxa and sample type be splitted in different fileds
+Mesozooplankton genetics,Should taxa and sample type be splitted in different fileds
+Mesozooplankton taxonomy,Should taxa and sample type be splitted in different fileds
+Microbial,
+Microbial biomass production,
+Mixrozooplankton taxonomy,?
+Mixotrophy FISH,?
+Multicore,Sample type (?) instead of gear
+Multicore archive half,
+Multicore work half,
+Muscle,Sample type (?) instead of tissue
+Muscle and Spleen,Sample type (?) instead of tissue
+"Muscle, spleen and gills",Sample type (?) instead of tissue
+MZP profile,
+Niskin Bottle,Sample type (?) instead of gear
+Nutrients,
+O18,d18 Oxygen?
+Only tissue samples,
+Otholites,Sample type (?) instead of tissue
+Pale eelpout,Sample type (?) instead of taxa
+Particulate absorption,
+PC Bottle,Sample type (?) instead of gear
+PC section,Sample type (?) instead of gear
+PCR tube,Sample type (?) instead of gear
+pCSP,Sample type (?) instead of gear
+PET Bottle,Sample type (?) instead of gear
+Phytoplankton taxonomy,
+Phytoplankton spores,
+Pigments,
+Plankton Net,Sample type (?) instead of gear
+Plankton sample,?
+POC/PON/StabIso,Should probably be splitted in two samples POC/PON & Stable isotopes. How to do this on registered data?
+Polar cod,Sample type (?) instead of species name
+Polar sculpin,Sample type (?) instead of species name
+POM,"Sample type (?) instead of ""material"""
+Pore water d13C,
+Pore water nutrients,
+Pore-water ICP,
+Porosity,
+Profile (40-120m),
+Protists,Ice algae?
+pTEP,
+Quantitative species records,
+Racetracks (80m) & Profile (40-120m),
+RNA,
+sea ice,"Sample type (?) instead of ""material"""
+Sea tadpole,"Sample type (?) instead of ""material"""
+Seawater,"Sample type (?) instead of ""material"""
+Sediment,"Sample type (?) instead of ""material"""
+Sediment incubation,"Sample type (?) instead of ""material"""
+Sediment slice,"Sample type (?) instead of ""material"""
+SEM filter,Sample type (?) instead of type of filter
+Silicate,
+Spleen,Sample type (?) instead of tissue
+Spleen,Sample type (?) instead of tissue
+Spotted snake blenny,Sample type (?) instead of species name
+Station,??
+Sterivex filter,Sample type (?) instead of type of filter
+Stomach,Sample type (?) instead of tissue
+Threespot eelpout,Sample type (?) instead of species name
+TOC,
+Total carbon (TC) filter,Is it the same as total organic carbon
+Total organic carbon,
+Trace elements,
+Trawl haul,Sample type (?) instead of gear
+TS probe,Sample type (?) instead of gear
+Twohorn sculpin,
+Under ice water,"Sample type (?) instead of ""material"""
+Virus,Virus abundance or virus diversity?
+Virus diversity,
+Virus Prod& decay,
+VivaFlow,Is this a gear?
+Water,"Sample type (?) instead of ""material"""
+Water sample,"Sample type (?) instead of ""material"""
+Whole fish,Sample type (?) instead of tissue
+Whole individual,Sample type (?) instead of tissue
+Whole individuals,Sample type (?) instead of tissue
