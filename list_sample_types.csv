@@ -22,14 +22,14 @@ Capelin,Sample type (?) instead of species name
 CARD FISH EPS,?
 Careproctus,Sample type (?) instead of species name
 Chlorophyll a,
-CNP,?
+CNP,Carbon:Nitrogen:Phosphorous ratio
 Cod,Sample type (?) instead of taxa
 Copepods,Sample type (?) instead of taxa
 CTD profile,CTD or Hydrography ?
 CTD w/bottles,CTD or Hydrography ?
 Ctenophores,Sample type (?) instead of species name
 d13C DIC,
-dCSP,
+dCSP,dissolved Coomassie stainable particles 
 dD and d18O,? (d18 Oxygen)
 DIC conc,Same as DIC/Alkalinity
 DIC/Alk,
@@ -40,9 +40,8 @@ Dinocysts,Sample type (?) instead of taxa
 Dissolved trace elements,
 DNA,Is this the same as aDNA?
 dO2,Dissolved oxygen?
-dTEP,?
-FA,?
-FC,?
+dTEP,dissolved Transparent exopolymeric particles 
+Fatty acids,
 FCM,
 Fecal pellet abundance,
 Filter,Sample type instead of filter type
@@ -120,7 +119,7 @@ Pore-water ICP,
 Porosity,
 Profile (40-120m),
 Protists,Ice algae?
-pTEP,
+pTEP,particulate Transparent exopolymeric particles
 Quantitative species records,
 Racetracks (80m) & Profile (40-120m),
 RNA,
@@ -139,7 +138,7 @@ Station,??
 Sterivex filter,Sample type (?) instead of type of filter
 Stomach,Sample type (?) instead of tissue
 Threespot eelpout,Sample type (?) instead of species name
-TOC,
+TOC,Total organic carbon
 Total carbon (TC) filter,Is it the same as total organic carbon
 Total organic carbon,
 Trace elements,
