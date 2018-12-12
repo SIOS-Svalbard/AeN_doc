@@ -1,0 +1,71 @@
+\documentclass[a4paper,english, 11pt]{article}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern} % For å gi vektorbasert tekst
+\usepackage{xcolor}
+% \usepackage{listings}
+\usepackage{parskip}
+
+\usepackage{amssymb,amsthm,framed}  
+
+\usepackage[]{amsmath} 
+\usepackage[hang,small,bf]{caption}
+\usepackage{siunitx} 
+\usepackage{bm}
+\usepackage{url}  
+\usepackage{multirow} 
+\usepackage[hidelinks]{hyperref}
+\usepackage[a4paper,inner=2.5cm,outer=2.5cm,top=2.5cm,bottom=2.5cm,pdftex]{geometry} 
+
+%  
+\usepackage{listings}
+\lstset{language=bash}
+\lstset{basicstyle=\ttfamily,
+  numbers=left,
+  showstringspaces=false,
+  commentstyle=\color{red},
+  keywordstyle=\color{black},
+  breaklines=true,
+  belowskip=0.5em
+}
+
+
+\usepackage{accsupp}    
+\lstset {
+    numberstyle=\noncopynumber,
+    columns=flexible,
+}
+
+\newcommand{\noncopynumber}[1]{
+    \BeginAccSupp{method=escape,ActualText={}}
+    #1
+    \EndAccSupp{}
+}
+
+
+\usepackage{graphicx}     
+
+\usepackage{enumitem}      
+\graphicspath{{../Images/AeN/}} 
+ 
+\hyphenpenalty=5000
+\tolerance=1000
+\title{Notes and decisions on the sampling}
+\date{\today}
+\author{Pål Ellingsen (\url{pale@unis.no})}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\section{CTD} % (fold) {{{
+\label{sec:CTD}
+
+\subsection{2018-12-03} % (fold) {{{
+\label{sub:2018-12-03}
+When registering the depth to which the CTD was lowered, sample depth and maximum depth should not be used, as they will be inherited to the Niskin bottles. One could remove the inheritance, but this would be a problem in the case of trawls and nets. Therefor it is found easier to only comment this in the event remarks. 
+% subsection 2018-12-03 (end) }}}
+
+% section CTD (end) }}}
+\end{document} 
