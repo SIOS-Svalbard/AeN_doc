@@ -2,7 +2,10 @@ Sample type,Comment
 ,
 5m Under ice 10m NET,"Should be splitted into depth (5m), gear (type of net) & sample type (??)"
 5m Under ice VivaFlow,"Should be splitted into depth (5m), gear (Viva Flow) & sample type (??)"
-5m Under ice VivaFlow + IMR1/2,"Should be splitted into depth (5m), gear (Viva Flow) & sample type (??)"
+5m Under ice VivaFlow + IMR1/2,"Should be splitted into depth (5m), gear (Viva Flow) & sample type (??) 
+Luka: Actually I wrote ""Water sample from VivaFlow” and ""Water sample from Net” as a sample type, which means that it´s a water sample concentrated using VivaFlow/Net (what is concentrated of course is protist/phytoplankton cells). 
+
+The net that we used was 10µm mesh size plankton net which was available from the ship. "
 aDNA,Anchient DNA
 Algae aggregates,
 Bacteria,Sample type = abundance?

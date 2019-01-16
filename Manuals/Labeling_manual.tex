@@ -49,19 +49,28 @@
  
 \hyphenpenalty=5000
 \tolerance=1000
-\title{Draft: Labeling manual}
+\title{Draft: The Nansen Legacy labeling manual}
 \date{\today\\v0.1}
 \author{Pål Ellingsen (\url{pale@unis.no})}
 
 \begin{document}
 \maketitle
 \tableofcontents
+\section{Introduction} % (fold) {{{
+\label{sec:Introduction}
+
+The Nansen Legacy project is aimed at generating samples, data and science relevant during the project and after its conclusion. Additionally it is a collaboration between major marine institutions in Norway. To accommodate the tracking of samples between from ship to land and  between institutions it was decided to use a unified labeling system. To secure that the project data and metadata follows the FAIR (Findable, Accessible, Interoperable, Reproducible) principle for data management within the project, a first step is to ensure that the collected samples are findable and that relevant metadata are logged
+along with the sample collection. The metadata needs to be logged in a standardized manner and will be
+made accessible through a search interphase as soon as possible after the cruises.  This manual details how to label samples, log the metadata and how to find information about logged samples in the SIOS database.  
+
+% section Introduction (end) }}}
+
 \section{Labeling samples} % (fold) {{{
 \label{sec:Labeling samples}
 
-\subsection{Data Matrix} % (fold) {{{
-\label{ssub:Data Matrix}
-Samples are going to be marked with UUID hex codes, example \emph{dbad1808625f11e880faa0481c9e7d26}. As these contain 32 hex digits, it is impractical to manually type these. A good solution for marking and reading these is the use of Data Matrix codes following the ECC 200 standard. To fit the UUID the code will be of size  $22\times22$, see figure~\ref{fig:data_matrix} for an example.
+
+
+In order to be able to distinguish samples, samples in the project are assigned a unique id, in the form of a universally unique identifier (UUID). Details about it can be found in subsection~\ref{sub:UUID}. For physical samples this UUID is encoded in the form of a 2D barcode, specifically a Data Matrix (DM) code, details in subsection~\ref{sub:DM}. An example of such a code can be seen in figure~\ref{fig:data_matrix}. The code is then printed, together with descriptive text, onto a label which is stuck on the sample or its container.
 
 \begin{figure}[htb]
     \centering
@@ -70,8 +79,83 @@ Samples are going to be marked with UUID hex codes, example \emph{dbad1808625f11
         Example Data Matrix code containing an UUID.
     }
 \end{figure}
-% subsection Data Matrix (end) }}}
 
+\subsection{Procedure for physical samples} % (fold) {{{
+\label{sub:Procedure for physical samples}
+
+
+The interface for printing labels is available through a webpage on the research ship. Details of this is given by the cruise leader.
+
+\begin{enumerate}
+    \item Choose label size.
+    \item Write information which is to be printed together with the label into the printing page. This should include the date and information about what the sample is.
+    \item Print the label.  
+\end{enumerate}
+The following steps can be done in any order depending on what is easiest:
+\begin{enumerate}
+\setcounter{enumi}{3}
+    \item Stick the label on the sample
+    \item Register data about the sample in the spreadsheet, see section~\ref{sub:spreadsheet_reg}.
+\end{enumerate}
+
+% subsection Procedure for physical samples (end) }}}
+
+\subsection{Procedure for virtual samples} % (fold) {{{
+\label{sub:Procedure for virtual samples}
+
+Examples of virtual sample are: gear casts, Multicores, Multinets and Ice cores that have been split/melted. Since these have no physical place for a label to go, the procedure of logging them involves either printing a sheet of paper with the codes or just assigning them a UUID without any Data Matrix code. Which approach is the best depends on the circumstance. If the UUID is going to be used by more than one scientist, for example in the case of Niskin bottles, it is often easier to print an A4 page with the codes. Below follows two different procedures depending on what is chosen:
+
+\subsubsection{A4 page of codes} % (fold) {{{
+\label{ssub:A4_page}
+
+Go to the ''Gear UUID generator'' page on the printing overview (address distributed on the cruise). 
+On this page you specify the name of the gear ''Gear Name'' (CTD, Multinet, Multicorer), the type of container ''Sample Name'' (Niskin, core, net), number of samples in on gear cast ''Number of samples'' and number of gear casts expected ''Number of pages'' (this is only to save having to come to this page for every cast). 
+
+By pressing ''Make PDF'' a PDF is generated and can be printed on an normal printer. The A4 page printed should be marked with information identifying which gear cast this is for. Then all the containers need to registered in the same way physical samples are, see subsection~\ref{sub:spreadsheet_reg}.
+
+\textbf{Note: It is very important that one person is responsible for registering the containers, as without them samples will be without parents and untraceable.}
+
+If copies are needed for several scientists to work on the same containers, the A4 page can be copied on a copier. 
+
+% subsubsection A4_page (end) }}}
+
+\subsubsection{Only UUID} % (fold) {{{
+\label{ssub:Only_UUID}
+
+When only the UUID is needed, one can be generated through the ''UUID generator'' on the printing overview. Pick one of them and continue the registration as in subsection~\ref{sub:spreadsheet_reg}. Remember to ''Get new UUID'' for every time you leave the page in order to ensure that a UUID is used twice.  
+
+% subsubsection Only_UUID (end) }}}
+% subsection Procedure for virtual samples (end) }}}
+
+\subsubsection{Hierarchy} % (fold) {{{
+\label{sub:Hirarcy}
+
+By using UUIDs for the samples it will be possible to keep track of the hierarchy of the samples. By issuing a new UUID for each subsample, and linking it with the sample UUID, one can easily track the hierarchy. How this would be done is shown in figure~\ref{fig:parent_uuid}.
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=1\textwidth]{Labeling.pdf}
+    \caption{\label{fig:parent_uuid}
+       Examples of how event id and parent id works for two different gear types. These should be transferable to other gear types.
+    }
+\end{figure}
+% subsection Hirarcy (end) }}}
+In order to 
+
+\subsection{Generation of sample log spreadsheet} % (fold) {{{
+\label{sub:Sample_log_spreadsheet_generation}
+
+% subsection   (end) }}}
+
+\subsection{Sample logging} % (fold) {{{
+\label{sub:spreadsheet_reg}
+
+
+The samples taken during a cruise need to be logged in a standardised spreadsheet, see subsection~\ref{sub:Sample_log_spreadsheet_generation} for how to make one. Logging of samples should be done continuously during the cruise. 
+
+When logging the sample you will need its id, for physical samples this id goes in the Sample ID field and should be entered by scanning the Data Matrix code on the sample label. Then its parent needs to be registered, what the parent is depends on what type of sample it is, see figure~\ref{fig:parent_uuid} for some examples. Having registered these two, the rest of the columns in the spreadsheet needs to be filled out. Every column has an explanation of what is expected in the given field. 
+
+
+% subsection Sample log spreadsheet logging (end) }}}
 \subsection{Labels} % (fold) {{{
 \label{sub:Labels}
 
@@ -113,8 +197,33 @@ Data Matrix codes can be read with a smartphone or webcamera, though this is not
 A reader that satisfies this is the \emph{Datalogic PowerScan PD9530-DPM}, see figure~\ref{fig:scanner}. It is suited for reading small Data Matrix codes, which is necessary as the codes on the Eppendorf tubes need to be small in order to avoid to large a distortion from the code being wrapped around the tube. 
 % subsection Scanner (end) }}}
 
-\subsection{Cost} % (fold) {{{
-\label{sub:Cost}
+% section Marking samples (end) }}}
+\appendix
+
+\section{Technical details} % (fold) {{{
+\label{sec:Technical details}
+
+\subsection{UUID} % (fold) {{{
+\label{sub:UUID}
+
+\subsubsection{Generation} % (fold) {{{
+\label{ssub:Generation}
+
+The reason for using UUID (universally unique identifier) to mark samples is that given a good seed, the generation of UUIDs (with for example UUID1) ensures that the code is unique (the probability of collision is on the order of $ 2\times10^{-18}$). UUID1 contains the time and information about the computer generating it. This could be a good code to use for AeN as it contains the time of generation. UUID generation is implemented in most languages, and is easily done in for instance Python by importing the built in library \emph{uuid}. 
+
+% subsection Generation (end) }}}
+
+\subsection{Data Matrix} % (fold) {{{
+\label{ssub:DM}
+Samples are going to be marked with UUID hex codes, example \emph{dbad1808625f11e880faa0481c9e7d26}. As these contain 32 hex digits, it is impractical to manually type these. A good solution for marking and reading these is the use of Data Matrix codes following the ECC 200 standard. To fit the UUID the code will be of size  $22\times22$, see figure~\ref{fig:data_matrix} for an example.
+
+% subsection Data Matrix (end) }}}
+
+% section Technical details (end) }}}
+
+\section{Costs} % (fold) {{{
+\label{sec:Costs}
+
 The cost of the purposed solutions are shown in table~\ref{tab:costs}.
 \begin{table}[htb]
     
@@ -136,30 +245,6 @@ The cost of the purposed solutions are shown in table~\ref{tab:costs}.
 
 
 Based the costs presented in the table and the initial needs (20 000 Eppendorf and 5 000 larger labels) the total cost comes to about \textbf{73 000 NOK}.
-% subsection Cost (end) }}}
-% section Marking samples (end) }}}
+% section Costs (end) }}}
 
-\section{UUID marking} % (fold) {{{
-\label{sec:UUID}
-
-\subsection{Generation} % (fold) {{{
-\label{sub:Generation}
-
-The reason for using UUID (universally unique identifier) to mark samples is that given a good seed, the generation of UUIDs (with for example UUID1) ensures that the code is unique (the probability of collision is on the order of $ 2\times10^{-18}$). UUID1 contains the time and information about the computer generating it. This could be a good code to use for AeN as it contains the time of generation. UUID generation is implemented in most languages, and is easily done in for instance Python by importing the built in library \emph{uuid}. 
-
-% subsection Generation (end) }}}
-
-\subsection{Hierarchy} % (fold) {{{
-\label{sub:Hirarcy}
-
-By using UUIDs for the samples it will be possible to keep track of the hierarchy of the samples. By issuing a new UUID for each subsample, and linking it with the sample UUID, one can easily track the hierarchy. How this would be done is shown in figure~\ref{fig:parent_uuid}.
-\begin{figure}[htb]
-    \centering
-    \includegraphics[width=0.7\textwidth]{UUID.pdf}
-    \caption{\label{fig:parent_uuid}
-       Hierarchy when using UUIDs. 
-    }
-\end{figure}
-% subsection Hirarcy (end) }}}
-% section UUID (end) }}}
 \end{document} 
