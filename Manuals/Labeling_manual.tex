@@ -4,7 +4,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern} 
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
 \usepackage{parskip} 
 \usepackage{amssymb,amsthm,framed}  
 \usepackage[]{amsmath} 
@@ -15,6 +15,11 @@
 \usepackage{multirow} 
 \usepackage[hidelinks]{hyperref}
 \usepackage[a4paper,inner=2.5cm,outer=2.5cm,top=2.5cm,bottom=2.5cm,pdftex]{geometry} 
+\usepackage{array}
+\usepackage{ragged2e}
+\newcolumntype{P}[1]{>{\RaggedRight\hspace{0pt}}p{#1}}
+
+\sisetup{product-units=single}
 
 %  
 \usepackage{listings}
@@ -65,12 +70,26 @@ made accessible through a search interphase as soon as possible after the cruise
 
 % section Introduction (end) }}}
 
+
+\subsection{Hierarchy} % (fold) {{{
+\label{sub:Hirarcy}
+
+One of the backbones of the sample log is the use of parent IDs. A parent ID is the ID of the gear cast or sample which a sample or sub-sample comes from, see figure~\ref{fig:parent_uuid}. By registering the parent, it is possible to keep track of which samples belong together, and any number of levels of sub-samples. Additionally it reduces the amount of information that needs to be registered on a sample, as information like for example position, bottom depth, date and time can be inherited from the parent. 
+\begin{figure}[hp]
+    \centering
+    \includegraphics[width=1\textwidth]{Labeling.pdf}
+    \caption{\label{fig:parent_uuid}
+       Examples of how event id and parent id works for two different gear types. These should be transferable to other gear types.
+    }
+\end{figure}
+% subsection Hirarcy (end) }}}
+
 \section{Labeling samples} % (fold) {{{
 \label{sec:Labeling samples}
 
 
 
-In order to be able to distinguish samples, samples in the project are assigned a unique id, in the form of a universally unique identifier (UUID). Details about it can be found in subsection~\ref{sub:UUID}. For physical samples this UUID is encoded in the form of a 2D barcode, specifically a Data Matrix (DM) code, details in subsection~\ref{sub:DM}. An example of such a code can be seen in figure~\ref{fig:data_matrix}. The code is then printed, together with descriptive text, onto a label which is stuck on the sample or its container.
+In order to distinguish samples, samples in the project are assigned a unique id, in the form of a universally unique identifier (UUID). Details about it can be found in subsection~\ref{sub:UUID}. For physical samples this UUID is encoded in the form of a 2D barcode, specifically a Data Matrix (DM) code, details in subsection~\ref{sub:DM}. An example of such a code can be seen in figure~\ref{fig:data_matrix}. The code is then printed, together with descriptive text, onto a label which is stuck on the sample or its container.
 
 \begin{figure}[htb]
     \centering
@@ -127,22 +146,17 @@ When only the UUID is needed, one can be generated through the ''UUID generator'
 % subsubsection Only_UUID (end) }}}
 % subsection Procedure for virtual samples (end) }}}
 
-\subsubsection{Hierarchy} % (fold) {{{
-\label{sub:Hirarcy}
-
-By using UUIDs for the samples it will be possible to keep track of the hierarchy of the samples. By issuing a new UUID for each subsample, and linking it with the sample UUID, one can easily track the hierarchy. How this would be done is shown in figure~\ref{fig:parent_uuid}.
-\begin{figure}[htb]
-    \centering
-    \includegraphics[width=1\textwidth]{Labeling.pdf}
-    \caption{\label{fig:parent_uuid}
-       Examples of how event id and parent id works for two different gear types. These should be transferable to other gear types.
-    }
-\end{figure}
-% subsection Hirarcy (end) }}}
-In order to 
 
 \subsection{Generation of sample log spreadsheet} % (fold) {{{
 \label{sub:Sample_log_spreadsheet_generation}
+
+In order to log the samples labeled on a cruise, a standardised spreadsheet is used. The spreadsheet is based on Darwin Core. A generator for the spreadsheet can be found on the SIOS page (or on the ship), specifically at \url{https://www.sios-svalbard.org/cgi-bin/darwinsheet/?setup=aen}. When loading the page, certain parameters are already ticked, these are mandatory and should not be removed. 
+The procedure is then to select the wanted columns, this should be done with some cooperation within research groups, as to make sure wanted information is registered. If a column is forgotten, a new sheet can be generated and the column copied into an existing spreadsheet.
+
+When working with the spreadsheet the order of columns can be changed, but it is important to move the whole column as the third row contains the key used by the data manager to read the log into the database. 
+
+It is possible to add additional columns to the spreadsheet that will not end up in the sample log, as any column with an empty third row is ignored. The same goes with rows with an empty event id. 
+
 
 % subsection   (end) }}}
 
@@ -152,50 +166,34 @@ In order to
 
 The samples taken during a cruise need to be logged in a standardised spreadsheet, see subsection~\ref{sub:Sample_log_spreadsheet_generation} for how to make one. Logging of samples should be done continuously during the cruise. 
 
-When logging the sample you will need its id, for physical samples this id goes in the Sample ID field and should be entered by scanning the Data Matrix code on the sample label. Then its parent needs to be registered, what the parent is depends on what type of sample it is, see figure~\ref{fig:parent_uuid} for some examples. Having registered these two, the rest of the columns in the spreadsheet needs to be filled out. Every column has an explanation of what is expected in the given field. 
+When logging the sample you will need its id, for physical samples this id goes in the Sample ID field and should be entered by scanning the Data Matrix code on the sample label. Then its parent, see subsection~\ref{sub:Hirarcy}, needs to be registered, what the parent is depends on what type of sample it is, see figure~\ref{fig:parent_uuid} for some examples. Having registered these two, the rest of the columns in the spreadsheet needs to be filled out. Every column has an explanation of what is expected in the given field. 
+
+To check a sample log there is a spreadsheet checker available on the ship and on the SIOS page ????.
+Note that the sheet named ''Metadata'' needs to be filled out before running the checker.
 
 
 % subsection Sample log spreadsheet logging (end) }}}
-\subsection{Labels} % (fold) {{{
+\section{Label types} % (fold) {{{
 \label{sub:Labels}
 
-The labels for the samples need to be printable in the field and fit on different size containers. So far it has been identified that there is a need for two sizes of labels, one for Eppendorf tubes (2 ml) and one for larger containers.
+When selecting labels there are several considerations to be taken into account. Important considerations are which conditions will the labels be subject to and what type of container are they going on.
 
-\subsubsection{Eppendorf labels} % (fold) {{{
-\label{ssub:Eppendorf labels}
+In the Nansen Legacy several different labels are available and can be printed on the Zebra label printers on the ship. Table~\ref{tab:labels} contains an overview of them and should be used to choose the appropriate one.
 
-These labels need to withstand temperatures down to \SI{-196}{\degree\celsius} and up to \SI{100}{\degree\celsius}. In addition, they need to be resistant to laboratory solvents and water. Once attached the labels should be hard to remove, as they will contain the unique identification for the sample.
+\begin{table}[htb]
+    \rowcolors{3}{cyan!10}{white}
+    \caption{\label{tab:lables}An overview of different labels and their properties. All labels are waterproof and can withstand most laboratory chemicals}
+    \begin{tabular}{l|P{3cm}lP{4cm}P{4cm}}
+        \hline
+        \textbf{Label} & \textbf{Size} & \textbf{Temp. range} & \textbf{Amount of text} & \textbf{Notes} \\ \hline
+        Small& \SI{10}{\mm} diameter & \SIrange{-80}{135}{\celsius} & No text, only DM & Problems sticking on certain plastic bags in \SI{-20}{\celsius}\\
+        Medium& \SI{19 x 25}{\mm}, fits Eppendorf \SI{2}{\ml} tubes & \SIrange{}{}{\celsius} & 4 lines of 18 characters each & Problems sticking on certain plastic bags in \SI{-20}{\celsius}. \\
+        Large& \SI{25 x 51}{\mm} & \SIrange{-80}{135}{\celsius} & 4 lines of 20 characters each, one with 36 characters. & Problems sticking on certain plastic bags in  \SI{-20}{\celsius}.\\
+        \hline
+    \end{tabular}
+\end{table}
 
-So far it looks like CILS international has some labels which wrap around the Eppendorf tube, with a printable area (with a thermal printer) of \SI{25x19}{\mm}. There are also labels available from Sigma Aldrich.
 
-
-% subsubsection Eppendorf labels (end) }}}
-
-\subsubsection{Larger labels} % (fold) {{{
-\label{ssub:Larger labels}
-These labels are for the use on larger samples, and should withstand temperatures in the range of \SIrange{-80}{100}{\degree\celsius}, laboratory solvents and water. These should be hard to remove as they contain the unique identification for the sample.
-
-CILS size is \SI{26x79}{\mm}
-
-CILS and Sigma Aldrich can both supply labels that suite this, though CILS seems to have a higher standard.
-% subsubsection Larger labels (end) }}}
-% subsection Labels (end) }}}
-
-\subsection{Printer} % (fold) {{{
-\label{sub:Printer}
-To ensure that the labels can be printed in the field and that the marking stays on, thermal printers should be used. The easiest is to have one printer for each size of the label. In addition to printing the Data Matrix code, these printers will be able to add information from each scientist in human readable format (text), helping to identify the sample without the need to scan it each time.
-
-For this it looks like a \emph{Zebra GX430t}, see figure~\ref{fig:zebra}, will satisfy the requirements. This printer supports printing using ZPL codes and Data Matrix codes following ECC 200, which then means that a custom (Python) program can be used to generate the needed UUID and add the text wanted from the scientist. Here an API to pull the cruise number of the boat would be advantageous. 
-% subsection Printer (end) }}}
-
-In operation the printer uses ribbon, which needs to periodically be changed, though this is not a large running cost.
-\subsection{Scanner} % (fold) {{{
-\label{sub:Scanner}
-
-Data Matrix codes can be read with a smartphone or webcamera, though this is not a robust solution, as the needed information should be easily inserted into an Excel sheet / database search. A faster and better solution is to use a hand held imaging barcode reader. It needs to be robust for use in the field, and easily interfaced to the computer.
-
-A reader that satisfies this is the \emph{Datalogic PowerScan PD9530-DPM}, see figure~\ref{fig:scanner}. It is suited for reading small Data Matrix codes, which is necessary as the codes on the Eppendorf tubes need to be small in order to avoid to large a distortion from the code being wrapped around the tube. 
-% subsection Scanner (end) }}}
 
 % section Marking samples (end) }}}
 \appendix
@@ -209,15 +207,34 @@ A reader that satisfies this is the \emph{Datalogic PowerScan PD9530-DPM}, see f
 \subsubsection{Generation} % (fold) {{{
 \label{ssub:Generation}
 
-The reason for using UUID (universally unique identifier) to mark samples is that given a good seed, the generation of UUIDs (with for example UUID1) ensures that the code is unique (the probability of collision is on the order of $ 2\times10^{-18}$). UUID1 contains the time and information about the computer generating it. This could be a good code to use for AeN as it contains the time of generation. UUID generation is implemented in most languages, and is easily done in for instance Python by importing the built in library \emph{uuid}. 
+The reason for using UUID (universally unique identifier) to mark samples is that, given a good seed, the generation of UUIDs (with for example UUID1) ensures that the code is unique (the probability of collision is on the order of $ 2\times10^{-18}$). UUID1 contains the time and information about the computer generating it. It is a good code to use in the Nansen Legacy as the first 8 characters are sequential (it is time) and can be printed in clear text on the label to help with finding samples. UUID generation is implemented in most languages, and is easily done in for instance Python by importing the built in library \emph{uuid}. 
 
 % subsection Generation (end) }}}
 
-\subsection{Data Matrix} % (fold) {{{
+\subsubsection{Data Matrix} % (fold) {{{
 \label{ssub:DM}
-Samples are going to be marked with UUID hex codes, example \emph{dbad1808625f11e880faa0481c9e7d26}. As these contain 32 hex digits, it is impractical to manually type these. A good solution for marking and reading these is the use of Data Matrix codes following the ECC 200 standard. To fit the UUID the code will be of size  $22\times22$, see figure~\ref{fig:data_matrix} for an example.
+Samples are identified by UUIDs in the for of hex numbers, example \emph{388613ee-1a67-11e9-b5cc-a0481c9e7d26}. As these contain 36 characters, it is impractical to manually type these, therefore they are printed in the form of  Data Matrix (DM) codes following the ECC 200 standard. To fit the UUID the code is of size  $22\times22$, see figure~\ref{fig:data_matrix}. These DMs can be printed in different sizes and read by 2d barcode readers, webcameras and mobile phones. 
+
 
 % subsection Data Matrix (end) }}}
+
+\subsection{Printer} % (fold) {{{
+\label{sub:Printer}
+To ensure that the labels can be printed in the field and that the marking stays on, thermal transfer printers are used. One printer is available for each label size. In addition to printing the Data Matrix code, these printers are able to add information from each scientist in human readable format (text), helping to identify the sample without the need to scan it each time.
+
+The chosen printer is a \emph{Zebra GX430t} printer. It was chosen as it puts few limitations on the labels used, and it can be printed to both from software and custom written Python software in the form of a web page. To specify what is printed ZPL codes are used. These support Data Matrix codes following ECC 200.
+
+% subsection Printer (end) }}}
+
+In operation the printer uses ribbon, which needs to periodically be changed, though this is not a large running cost.
+
+\subsection{Scanner} % (fold) {{{
+\label{sub:Scanner}
+
+Data Matrix codes can be read with a smartphone or webcamera, though this is not as fast as a dedicated scanner, but it is useful for scanning samples at home institutions. On the ship there are USB scanners available which should be used to insert the UUID codes in the spreadsheet. They work like keyboards, place the cursor in the desired cell and press the scan button on the scanner.
+
+There are two different types of scanners, the \emph{Opticon OPI-3601} and the \emph{Datalogic PowerScan PD9530-DPM}. Most scientists like the \emph{Opticon} the best, but for environments with a lot of water the more expensive and waterproof \emph{Datalogic} is recommended.
+% subsection Scanner (end) }}}
 
 % section Technical details (end) }}}
 
@@ -226,12 +243,11 @@ Samples are going to be marked with UUID hex codes, example \emph{dbad1808625f11
 
 The cost of the purposed solutions are shown in table~\ref{tab:costs}.
 \begin{table}[htb]
-    
+    \rowcolors{3}{cyan!10}{white}
     \caption{\label{tab:costs}The unit costs}
     \begin{tabular}{lllrr}
         \hline
-        \textbf{Item} & Need & \textbf{Unit size} & \textbf{Unit price} & \textbf{Total price} \\
-        \hline
+        \textbf{Item} & \textbf{Need} & \textbf{Unit size} & \textbf{Unit price} & \textbf{Total price} \\ \hline
         CILS Eppendorf label    & 5 000     & Per label  (5 000)    & 2.16 NOK  & 10 800 NOK\\ 
         CILS Eppendorf label    & 20 000    & Per label  (20 000)   & 1.33 NOK  & 26 661 NOK\\ 
         CILS Larger label       & 5 000     & Per label  (5 000)    & 2.14 NOK  & 10 675 NOK\\ 
