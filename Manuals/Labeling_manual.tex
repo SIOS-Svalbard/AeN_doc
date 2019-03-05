@@ -82,14 +82,14 @@ One of the backbones of the sample log is the use of parent IDs. A parent ID is 
        Examples of how event id and parent id works for two different gear types. These should be transferable to other gear types.
     }
 \end{figure}
-% subsection Hirarcy (end) }}}
+% subsection Hierarchy (end) }}}
 
 \section{Labeling samples} % (fold) {{{
 \label{sec:Labeling samples}
 
 
 
-In order to distinguish samples, samples in the project are assigned a unique id, in the form of a universally unique identifier (UUID). Details about it can be found in subsection~\ref{sub:UUID}. For physical samples this UUID is encoded in the form of a 2D barcode, specifically a Data Matrix (DM) code, details in subsection~\ref{sub:DM}. An example of such a code can be seen in figure~\ref{fig:data_matrix}. The code is then printed, together with descriptive text, onto a label which is stuck on the sample or its container.
+In order to distinguish samples, samples in the project are assigned a unique id, in the form of a universally unique identifier (UUID). Details about it can be found in subsection~\ref{sub:UUID}. For physical samples this UUID is encoded in the form of a 2D barcode, specifically a Data Matrix (DM) code, details in subsection~\ref{ssub:DM}. An example of such a code can be seen in figure~\ref{fig:data_matrix}. The code is then printed, together with descriptive text, onto a label which is stuck on the sample or its container.
 
 \begin{figure}[htb]
     \centering
@@ -132,9 +132,9 @@ On this page you specify the name of the gear ''Gear Name'' (CTD, Multinet, Mult
 
 By pressing ''Make PDF'' a PDF is generated and can be printed on an normal printer. The A4 page printed should be marked with information identifying which gear cast this is for. Then all the containers need to registered in the same way physical samples are, see subsection~\ref{sub:spreadsheet_reg}.
 
-\textbf{Note: It is very important that one person is responsible for registering the containers, as without them samples will be without parents and untraceable.}
+\textbf{Note: It is very important that one person is responsible for registering the containers, as without their IDs their samples will be without parents and untraceable.}
 
-If copies are needed for several scientists to work on the same containers, the A4 page can be copied on a copier. 
+If copies are needed for several scientists to work on the same containers, the A4 page can be copied on a photocopier. 
 
 % subsubsection A4_page (end) }}}
 
@@ -182,12 +182,12 @@ In the Nansen Legacy several different labels are available and can be printed o
 
 \begin{table}[htb]
     \rowcolors{3}{cyan!10}{white}
-    \caption{\label{tab:lables}An overview of different labels and their properties. All labels are waterproof and can withstand most laboratory chemicals}
+    \caption{\label{tab:labels} An overview of different labels and their properties. All labels are waterproof and can withstand most laboratory chemicals}
     \begin{tabular}{l|P{3cm}lP{4cm}P{4cm}}
         \hline
         \textbf{Label} & \textbf{Size} & \textbf{Temp. range} & \textbf{Amount of text} & \textbf{Notes} \\ \hline
         Small& \SI{10}{\mm} diameter & \SIrange{-80}{135}{\celsius} & No text, only DM & Problems sticking on certain plastic bags in \SI{-20}{\celsius}\\
-        Medium& \SI{19 x 25}{\mm}, fits Eppendorf \SI{2}{\ml} tubes & \SIrange{}{}{\celsius} & 4 lines of 18 characters each & Problems sticking on certain plastic bags in \SI{-20}{\celsius}. \\
+        Medium& \SI{19 x 25}{\mm}, fits Eppendorf \SI{2}{\ml} tubes & \SIrange{-196}{155}{\celsius} & 4 lines of 18 characters each & Problems sticking on certain plastic bags in \SI{-20}{\celsius}. \\
         Large& \SI{25 x 51}{\mm} & \SIrange{-80}{135}{\celsius} & 4 lines of 20 characters each, one with 36 characters. & Problems sticking on certain plastic bags in  \SI{-20}{\celsius}.\\
         \hline
     \end{tabular}
@@ -196,7 +196,9 @@ In the Nansen Legacy several different labels are available and can be printed o
 
 
 % section Marking samples (end) }}}
+\newpage
 \appendix
+\section*{Appendix}
 
 \section{Technical details} % (fold) {{{
 \label{sec:Technical details}
@@ -204,16 +206,18 @@ In the Nansen Legacy several different labels are available and can be printed o
 \subsection{UUID} % (fold) {{{
 \label{sub:UUID}
 
+A universally unique identifier (UUID) is a 32 character hex number, with 4 dashes splitting it into parts. An example is \emph{55702a3a-1ef4-11e9-b911-005056c00001}. It is a very common ID when one desires an identifier that is unique (on a global scale).
+
 \subsubsection{Generation} % (fold) {{{
 \label{ssub:Generation}
 
-The reason for using UUID (universally unique identifier) to mark samples is that, given a good seed, the generation of UUIDs (with for example UUID1) ensures that the code is unique (the probability of collision is on the order of $ 2\times10^{-18}$). UUID1 contains the time and information about the computer generating it. It is a good code to use in the Nansen Legacy as the first 8 characters are sequential (it is time) and can be printed in clear text on the label to help with finding samples. UUID generation is implemented in most languages, and is easily done in for instance Python by importing the built in library \emph{uuid}. 
+The reason for using UUIDs (universally unique identifier) to mark samples is that, given a good seed, the generation of UUIDs (with for example UUID1) ensures that the code is unique (the probability of collision is on the order of $ 2\times10^{-18}$). UUID1 contains the time and information about the computer generating it. It is a good code to use in the Nansen Legacy as the first 8 characters are sequential (time) and can be printed in clear text on the label to help with finding samples. UUID generation is implemented in most languages, and is easily done in for instance Python by importing the built in library \emph{uuid}. 
 
 % subsection Generation (end) }}}
 
 \subsubsection{Data Matrix} % (fold) {{{
 \label{ssub:DM}
-Samples are identified by UUIDs in the for of hex numbers, example \emph{388613ee-1a67-11e9-b5cc-a0481c9e7d26}. As these contain 36 characters, it is impractical to manually type these, therefore they are printed in the form of  Data Matrix (DM) codes following the ECC 200 standard. To fit the UUID the code is of size  $22\times22$, see figure~\ref{fig:data_matrix}. These DMs can be printed in different sizes and read by 2d barcode readers, webcameras and mobile phones. 
+Samples are identified by UUIDs in the form of hex numbers, example \emph{388613ee-1a67-11e9-b5cc-a0481c9e7d26}. As these contain 36 characters, it is impractical to manually type these, therefore they are printed in the form of  Data Matrix (DM) codes following the ECC 200 standard. To fit the UUID, the DM code is of size $22\times22$, see figure~\ref{fig:data_matrix}. These DMs can be printed in different sizes and read by 2D barcode readers, webcameras and mobile phones. 
 
 
 % subsection Data Matrix (end) }}}
@@ -222,45 +226,48 @@ Samples are identified by UUIDs in the for of hex numbers, example \emph{388613e
 \label{sub:Printer}
 To ensure that the labels can be printed in the field and that the marking stays on, thermal transfer printers are used. One printer is available for each label size. In addition to printing the Data Matrix code, these printers are able to add information from each scientist in human readable format (text), helping to identify the sample without the need to scan it each time.
 
-The chosen printer is a \emph{Zebra GX430t} printer. It was chosen as it puts few limitations on the labels used, and it can be printed to both from software and custom written Python software in the form of a web page. To specify what is printed ZPL codes are used. These support Data Matrix codes following ECC 200.
+The chosen printer is a \emph{Zebra GX430t} printer. It was chosen as it puts few limitations on the labels used, and it can be printed to both from software and custom written Python software in the form of a web page. To specify what is printed ZPL codes are used. These support Data Matrix codes following the ECC 200 standard.
 
 % subsection Printer (end) }}}
 
-In operation the printer uses ribbon, which needs to periodically be changed, though this is not a large running cost.
+In operation the printer uses ribbon, type \emph{Zebra 5095} which needs to periodically be changed, though this is not a large running cost.
 
 \subsection{Scanner} % (fold) {{{
 \label{sub:Scanner}
 
-Data Matrix codes can be read with a smartphone or webcamera, though this is not as fast as a dedicated scanner, but it is useful for scanning samples at home institutions. On the ship there are USB scanners available which should be used to insert the UUID codes in the spreadsheet. They work like keyboards, place the cursor in the desired cell and press the scan button on the scanner.
+Data Matrix codes can be read with a smartphone or a webcamera, though this is not as fast as a dedicated scanner, but it is useful for scanning samples at home institutions. On the ship there are USB scanners available, which should be used to insert the UUID codes in the spreadsheet. They work like keyboards, place the cursor in the desired cell and press the scan button on the scanner.
 
-There are two different types of scanners, the \emph{Opticon OPI-3601} and the \emph{Datalogic PowerScan PD9530-DPM}. Most scientists like the \emph{Opticon} the best, but for environments with a lot of water the more expensive and waterproof \emph{Datalogic} is recommended.
+There are two different types of scanners, the \emph{Opticon OPI-3601} and the \emph{Datalogic PowerScan PD9530-DPM}. Most scientists like the \emph{Opticon} best, but for environments with a lot of water the more expensive and waterproof \emph{Datalogic} is recommended.
 % subsection Scanner (end) }}}
+
+\subsection{Programs} % (fold) {{{
+\label{sub:Programs}
+The programs uses and their webpages are available through the SIOS GitHub page: \url{https://github.com/SIOS-Svalbard/}. They are written in mostly Python, PHP, JavaScript and PostgreSQL.
+% subsection Programs (end) }}}
 
 % section Technical details (end) }}}
 
-\section{Costs} % (fold) {{{
+\section{List of equipment and costs} % (fold) {{{
 \label{sec:Costs}
-
-The cost of the purposed solutions are shown in table~\ref{tab:costs}.
+Table~\ref{tab:costs} shows the list of the different types of equipment and their approximate cost (on Svalbard). 
 \begin{table}[htb]
     \rowcolors{3}{cyan!10}{white}
-    \caption{\label{tab:costs}The unit costs}
-    \begin{tabular}{lllrr}
+    \caption{\label{tab:costs}List of equipment and unit costs. For the label if fewer labels are ordered, the unit price goes up. This is based on prices in 2018 to Svalbard, when this equipment was ordered.}
+    \begin{tabular}{lllr}
         \hline
-        \textbf{Item} & \textbf{Need} & \textbf{Unit size} & \textbf{Unit price} & \textbf{Total price} \\ \hline
-        CILS Eppendorf label    & 5 000     & Per label  (5 000)    & 2.16 NOK  & 10 800 NOK\\ 
-        CILS Eppendorf label    & 20 000    & Per label  (20 000)   & 1.33 NOK  & 26 661 NOK\\ 
-        CILS Larger label       & 5 000     & Per label  (5 000)    & 2.14 NOK  & 10 675 NOK\\ 
-        CILS Larger label       & 20 000    & Per label  (20 000)   & 1.55 NOK  & 31 107 NOK\\ 
-        Zebra GX430t            & 3         & Per unit              & 4950 NOK  & 14 850 NOK\\ 
-        Zebra 2300 print ribbon & 3         & $12\times74$~m         & 320 NOK   & 960 NOK\\ 
-        Datalogic PD9530-DPM    & 3         & Per unit              & 6478 NOK  & 19 434 NOK\\ 
+        \textbf{Item} & \textbf{Product name} & \textbf{Unit size} & \textbf{Unit price} \\ \hline
+        Small label     & CILS 10 mm diam, 8100X  & Per label  (10 000)   & 0.74 NOK  \\ 
+        Medium label    & CILS Eppendorf, 81000TN & Per label  (20 000)   & 1.33 NOK  \\ 
+        Large label     & CILS, 8100X             & Per label  (10 000)   & 0.83 NOK  \\ 
+        Printer         & Zebra GX430t (GX43-102420-000)            & Per unit              & 5 397 NOK  \\ 
+        Printer ribbon  & Zebra 5095, 84 mm &     $ 12\times74$~m         & 640  NOK   \\ 
+        Opticon scanner & Opticon OPI-3601 USB    & Per unit              & 1 296 NOK  \\ 
+        Datalogic scanner & Datalogic PD9530-DPM  & Per unit              & 5 781 NOK  \\ 
         \hline
     \end{tabular}
 \end{table}
 
 
-Based the costs presented in the table and the initial needs (20 000 Eppendorf and 5 000 larger labels) the total cost comes to about \textbf{73 000 NOK}.
 % section Costs (end) }}}
 
 \end{document} 
