@@ -1,11 +1,8 @@
-Sample type,Comment
+Sample type,Comment,Action
 ,
 5m Under ice 10m NET,"Should be splitted into depth (5m), gear (type of net) & sample type (??)"
 5m Under ice VivaFlow,"Should be splitted into depth (5m), gear (Viva Flow) & sample type (??)"
-5m Under ice VivaFlow + IMR1/2,"Should be splitted into depth (5m), gear (Viva Flow) & sample type (??) 
-Luka: Actually I wrote ""Water sample from VivaFlow” and ""Water sample from Net” as a sample type, which means that it´s a water sample concentrated using VivaFlow/Net (what is concentrated of course is protist/phytoplankton cells). 
-
-The net that we used was 10µm mesh size plankton net which was available from the ship. "
+5m Under ice VivaFlow + IMR1/2,"Should be splitted into depth (5m), gear (Viva Flow) & sample type (??) Luka: Actually I wrote ""Water sample from VivaFlow” and ""Water sample from Net” as a sample type, which means that it´s a water sample concentrated using VivaFlow/Net (what is concentrated of course is protist/phytoplankton cells).  The net that we used was 10µm mesh size plankton net which was available from the ship. "
 aDNA,Anchient DNA
 Algae aggregates,
 Bacteria,Sample type = abundance?
@@ -21,20 +18,20 @@ CARD FISH EPS,?
 Careproctus,Sample type (?) instead of species name
 Chlorophyll a,
 CNP,Carbon:Nitrogen:Phosphorous ratio
-Cod,Sample type (?) instead of taxa
-Copepods,Sample type (?) instead of taxa
-CTD profile,CTD or Hydrography ?
-CTD w/bottles,CTD or Hydrography ?
-Ctenophores,Sample type (?) instead of species name
+Cod,Sample type (?) instead of taxa, Rename to Fish and move taxonomy 
+Copepods,Sample type (?) instead of taxa, Rename to Zooplankton and move taxonomy 
+CTD profile,CTD or Hydrography ?, Rename to CTD
+CTD w/bottles,CTD or Hydrography ?. Using this to distinguish if there were bottles 
+Ctenophores,Sample type (?) instead of species name, Rename to ???? and move taxonomy
 d13C DIC,
 dCSP,dissolved Coomassie stainable particles 
 dD and d18O,? (d18 Oxygen)
-DIC conc,Same as DIC/Alkalinity
+DIC conc,Same as DIC/Alkalinity, Rename to DIC/Alk
 DIC/Alk,
 Dilution culture from Ice core,?
 Dilution culture from net,?
 Dilution culture from VivaFlow,?
-Dinocysts,Sample type (?) instead of taxa
+Dinocysts,Sample type (?) instead of taxa, Rename to ??? and move to taxonomy
 Dissolved trace elements,
 DNA,Is this the same as aDNA?
 dO2,Dissolved oxygen?
@@ -53,14 +50,14 @@ GC cutter sample,
 GC section,
 GC section archive half,
 GC section working half,
-Gelatinous seasnail,Sample type (?) instead of taxa
+Gelatinous seasnail,Sample type (?) instead of taxa, Rename to ??? and move to taxonomy
 GF/F filter,Sample type (?) instead of filter type
-Gill,Sample type (?) instead of tissue
-Gills and Muscle,Sample type (?) instead of tissue
+Gill,Sample type (?) instead of tissue, Rename to tissue and move to Description???
+Gills and Muscle,Sample type (?) instead of tissue, Rename to tissue and move to Description???
 Glass vial,Sample type (?) instead of vial type
-Gonad,Sample type (?) instead of tissue
+Gonad,Sample type (?) instead of tissue, Rename to tissue and move to Description???
 Grain size,
-Hindgut,Sample type (?) instead of tissue
+Hindgut,Sample type (?) instead of tissue, Rename to tissue and move to Description???
 HPLC Pigments,
 Ice core,
 Ice meiofauna,
@@ -71,41 +68,41 @@ Juveniles Rep1,Sample type (?) instead of developmental stage
 Juveniles Rep2,Sample type (?) instead of developmental stage
 Juveniles sieved 250um,Sample type (?) instead of developmental stage
 Limacina/Foraminifera,Sample type (?) instead of taxa
-Liver,Sample type (?) instead of tissue
-Long rough dab,Sample type (?) instead of species name
+Liver,Sample type (?) instead of tissue, Rename to tissue and move to Description???
+Long rough dab,Sample type (?) instead of species name, Rename to Fish and move to taxon
 Meiofauna taxonomy,
-Melt pond,"Sample type (?) instead of ""material"""
-Meroplankton taxonomy,Should taxa and sample type be splitted in different fileds
-Mesozooplankton ecotoxology,Should taxa and sample type be splitted in different fileds
-Mesozooplankton genetics,Should taxa and sample type be splitted in different fileds
-Mesozooplankton taxonomy,Should taxa and sample type be splitted in different fileds
+Melt pond,"Sample type (?) instead of ""material""". Pål: I think this is used to join multiple samples from one melt pond
+Meroplankton taxonomy,Should taxa and sample type be split in different fields
+Mesozooplankton ecotoxology,Should taxa and sample type be split in different fields
+Mesozooplankton genetics,Should taxa and sample type be split in different fields
+Mesozooplankton taxonomy,Should taxa and sample type be split in different fields
 Microbial,
 Microbial biomass production,
 Mixrozooplankton taxonomy,?
 Mixotrophy FISH,?
-Multicore,Sample type (?) instead of gear
+Multicore, One core from a multicore (i.e. a sample)
 Multicore archive half,
 Multicore work half,
-Muscle,Sample type (?) instead of tissue
-Muscle and Spleen,Sample type (?) instead of tissue
-"Muscle, spleen and gills",Sample type (?) instead of tissue
+Muscle,Sample type (?) instead of tissue, Rename to tissue and move to Description???
+Muscle and Spleen,Sample type (?) instead of tissue, Rename to tissue and move to Description???
+"Muscle, spleen and gills",Sample type (?) instead of tissue, Rename to tissue and move to Description???
 MZP profile,
-Niskin Bottle,Sample type (?) instead of gear
+Niskin Bottle, One bottle from a set of bottles 
 Nutrients,
 O18,d18 Oxygen?
 Only tissue samples,
-Otholites,Sample type (?) instead of tissue
-Pale eelpout,Sample type (?) instead of taxa
+Otholites,Sample type (?) instead of tissue, Rename to tissue and move to Description???
+Pale eelpout,Sample type (?) instead of taxa, Rename to tissue and move to Description???
 Particulate absorption,
-PC Bottle,Sample type (?) instead of gear
-PC section,Sample type (?) instead of gear
+PC Bottle, From GOFLO?. Sample type (?) instead of gear
+PC section,Sample type (?) instead of gear, Rename to Piston core section
 PCR tube,Sample type (?) instead of gear
 pCSP,Sample type (?) instead of gear
 PET Bottle,Sample type (?) instead of gear
 Phytoplankton taxonomy,
 Phytoplankton spores,
 Pigments,
-Plankton Net,Sample type (?) instead of gear
+Plankton Net,Sample type (?) instead of gear, Move to Gear type: Phytoplankton net ? 
 Plankton sample,?
 POC/PON/StabIso,Should probably be splitted in two samples POC/PON & Stable isotopes. How to do this on registered data?
 POM,"Sample type (?) instead of ""material"""
@@ -113,17 +110,17 @@ Pore water d13C,
 Pore water nutrients,
 Pore-water ICP,
 Porosity,
-Profile (40-120m),
+Profile (40-120m), Drone, Rename to profile and move 40-120 m to min/max height 
 Protists,Ice algae?
 pTEP,particulate Transparent exopolymeric particles
 Quantitative species records,
-Racetracks (80m) & Profile (40-120m),
+Racetracks (80m) & Profile (40-120m), Dron, Split into Racetrack  and profile 
 RNA,
 sea ice,"Sample type (?) instead of ""material"""
 Seawater,"Sample type (?) instead of ""material"""
 Sediment,"Sample type (?) instead of ""material"""
 Sediment incubation,"Sample type (?) instead of ""material"""
-Sediment slice,"Sample type (?) instead of ""material"""
+Sediment slice, Part of a sediment core used for further splitting
 SEM filter,Sample type (?) instead of type of filter
 Silicate,
 Spleen,Sample type (?) instead of tissue
