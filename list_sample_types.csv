@@ -96,8 +96,8 @@ Pale eelpout,Sample type (?) instead of taxa, Rename to tissue and move to Descr
 Particulate absorption,,
 PC Bottle, From GOFLO?. PC?, 
 PC section,Sample type (?) instead of gear, Rename to Piston core section
-PCR tube,Sample type (?) instead of gear
-pCSP,Sample type (?) instead of gear
+PCR tube,Sample type (?) instead of gear,
+pCSP,Sample type (?) instead of gear,
 PET Bottle,PET?. From GOFLO,
 Phytoplankton taxonomy,,
 Phytoplankton spores,,
@@ -106,7 +106,7 @@ Plankton Net,Sample type (?) instead of gear, Move to Gear type: Phytoplankton n
 Plankton sample w/ WP2,?,
 Plankton sample w/ multinet,?,
 Plankton sample,?,
-POC/PON/StabIso,Should probably be splitted in two samples POC/PON & Stable isotopes. How to do this on registered data? Pål: Not possible 
+POC/PON/StabIso,Should probably be splitted in two samples POC/PON & Stable isotopes. How to do this on registered data? Pål: Not possible,
 POM,"Sample type (?) instead of ""material""",
 Pore water d13C, Should this be d13C with pore in Description?,
 Pore water nutrients, Should this be nutrients with pore in Description? ,
@@ -137,13 +137,13 @@ Total organic carbon,,
 Trace elements,,
 Trawl haul,Sample type (?) instead of gear, "Remove sample type, as gear shows this"
 TS probe,Sample type (?) instead of gear, "Remove sample type, as gear shows this"
-Under ice water,"Sample type (?) instead of ""material"""
+Under ice water,"Sample type (?) instead of ""material""",
 Virus,Virus abundance or virus diversity?,
 Virus diversity,,
 Virus Prod& decay,,
 VivaFlow,"This is a water concentrator, should probably not be here.",
 Water,"Sample type (?) instead of ""material""",
-Water sample,"Sample type (?) instead of ""material""",
+Water sample,"Sample type (?) instead of ""material"". Looks like most of it is from a net",
 Whole fish,Sample type (?) instead of tissue, Rename to Fish
 Whole individual,Sample type (?) instead of tissue. Pål: should this be fish etc. instead?,
 Whole individuals,Sample type (?) instead of tissue,
