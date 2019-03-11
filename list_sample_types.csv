@@ -1,149 +1,149 @@
 Sample type,Comment,Action
-,
-5m Under ice 10m NET,"Should be splitted into depth (5m), gear (type of net) & sample type (??)"
-5m Under ice VivaFlow,"Should be splitted into depth (5m), gear (Viva Flow) & sample type (??)"
-5m Under ice VivaFlow + IMR1/2,"Should be splitted into depth (5m), gear (Viva Flow) & sample type (??) Luka: Actually I wrote ""Water sample from VivaFlow” and ""Water sample from Net” as a sample type, which means that it´s a water sample concentrated using VivaFlow/Net (what is concentrated of course is protist/phytoplankton cells).  The net that we used was 10µm mesh size plankton net which was available from the ship. "
-aDNA,Anchient DNA
-Algae aggregates,
-Bacteria,Sample type = abundance?
-Bacterial production,
-Bio bulk,?
-Biological,Need to specify
+,,
+5m Under ice 10m NET,"Should be splitted into depth (5m), gear (type of net) & sample type (??)",
+5m Under ice VivaFlow,"Should be splitted into depth (5m), gear (Viva Flow) & sample type (??)",
+5m Under ice VivaFlow + IMR1/2,"Should be splitted into depth (5m), gear (Viva Flow) & sample type (??) Luka: Actually I wrote ""Water sample from VivaFlow” and ""Water sample from Net” as a sample type, which means that it´s a water sample concentrated using VivaFlow/Net (what is concentrated of course is protist/phytoplankton cells).  The net that we used was 10µm mesh size plankton net which was available from the ship. ",
+aDNA,Anchient DNA,
+Algae aggregates,,
+Bacteria,Sample type = abundance?,
+Bacterial production,,
+Bio bulk,?,
+Biological,Need to specify,
 Blood,Sample type (?) instead of tissue, Rename to tissue and move to Description???
-Bottom ice,Sample type (?) instead of part of ice core
+Bottom ice,Sample type (?) instead of part of ice core,
 Brain,Sample type (?) instead of tissue, Rename to tissue and move to Description???
-brine,Sample type (?) instead of material
-Bulk zooplankton,Sample type (?) instead of taxa
-CARD FISH EPS,?
-Careproctus,Sample type (?) instead of species name
-Chlorophyll a,
-CNP,Carbon:Nitrogen:Phosphorous ratio
+brine,Sample type (?) instead of material,
+Bulk zooplankton,Sample type (?) instead of taxa,
+CARD FISH EPS,?,
+Careproctus,Sample type (?) instead of species name,
+Chlorophyll a,,
+CNP,Carbon:Nitrogen:Phosphorous ratio,
 Cod,Sample type (?) instead of taxa, Rename to Fish and move taxonomy 
 Copepods,Sample type (?) instead of taxa, Rename to Zooplankton and move taxonomy 
 CTD profile,CTD or Hydrography ?, Rename to CTD
-CTD w/bottles,CTD or Hydrography ?. Using this to distinguish if there were bottles 
+CTD w/bottles,CTD or Hydrography ?. Using this to distinguish if there were bottles,
 Ctenophores,Sample type (?) instead of species name, Rename to ???? and move taxonomy
-d13C DIC,
-dCSP,dissolved Coomassie stainable particles 
-dD and d18O,? (d18 Oxygen)
+d13C DIC,,
+dCSP,dissolved Coomassie stainable particles,
+dD and d18O,? (d18 Oxygen),
 DIC conc,Same as DIC/Alkalinity, Rename to DIC/Alk
-DIC/Alk,
-Dilution culture from Ice core,?
-Dilution culture from net,?
-Dilution culture from VivaFlow,?
+DIC/Alk,,
+Dilution culture from Ice core,?,
+Dilution culture from net,?,
+Dilution culture from VivaFlow,?,
 Dinocysts,Sample type (?) instead of taxa, Rename to ??? and move to taxonomy
-Dissolved trace elements,
-DNA,Is this the same as aDNA?
-dO2,Dissolved oxygen?
-dTEP,dissolved Transparent exopolymeric particles 
-Fatty acids,
-Fecal pellet abundance,
-Filter,Sample type instead of filter type
-Fish,
-FISH-EPS,
-FISH-Mixotrophy,
-fixed net sample,Sample type (?) instead of gear and treatment
-Flow cytometry,
-For dating,
-GC catcher sample,
-GC cutter sample,
-GC section,
-GC section archive half,
-GC section working half,
+Dissolved trace elements,,
+DNA,Is this the same as aDNA?,
+dO2,Dissolved oxygen?,
+dTEP,dissolved Transparent exopolymeric particles,
+Fatty acids,,
+Fecal pellet abundance,,
+Filter,Sample type instead of filter type,
+Fish,,
+FISH-EPS,,
+FISH-Mixotrophy,,
+fixed net sample,Sample type (?) instead of gear and treatment,
+Flow cytometry,,
+For dating,,
+GC catcher sample,,
+GC cutter sample,,
+GC section,,
+GC section archive half,,
+GC section working half,,
 Gelatinous seasnail,Sample type (?) instead of taxa, Rename to ??? and move to taxonomy
-GF/F filter,Sample type (?) instead of filter type
+GF/F filter,Sample type (?) instead of filter type,
 Gill,Sample type (?) instead of tissue, Rename to tissue and move to Description???
 Gills and Muscle,Sample type (?) instead of tissue, Rename to tissue and move to Description???
-Glass vial,Sample type (?) instead of vial type
+Glass vial,Sample type (?) instead of vial type,
 Gonad,Sample type (?) instead of tissue, Rename to tissue and move to Description???
-Grain size,
+Grain size,,
 Hindgut,Sample type (?) instead of tissue, Rename to tissue and move to Description???
-HPLC Pigments,
-Ice core,
-Ice meiofauna,
-IP25,
-Isotope (muscle tissue),Stable isotope?
-Isotopes,Stable isotope?
-Juveniles Rep1,Sample type (?) instead of developmental stage
-Juveniles Rep2,Sample type (?) instead of developmental stage
-Juveniles sieved 250um,Sample type (?) instead of developmental stage
+HPLC Pigments,,
+Ice core,,
+Ice meiofauna,,
+IP25,,
+Isotope (muscle tissue),Stable isotope?,
+Isotopes,Stable isotope?,
+Juveniles Rep1,Sample type (?) instead of developmental stage,
+Juveniles Rep2,Sample type (?) instead of developmental stage,
+Juveniles sieved 250um,Sample type (?) instead of developmental stage,
 Limacina/Foraminifera,Sample type (?) instead of taxa, Rename to ??? and move to taxonomy???
 Liver,Sample type (?) instead of tissue, Rename to tissue and move to Description???
 Long rough dab,Sample type (?) instead of species name, Rename to Fish and move to taxonomy
-Meiofauna taxonomy,
-Melt pond,"Sample type (?) instead of ""material"". Pål: I think this is used to join multiple samples from one melt pond"
-Meroplankton taxonomy,Should taxa and sample type be split in different fields
-Mesozooplankton ecotoxology,Should taxa and sample type be split in different fields
-Mesozooplankton genetics,Should taxa and sample type be split in different fields
-Mesozooplankton taxonomy,Should taxa and sample type be split in different fields
-Microbial,
-Microbial biomass production,
-Mixrozooplankton taxonomy,?
-Mixotrophy FISH,?
-Multicore, One core from a multicore (i.e. a sample)
-Multicore archive half, Half a multicore
-Multicore work half, Half a multicore 
+Meiofauna taxonomy,,
+Melt pond,"Sample type (?) instead of ""material"". Pål: I think this is used to join multiple samples from one melt pond",
+Meroplankton taxonomy,Should taxa and sample type be split in different fields,
+Mesozooplankton ecotoxology,Should taxa and sample type be split in different fields,
+Mesozooplankton genetics,Should taxa and sample type be split in different fields,
+Mesozooplankton taxonomy,Should taxa and sample type be split in different fields,
+Microbial,,
+Microbial biomass production,,
+Mixrozooplankton taxonomy,?,
+Mixotrophy FISH,?,
+Multicore, One core from a multicore (i.e. a sample),
+Multicore archive half, Half a multicore,
+Multicore work half, Half a multicore,
 Muscle,Sample type (?) instead of tissue, Rename to tissue and move to Description???
 Muscle and Spleen,Sample type (?) instead of tissue, Rename to tissue and move to Description???
 "Muscle, spleen and gills",Sample type (?) instead of tissue, Rename to tissue and move to Description???
-MZP profile,
-Niskin Bottle, One bottle from a set of bottles 
-Nutrients,
-O18,d18 Oxygen?
-Only tissue samples, ? Rename to Tissue?
+MZP profile,What is this?,
+Niskin Bottle, One bottle from a set of bottles ,
+Nutrients,,
+O18,d18 Oxygen?,
+Only tissue samples, ? Rename to Tissue?,
 Otholites,Sample type (?) instead of tissue, Rename to tissue and move to Description???
 Pale eelpout,Sample type (?) instead of taxa, Rename to tissue and move to Description???
-Particulate absorption,
-PC Bottle, From GOFLO?. Sample type (?) instead of gear
+Particulate absorption,,
+PC Bottle, From GOFLO?. PC?, 
 PC section,Sample type (?) instead of gear, Rename to Piston core section
 PCR tube,Sample type (?) instead of gear
 pCSP,Sample type (?) instead of gear
-PET Bottle,Sample type (?) instead of gear, Remove as this is a GOFLO 
-Phytoplankton taxonomy,
-Phytoplankton spores,
-Pigments,
+PET Bottle,PET?. From GOFLO,
+Phytoplankton taxonomy,,
+Phytoplankton spores,,
+Pigments,,
 Plankton Net,Sample type (?) instead of gear, Move to Gear type: Phytoplankton net ? 
-Plankton sample w/ WP2,?
-Plankton sample w/ multinet,?
-Plankton sample,?
+Plankton sample w/ WP2,?,
+Plankton sample w/ multinet,?,
+Plankton sample,?,
 POC/PON/StabIso,Should probably be splitted in two samples POC/PON & Stable isotopes. How to do this on registered data? Pål: Not possible 
-POM,"Sample type (?) instead of ""material"""
-Pore water d13C,
-Pore water nutrients,
-Pore-water ICP,
-Porosity,
+POM,"Sample type (?) instead of ""material""",
+Pore water d13C, Should this be d13C with pore in Description?,
+Pore water nutrients, Should this be nutrients with pore in Description? ,
+Pore-water ICP,Should this be ICP with pore in Description,
+Porosity,,
 Profile (40-120m), Drone, Rename to profile and move 40-120 m to min/max height 
-Protists,Ice algae?
-pTEP,particulate Transparent exopolymeric particles
-Quantitative species records,
+Protists,Ice algae?,
+pTEP,particulate Transparent exopolymeric particles,
+Quantitative species records,,
 Racetracks (80m) & Profile (40-120m), Dron, Split into Racetrack  and profile. Altitude to correct place
-RNA,
-sea ice,"Sample type (?) instead of ""material"""
-Seawater,"Sample type (?) instead of ""material"""
-Sediment,"Sample type (?) instead of ""material"""
-Sediment incubation,"Sample type (?) instead of ""material"""
-Sediment slice, Part of a sediment core used for further splitting
-SEM filter,Sample type (?) instead of type of filter
-Silicate,
+RNA,,
+sea ice,"Sample type (?) instead of ""material""",
+Seawater,"Sample type (?) instead of ""material""",
+Sediment,"Sample type (?) instead of ""material""",
+Sediment incubation,"Sample type (?) instead of ""material""",
+Sediment slice, Part of a sediment core used for further splitting,
+SEM filter,Sample type (?) instead of type of filter,
+Silicate,,
 Spleen,Sample type (?) instead of tissue, Rename to tissue and move to Description???
 "Spleen, Liver and Gonades",Sample type (?) instead of tissue, Rename to tissue and move to Description???
 Spotted snake blenny, Species?, Rename to Fish and move to taxonomy???
-Station,Needed for defining spesific stations (NLEG01….)
-Sterivex filter,Sample type (?) instead of type of filter
+Station,Needed for defining spesific stations (NLEG01….),
+Sterivex filter,Sample type (?) instead of type of filter,
 Stomach,Sample type (?) instead of tissue, Rename to tissue and move to Description???
-TOC,Total organic carbon
-Total carbon (TC) filter,Is it the same as total organic carbon
-Total organic carbon,
-Trace elements,
+TOC,Total organic carbon,
+Total carbon (TC) filter,Is it the same as total organic carbon,
+Total organic carbon,,
+Trace elements,,
 Trawl haul,Sample type (?) instead of gear, "Remove sample type, as gear shows this"
 TS probe,Sample type (?) instead of gear, "Remove sample type, as gear shows this"
 Under ice water,"Sample type (?) instead of ""material"""
-Virus,Virus abundance or virus diversity?
-Virus diversity,
-Virus Prod& decay,
-VivaFlow,"This is a water concentrator, should probably not be here."
-Water,"Sample type (?) instead of ""material"""
-Water sample,"Sample type (?) instead of ""material"""
+Virus,Virus abundance or virus diversity?,
+Virus diversity,,
+Virus Prod& decay,,
+VivaFlow,"This is a water concentrator, should probably not be here.",
+Water,"Sample type (?) instead of ""material""",
+Water sample,"Sample type (?) instead of ""material""",
 Whole fish,Sample type (?) instead of tissue, Rename to Fish
-Whole individual,Sample type (?) instead of tissue. Pål: should this be fish etc. instead?
-Whole individuals,Sample type (?) instead of tissue
+Whole individual,Sample type (?) instead of tissue. Pål: should this be fish etc. instead?,
+Whole individuals,Sample type (?) instead of tissue,
