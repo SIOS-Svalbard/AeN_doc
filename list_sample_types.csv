@@ -9,9 +9,9 @@ Bacteria,,Sample type = abundance?
 Bacterial production,,
 Bio bulk,,?
 Biological,,Need to specify
-Blood, Rename to tissue and move to Description???,Sample type (?) instead of tissue
+Blood, Rename to tissue and move to tissueType,Sample type (?) instead of tissue
 Bottom ice,,Sample type (?) instead of part of ice core
-Brain, Rename to tissue and move to Description???,Sample type (?) instead of tissue
+Brain, Rename to tissue and move to tissueType,Sample type (?) instead of tissue
 brine,,Sample type (?) instead of material
 Bulk zooplankton,,Sample type (?) instead of taxa
 CARD FISH EPS,,?
@@ -52,12 +52,12 @@ GC section archive half,,
 GC section working half,,
 Gelatinous seasnail, Rename to ??? and move to taxonomy,Sample type (?) instead of taxa
 GF/F filter,,Sample type (?) instead of filter type
-Gill, Rename to tissue and move to Description???,Sample type (?) instead of tissue
-Gills and Muscle, Rename to tissue and move to Description???,Sample type (?) instead of tissue
+Gill, Rename to tissue and move to tissueType,Sample type (?) instead of tissue
+Gills and Muscle, Rename to tissue and move as "gills; muscle" to tissueType,Sample type (?) instead of tissue
 Glass vial,,Sample type (?) instead of vial type
-Gonad, Rename to tissue and move to Description???,Sample type (?) instead of tissue
+Gonad, Rename to tissue and move to tissueType,Sample type (?) instead of tissue
 Grain size,,
-Hindgut, Rename to tissue and move to Description???,Sample type (?) instead of tissue
+Hindgut, Rename to tissue and move to tissueType,Sample type (?) instead of tissue
 HPLC Pigments,,
 Ice core,,
 Ice meiofauna,,
@@ -68,7 +68,7 @@ Juveniles Rep1,,Sample type (?) instead of developmental stage
 Juveniles Rep2,,Sample type (?) instead of developmental stage
 Juveniles sieved 250um,,Sample type (?) instead of developmental stage
 Limacina/Foraminifera, Rename to ??? and move to taxonomy???,Sample type (?) instead of taxa
-Liver, Rename to tissue and move to Description???,Sample type (?) instead of tissue
+Liver, Rename to tissue and move to tissueType,Sample type (?) instead of tissue
 Long rough dab, Rename to Fish and move to taxonomy,Sample type (?) instead of species name
 Meiofauna taxonomy,,
 Melt pond,,"Sample type (?) instead of ""material"". Pål: I think this is used to join multiple samples from one melt pond"
@@ -83,9 +83,9 @@ Mixotrophy FISH,,?
 Multicore,, One core from a multicore (i.e. a sample)
 Multicore archive half,, Half a multicore
 Multicore work half,, Half a multicore
-Muscle, Rename to tissue and move to Description???,Sample type (?) instead of tissue
-Muscle and Spleen, Rename to tissue and move to Description???,Sample type (?) instead of tissue
-"Muscle, spleen and gills", Rename to tissue and move to Description???,Sample type (?) instead of tissue
+Muscle, Rename to tissue and move to tissueType,Sample type (?) instead of tissue
+Muscle and Spleen, Rename to tissue and move as "muscle; spleen" to tissueType,Sample type (?) instead of tissue
+"Muscle, spleen and gills", Rename to tissue and move as "muscle; spleen; gills" tissueType,Sample type (?) instead of tissue
 MZP profile,,What is this?
 Niskin Bottle,, One bottle from a set of bottles 
 Nutrients,,
@@ -125,12 +125,12 @@ Sediment incubation,,"Sample type (?) instead of ""material"""
 Sediment slice,, Part of a sediment core used for further splitting
 SEM filter,,Sample type (?) instead of type of filter
 Silicate,,
-Spleen, Rename to tissue and move to Description???,Sample type (?) instead of tissue
-"Spleen, Liver and Gonades", Rename to tissue and move to Description???,Sample type (?) instead of tissue
+Spleen, Rename to tissue and move to tissueType,Sample type (?) instead of tissue
+"Spleen, Liver and Gonades", Rename to tissue and move as "spleen; liver; gonades" to tissueType,Sample type (?) instead of tissue
 Spotted snake blenny, Rename to Fish and move to taxonomy???, Species?
 Station,,Needed for defining spesific stations (NLEG01….)
 Sterivex filter,,Sample type (?) instead of type of filter
-Stomach, Rename to tissue and move to Description???,Sample type (?) instead of tissue
+Stomach, Rename to tissue and move to tissueType,Sample type (?) instead of tissue
 TOC,,Total organic carbon
 Total carbon (TC) filter,,Is it the same as total organic carbon
 Total organic carbon,,
@@ -144,6 +144,6 @@ Virus Prod& decay,,
 VivaFlow,,"This is a water concentrator, should probably not be here."
 Water,,"Sample type (?) instead of ""material"""
 Water sample,,"Sample type (?) instead of ""material"". Looks like most of it is from a net"
-Whole fish, Rename to Fish,Sample type (?) instead of tissue
+Whole fish, Rename to Fish and put "whole fish" in tissueType,Sample type (?) instead of tissue
 Whole individual,,Sample type (?) instead of tissue. Pål: should this be fish etc. instead?
 Whole individuals,,Sample type (?) instead of tissue
