@@ -1,8 +1,8 @@
 Sample type,Action,Comment
 ,,
-5m Under ice 10m NET,,"Should be splitted into depth (5m), gear (type of net) & sample type (??)"
-5m Under ice VivaFlow,,"Should be splitted into depth (5m), gear (Viva Flow) & sample type (??)"
-5m Under ice VivaFlow + IMR1/2,,"Should be splitted into depth (5m), gear (Viva Flow) & sample type (??) Luka: it´s a water sample concentrated using VivaFlow/Net (what is concentrated of course is protist/phytoplankton cells).  The net was 10µm plankton net"
+5m Under ice 10m NET,,"Should be split into depth (5m), gear (type of net) & sample type (??)"
+5m Under ice VivaFlow,,"Should be split into depth (5m), gear (Viva Flow) & sample type (??)"
+5m Under ice VivaFlow + IMR1/2,,"Should be split into depth (5m), gear (Viva Flow) & sample type (??) Luka: it´s a water sample concentrated using VivaFlow/Net (what is concentrated of course is protist/phytoplankton cells).  The net was 10µm plankton net"
 aDNA,,Anchient DNA
 Algae aggregates,,
 Bacteria,,Sample type = abundance?
@@ -62,7 +62,7 @@ HPLC Pigments,,
 Ice core,,
 Ice meiofauna,,
 IP25,,
-Isotope (muscle tissue),,Stable isotope?
+Isotope (muscle tissue), Rename to tissue and move to tissueType,
 Isotopes,,Stable isotope?
 Juveniles Rep1,,Sample type (?) instead of developmental stage
 Juveniles Rep2,,Sample type (?) instead of developmental stage
@@ -91,8 +91,8 @@ Niskin Bottle,, One bottle from a set of bottles
 Nutrients,,
 O18,,d18 Oxygen?
 Only tissue samples,, ? Rename to Tissue?
-Otholites, Rename to tissue and move to Description???,Sample type (?) instead of tissue
-Pale eelpout, Rename to tissue and move to Description???,Sample type (?) instead of taxa
+Otholites, Rename to tissue and move to tissueType,Sample type (?) instead of tissue
+Pale eelpout, Rename to ??? and move to Description???,Sample type (?) instead of taxa
 Particulate absorption,,
 PC Bottle, , From GOFLO?. PC?
 PC section, Rename to Piston core section,Sample type (?) instead of gear
