@@ -9,6 +9,7 @@
 \usepackage{amssymb,amsthm,framed}  
 \usepackage[]{amsmath} 
 \usepackage[hang,small,bf]{caption}
+\usepackage{subcaption}
 \usepackage{siunitx} 
 \usepackage{bm}
 \usepackage{url}  
@@ -17,6 +18,8 @@
 \usepackage[a4paper,inner=2.5cm,outer=2.5cm,top=2.5cm,bottom=2.5cm,pdftex]{geometry} 
 \usepackage{array}
 \usepackage{ragged2e}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
 \newcolumntype{P}[1]{>{\RaggedRight\hspace{0pt}}p{#1}}
 
 \sisetup{product-units=single}
@@ -55,12 +58,14 @@
 \hyphenpenalty=5000
 \tolerance=1000
 \title{Draft: The Nansen Legacy labeling manual}
-\date{\today\\v0.1}
+\date{\today\\v0.2}
 \author{Pål Ellingsen (\url{data.nleg@unis.no})}
 
 \begin{document}
 \maketitle
 \tableofcontents
+\pagestyle{fancy}
+\newpage
 \section{Introduction} % (fold) {{{
 \label{sec:Introduction}
 
@@ -75,15 +80,32 @@ made accessible through a search interphase as soon as possible after the cruise
 \label{sub:Hirarcy}
 
 One of the backbones of the sample log is the use of parent IDs. A parent ID is the ID of the gear cast or sample which a sample or sub-sample comes from, see figure~\ref{fig:parent_uuid}. By registering the parent, it is possible to keep track of which samples belong together, and any number of levels of sub-samples. Additionally it reduces the amount of information that needs to be registered on a sample, as information like for example position, bottom depth, date and time can be inherited from the parent. 
-\begin{figure}[hp]
+% subsection Hierarchy (end) }}}
+
+\subsubsection{Overview webpage} % (fold) {{{
+\label{ssub:Overview_webpage}
+
+The overview webpage is where all of the tools and printing software on the cruise is located. It runs on the ship and is therefore available during the whole cruise, independent of Internet access. 
+It can be found by opening a browser and going to the address \url{http://10.3.65.20}. What you should then see is something like what is shown in figure~\ref{fig:Printing_overview}.
+
+\begin{figure}[htb]
+    \tcbox[colback=white]{
+    \includegraphics[width=0.6\textwidth]{Printing_overview.png}
+    }
+    \caption{\label{fig:Printing_overview}
+        The overview webpage available on the ship.
+    }
+\end{figure}
+
+% subsubsection Overview webpage (end) }}}
+
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=1\textwidth]{Labeling.pdf}
     \caption{\label{fig:parent_uuid}
        Examples of how event id and parent id works for two different gear types. These should be transferable to other gear types.
     }
 \end{figure}
-% subsection Hierarchy (end) }}}
-
 \section{Labeling samples} % (fold) {{{
 \label{sec:Labeling samples}
 
@@ -97,13 +119,14 @@ In order to distinguish samples, samples in the project are assigned a unique id
     \caption{\label{fig:data_matrix}
         Example Data Matrix code containing an UUID.
     }
+
 \end{figure}
 
 \subsection{Procedure for physical samples} % (fold) {{{
 \label{sub:Procedure for physical samples}
 
 
-The interface for printing labels is available through a webpage on the research ship. Details of this is given by the cruise leader.
+The interface for printing labels is available through a webpage on the research ship. Details of this is given by the cruise leader. Figure~\ref{fig:printing} shows how the two printing pages look.
 
 \begin{enumerate}
     \item Choose label size.
@@ -117,17 +140,42 @@ The following steps can be done in any order depending on what is easiest:
     \item Register data about the sample in the spreadsheet, see section~\ref{sub:spreadsheet_reg}.
 \end{enumerate}
 
+%\begin{figure}[h]
+%% Uses the subcaption package
+    %\centering
+    %\begin{subfigure}[b]{0.49\textwidth}
+        %\includegraphics[width=\textwidth]{Medium_print.png}
+    %\end{subfigure}
+    %\begin{subfigure}[b]{0.49\textwidth}
+        %\includegraphics[width=\textwidth]{Large_print.png}
+    %\end{subfigure}
+    %\caption{\label{fig:printing}
+    %Example of how the printing pages look.}
+%\end{figure}
+\begin{figure}[htb]
+    \tcbox[colback=white]{
+    \includegraphics[width=1\textwidth]{Printing.png}
+}
+    \caption{\label{fig:printing}
+        Two printing pages. Left the one for the medium sized labels and right for the large labels.
+    }
+\end{figure}
+
 % subsection Procedure for physical samples (end) }}}
 
 \subsection{Procedure for virtual samples} % (fold) {{{
-\label{sub:Procedure for virtual samples}
+\label{sub:Procedure_for_virtual_samples}
 
-Examples of virtual sample are: gear casts, Multicores, Multinets and Ice cores that have been split/melted. Since these have no physical place for a label to go, the procedure of logging them involves either printing a sheet of paper with the codes or just assigning them a UUID without any Data Matrix code. Which approach is the best depends on the circumstance. If the UUID is going to be used by more than one scientist, for example in the case of Niskin bottles, it is often easier to print an A4 page with the codes. Below follows two different procedures depending on what is chosen:
+
+
+Examples of virtual sample are: gear casts, CTD Niskin bottles, Multicores, Multinets and Ice cores that have been split/melted. None of these samples have a physical/practical place for a label. They still need to be logged in the sample log (database), to ensure traceability of samples from them, see figure~\ref{fig:parent_uuid}. The procedure of logging them involves either printing a sheet of paper with codes or just assigning them a UUID without any Data Matrix code. Which approach is the best depends on the circumstance. These codes are then scanned/copied into the relevant sample log spreadsheet. If the UUID is going to be used by more than one scientist, for example in the case of Niskin bottles, it is often easier to print an A4 page with the codes. 
+
+Below follows two different procedures depending on what is chosen:
 
 \subsubsection{A4 page of codes} % (fold) {{{
 \label{ssub:A4_page}
 
-Go to the ''Gear UUID generator'' page on the printing overview (address distributed on the cruise). 
+Go to the ''Gear UUID generator'' page on the printing overview (see subsection~\ref{ssub:Overview_webpage}). 
 On this page you specify the name of the gear ''Gear Name'' (CTD, Multinet, Multicorer), the type of container ''Sample Name'' (Niskin, core, net), number of samples in on gear cast ''Number of samples'' and number of gear casts expected ''Number of pages'' (this is only to save having to come to this page for every cast). 
 
 By pressing ''Make PDF'' a PDF is generated and can be printed on an normal printer. The A4 page printed should be marked with information identifying which gear cast this is for. Then all the containers need to registered in the same way physical samples are, see subsection~\ref{sub:spreadsheet_reg}.
@@ -136,12 +184,40 @@ By pressing ''Make PDF'' a PDF is generated and can be printed on an normal prin
 
 If copies are needed for several scientists to work on the same containers, the A4 page can be copied on a photocopier. 
 
+\begin{figure}
+% Uses the subcaption package
+    \centering
+    \begin{subfigure}[t]{0.45\textwidth}
+        \vspace{0pt}
+        \tcbox[colback=white]{
+        \includegraphics[width=\textwidth]{Gear_overview.png}
+    }
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{0.47\textwidth}
+        \vspace{0pt}
+    \tcbox[colback=white]{
+        \includegraphics[width=\textwidth]{gear.pdf}
+    }
+    \end{subfigure}
+    \caption{\label{fig:gear_overview}
+        Left gear overview page and right an example output pdf file.
+    }
+\end{figure}
 % subsubsection A4_page (end) }}}
 
 \subsubsection{Only UUID} % (fold) {{{
 \label{ssub:Only_UUID}
 
-When only the UUID is needed, one can be generated through the ''UUID generator'' on the printing overview. Pick one of them and continue the registration as in subsection~\ref{sub:spreadsheet_reg}. Remember to ''Get new UUID'' for every time you leave the page in order to ensure that a UUID is used twice.  
+When only the UUID is needed, one can be generated through the ''UUID generator'' on the printing overview (subsection~\ref{ssub:Overview_webpage}), see figure~\ref{fig:uuid_gen}. Pick any one of the UUIDs and continue the registration as in subsection~\ref{sub:spreadsheet_reg}. In order to not reuse UUIDs, remember to use the ''Get new UUID'' button for every time have used the available codes displayed. A good procedure is to get new codes every time you go back to the page.
+
+\begin{figure}[htb]
+    \tcbox[colback=white]{
+    \includegraphics[width=0.5\textwidth]{UUID_gen.png}
+}
+    \caption{\label{fig:uuid_gen}
+        UUID generator webpage.
+    }
+\end{figure}
 
 % subsubsection Only_UUID (end) }}}
 % subsection Procedure for virtual samples (end) }}}
@@ -155,7 +231,7 @@ The procedure is then to select the wanted columns and generate the sheet. \text
 
 When working with the spreadsheet the order of columns can be changed, but it is important to move the whole column as the third row contains the key used by the data manager to read the log into the database. 
 
-It is possible to add additional columns to the spreadsheet that will not end up in the sample log, as any column with an empty third row is ignored. The same goes with rows with an empty event id. 
+It is possible to register information in the spreadsheet that you do not want in the sample log, for instance a taxon classification you are unsure of, a calculation, ... By leaving the third row of the column empty, it will be ignored when the spreadsheet is read into the sample log. The same applies to rows with an empty event id.
 
 
 % subsection   (end) }}}
@@ -166,13 +242,41 @@ It is possible to add additional columns to the spreadsheet that will not end up
 
 The samples taken during a cruise need to be logged in a standardised spreadsheet, see subsection~\ref{sub:Sample_log_spreadsheet_generation} for how to make one. Logging of samples should be done continuously during the cruise. 
 
-When logging the sample you will need its id, for physical samples this id goes in the Sample ID field and should be entered by scanning the Data Matrix code on the sample label. Then its parent, see subsection~\ref{sub:Hirarcy}, needs to be registered, what the parent is depends on what type of sample it is, see figure~\ref{fig:parent_uuid} for some examples. Having registered these two, the rest of the columns in the spreadsheet needs to be filled out. Every column has an explanation of what is expected in the given field. 
+When logging the sample you will need its id, for physical samples this id goes in the Sample ID field and should be entered by scanning the Data Matrix code on the sample label. Scanning the Data Matrix is done with a handheld scanner, see figure~\ref{fig:scanner}, that plugs into the USB port on your computer, available on the ship. When it is plugged in you should be able to place the marker in the event id field and push the button when the scanner is pointed at the sample label in question. 
 
-To check a sample log there is a spreadsheet checker available on the ship and on the SIOS page ????.
-Note that the sheet named ''Metadata'' needs to be filled out before running the checker.
 
+\begin{figure}[h!tb]
+    \centering
+    \includegraphics[width=0.3\textwidth]{Scanner.jpg}
+    \caption{\label{fig:scanner}
+        An Opticon OPI-3601 USB scanner.
+    }
+\end{figure}
+
+
+Then its parent, see subsection~\ref{sub:Hirarcy}, needs to be registered, what the parent is depends on what type of sample it is, see figure~\ref{fig:parent_uuid} for some examples. Having registered these two, the rest of the columns in the spreadsheet need to be filled out. Every column has an explanation of what is expected in the given field. 
+
+In order for the spreadsheet to be read into the sample log after the cruise, the spreadsheet needs to pass a format checker, see figure~\ref{fig:checker}, that checks all the entered fields for invalid and/or missing values. This checker is available on the ship through the overview page, see subsection~\ref{ssub:Overview_webpage}. It is \textbf{required} to run and pass this checker before uploading your spreadsheet to the data server on the ship at the end of the cruise. It is recommended to run this checker during the cruise, as errors can then easily be fixed.
+
+\emph{Note that the sheet named ''Metadata'' needs to be filled out before running the checker.}
+
+\begin{figure}[htb]
+    \tcbox[colback=white]{
+    \includegraphics[width=0.45\textwidth]{Checker.png}
+}
+    \caption{\label{fig:checker}
+        Excel spreadsheet checker. Should be on \emph{aen} for Nansen Legacy sample log.
+    }
+\end{figure}
 
 % subsection Sample log spreadsheet logging (end) }}}
+
+\subsection{End of cruise} % (fold) {{{
+\label{sub:end_of_cruise}
+
+At the end of the cruise, before going ashore, the finished spreadsheets need pass the checked with the checker, see subsection~\ref{sub:spreadsheet_reg}. After passing the checker, they should be stored with the official cruise data from the cruise. This is handled by the cruise leader and the IMR instrument responsible on the cruise. In addition to the sample spreadsheet, any collected data needs to be uploaded to the official cruise data.
+
+% subsection end_of_cruise (end) }}}
 \section{Label types} % (fold) {{{
 \label{sub:Labels}
 
@@ -180,7 +284,7 @@ When selecting labels there are several considerations to be taken into account.
 
 In the Nansen Legacy several different labels are available and can be printed on the Zebra label printers on the ship. Table~\ref{tab:labels} contains an overview of them and should be used to choose the appropriate one.
 
-\begin{table}[htb]
+\begin{table}[htbp]
     \rowcolors{3}{cyan!10}{white}
     \caption{\label{tab:labels} An overview of different labels and their properties. All labels are waterproof and can withstand most laboratory chemicals}
     \begin{tabular}{l|P{3cm}lP{4cm}P{4cm}}
@@ -196,6 +300,7 @@ In the Nansen Legacy several different labels are available and can be printed o
 
 
 % section Marking samples (end) }}}
+\clearpage
 \newpage
 \appendix
 \section*{Appendix}
