@@ -58,7 +58,7 @@
 \hyphenpenalty=5000
 \tolerance=1000
 \title{Draft: The Nansen Legacy labeling manual}
-\date{\today\\v0.2}
+\date{\today\\v0.3}
 \author{Pål Ellingsen (\url{data.nleg@unis.no})}
 
 \begin{document}
@@ -299,7 +299,70 @@ In the Nansen Legacy several different labels are available and can be printed o
 
 
 
+
+
 % section Marking samples (end) }}}
+
+\section{Searching for samples} % (fold) {{{
+\label{sec:Searching_sample}
+
+If you want to find something in the sample log, there are several ways of searching it.
+The sample log is located on the SIOS page, at \url{https://sios-svalbard.org/reports/aen_multi}.
+On the page you will find a list of links under "Nansen Legacy Tools" in addition to links pointing to the sampling protocols, see figure~\ref{fig:sios}.
+
+\begin{figure}[htb]
+    \centering
+    \tcbox[colback=white]{
+    \includegraphics[width=0.7\textwidth]{SIOS_page}
+    }
+    \caption{\label{fig:sios}
+        Top of page for sample log search at \url{https://sios-svalbard.org/reports/aen_multi}.
+    }
+\end{figure}
+In the following subsection several scenarios will be explained. 
+
+\subsection{Searching for individual samples} % (fold) {{{
+\label{sub:search_ind}
+
+If you know the ID of the sample you are interested in, you can use the \href{https://www.sios-svalbard.org/reports/ind_sample}{\color{blue}\underline{Sample ID search}} to find it. Input the ID in the search field by for instance scanning it and press "Search". If there is a sample with the given ID, all its information will be shown together with a map marking its location. At the bottom, a table of its children (if any) is shown. Clicking on different parts of the metadata will preform searches for samples with the same metadata. 
+
+% subsection search_ind (end) }}}
+
+\subsection{Find samples} % (fold) {{{
+\label{sub:find_samples}
+
+If you want to find samples base on location, time, cruise, gear type, sample type, parent event ID and/or station name, you want to use the \href{https://sios-svalbard.org/reports/aen_multi}{\color{blue}\underline{Sample Search}} page. Here you can choose one or more parameters to filter the database on. Make sure that you set the date range so it covers the times you are interested in (the first cruise in the Nansen Legacy was in June 2018).
+
+After clicking search, a table of the results should be shown if there are any results. By clicking on the event ID, detailed information of the sample can be shown. If you want detailed information about all the returned samples, the easiest is to download it via the \emph{Get full information from the search as a tab separated file} link. This gives a tab separated file that can be opened in a spreadsheet viewer like Excel or Libre Office. 
+
+\subsection{Samples from a given station} % (fold) {{{
+\label{sub:station_search}
+
+If you know the station name and want the samples from it, it is possible to use the \href{https://www.sios-svalbard.org/reports/aen_station}{\color{blue}\underline{Station Search}} page. Select the station and press search. It will show the location of the station on a map and its position, either as an average over all the samples taken from it or the defined position, if available. The samples taken at the station is shown in the table.
+
+An overview over all the stations can be found using the \href{https://www.sios-svalbard.org/reports/aen_plot_all_stations}{\color{blue}\underline{Station Overview}} link.
+
+% subsection station_search (end) }}}
+
+
+\subsection{Search for multiple samples} % (fold) {{{
+\label{sub:search_multi}
+If you have an Excel sheet or a number of samples you want to get the (updated) information about, it is possible to use the multiple search interface. It takes space separated event IDs as an input. This can be inputted in the text box by pasting from a column in a spreadsheet (Excel) or repeatedly scanning codes with a scanner. 
+
+After inputting all the codes, press \emph{Search}. If the IDs exist they should be displayed in a table. By pressing the export button all the information about them can be exported to a tab separated file.
+% subsection search_multi (end) }}}
+
+\subsection{Full sample log} % (fold) {{{
+\label{sub:Full sample log}
+A copy of the full sample log as a tab separated file can be downloaded using the \href{https://www.sios-svalbard.org/cgi-bin/export_search.cgi?&startdate=2018-01-01&enddate=3000-01-01&geartype=&sampletype=&cruisenumber=&parenteventid=&startlat=&startlon=&endlat=&endlon=&stationname=}{\color{blue}\underline{Full sample log as CSV (without metadata)}} link.
+% subsection Full sample log (end) }}}
+
+% subsection find_samples (end) }}}
+
+
+
+% section Searching_sample (end) }}}
+
 \clearpage
 \newpage
 \appendix
