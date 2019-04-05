@@ -58,7 +58,7 @@
 \hyphenpenalty=5000
 \tolerance=1000
 \title{Draft: The Nansen Legacy labeling manual}
-\date{\today\\v0.3}
+\date{\today\\v0.3.2}
 \author{Pål Ellingsen (\url{data.nleg@unis.no})}
 
 \begin{document}
@@ -111,7 +111,7 @@ It can be found by opening a browser and going to the address \url{http://10.3.6
 
 
 
-In order to distinguish samples, samples in the project are assigned a unique id, in the form of a universally unique identifier (UUID). Details about it can be found in subsection~\ref{sub:UUID}. For physical samples this UUID is encoded in the form of a 2D barcode, specifically a Data Matrix (DM) code, details in subsection~\ref{ssub:DM}. An example of such a code can be seen in figure~\ref{fig:data_matrix}. The code is then printed, together with descriptive text, onto a label which is stuck on the sample or its container.
+In order to distinguish samples, samples in the project are assigned a unique id, in the form of a universally unique identifier (UUID). Details about it can be found in subsection~\ref{sub:UUID}. For physical samples this UUID is encoded in the form of a 2D barcode, specifically a Data Matrix (DM) code, details in subsection~\ref{ssub:DM}. An example of such a code can be seen in figure~\ref{fig:data_matrix}. The code is then printed, together with a descriptive text, onto a label which is stuck on the sample or its container.
 
 \begin{figure}[htb]
     \centering
@@ -176,11 +176,11 @@ Below follows two different procedures depending on what is chosen:
 \label{ssub:A4_page}
 
 Go to the ''Gear UUID generator'' page on the printing overview (see subsection~\ref{ssub:Overview_webpage}). 
-On this page you specify the name of the gear ''Gear Name'' (CTD, Multinet, Multicorer), the type of container ''Sample Name'' (Niskin, core, net), number of samples in on gear cast ''Number of samples'' and number of gear casts expected ''Number of pages'' (this is only to save having to come to this page for every cast). 
+On this page you specify the name of the gear ''Gear Name'' (CTD, Multinet, Multicorer), the type of container ''Sample Name'' (Niskin, core, net), number of samples in one gear cast ''Number of samples'' and number of gear casts expected ''Number of pages'' (this is only to save having to come to this page for every cast). 
 
-By pressing ''Make PDF'' a PDF is generated and can be printed on an normal printer. The A4 page printed should be marked with information identifying which gear cast this is for. Then all the containers need to registered in the same way physical samples are, see subsection~\ref{sub:spreadsheet_reg}.
+By pressing ''Make PDF'' a PDF is generated and can be printed on an normal printer. The A4 page printed should be marked with information identifying which gear cast this is for. Then all the containers need to be registered in the same way physical samples are, see subsection~\ref{sub:spreadsheet_reg}.
 
-\textbf{Note: It is very important that one person is responsible for registering the containers, as without their IDs their samples will be without parents and untraceable.}
+\textbf{Note: It is very important that one person is responsible for registering the containers, because without the container IDs , the samples will be without parents and untraceable.}
 
 If copies are needed for several scientists to work on the same containers, the A4 page can be copied on a photocopier. 
 
@@ -208,7 +208,7 @@ If copies are needed for several scientists to work on the same containers, the 
 \subsubsection{Only UUID} % (fold) {{{
 \label{ssub:Only_UUID}
 
-When only the UUID is needed, one can be generated through the ''UUID generator'' on the printing overview (subsection~\ref{ssub:Overview_webpage}), see figure~\ref{fig:uuid_gen}. Pick any one of the UUIDs and continue the registration as in subsection~\ref{sub:spreadsheet_reg}. In order to not reuse UUIDs, remember to use the ''Get new UUID'' button for every time have used the available codes displayed. A good procedure is to get new codes every time you go back to the page.
+When only the UUID is needed, one can be generated through the ''UUID generator'' on the printing overview (subsection~\ref{ssub:Overview_webpage}), see figure~\ref{fig:uuid_gen}. Pick any one of the UUIDs and continue the registration as in subsection~\ref{sub:spreadsheet_reg}. In order to not reuse UUIDs, remember to use the ''Get new UUID'' button for every time you have used the displayed codes. A good procedure is to get new codes every time you go back to the page.
 
 \begin{figure}[htb]
     \tcbox[colback=white]{
@@ -227,11 +227,11 @@ When only the UUID is needed, one can be generated through the ''UUID generator'
 \label{sub:Sample_log_spreadsheet_generation}
 
 In order to log the samples labeled on a cruise, a standardised spreadsheet is used. The spreadsheet is based on Darwin Core. A generator for the spreadsheet can be found on the SIOS page (or on the ship), specifically at \url{https://www.sios-svalbard.org/cgi-bin/darwinsheet/?setup=aen}. When loading the page, certain parameters are already ticked, these are mandatory and should not be removed.  
-The procedure is then to select the wanted columns and generate the sheet. \textbf{Each RF group should agree upon which columns are compulsory.} If a column is forgotten, a new sheet can be generated and the column copied into an existing spreadsheet.
+The procedure is then to select the wanted columns and generate the sheet. \textbf{Each group (i.e. microbial, zooplankton, fish, chemistry, ...) should agree upon which columns are compulsory.} If a column is forgotten, a new sheet can be generated and the column copied into an existing spreadsheet.
 
 When working with the spreadsheet the order of columns can be changed, but it is important to move the whole column as the third row contains the key used by the data manager to read the log into the database. 
 
-It is possible to register information in the spreadsheet that you do not want in the sample log, for instance a taxon classification you are unsure of, a calculation, ... By leaving the third row of the column empty, it will be ignored when the spreadsheet is read into the sample log. The same applies to rows with an empty event id.
+It is possible to register information in the spreadsheet that does not appear in the final sample log, for instance a taxon classification you are unsure of, a calculation, ... By leaving the third row of the column empty, it will be ignored when the spreadsheet is read into the sample log. The same applies to rows with an empty event id.
 
 
 % subsection   (end) }}}
@@ -274,7 +274,7 @@ In order for the spreadsheet to be read into the sample log after the cruise, th
 \subsection{End of cruise} % (fold) {{{
 \label{sub:end_of_cruise}
 
-At the end of the cruise, before going ashore, the finished spreadsheets need pass the checked with the checker, see subsection~\ref{sub:spreadsheet_reg}. After passing the checker, they should be stored with the official cruise data from the cruise. This is handled by the cruise leader and the IMR instrument responsible on the cruise. In addition to the sample spreadsheet, any collected data needs to be uploaded to the official cruise data.
+At the end of the cruise, before going ashore, the finished spreadsheets need pass the checker routine, see subsection~\ref{sub:spreadsheet_reg}. After passing the checker, they should be stored with the official cruise data from the cruise. This is handled by the cruise leader and the IMR instrument responsible on the cruise. In addition to the sample spreadsheet, any collected data needs to be uploaded to the official cruise data.
 
 % subsection end_of_cruise (end) }}}
 \section{Label types} % (fold) {{{
@@ -331,7 +331,7 @@ If you know the ID of the sample you are interested in, you can use the \href{ht
 \subsection{Find samples} % (fold) {{{
 \label{sub:find_samples}
 
-If you want to find samples base on location, time, cruise, gear type, sample type, parent event ID and/or station name, you want to use the \href{https://sios-svalbard.org/reports/aen_multi}{\color{blue}\underline{Sample Search}} page. Here you can choose one or more parameters to filter the database on. Make sure that you set the date range so it covers the times you are interested in (the first cruise in the Nansen Legacy was in June 2018).
+If you want to find samples based on location, time, cruise, gear type, sample type, parent event ID and/or station name, you want to use the \href{https://sios-svalbard.org/reports/aen_multi}{\color{blue}\underline{Sample Search}} page. Here you can choose one or more parameters to filter the database on. Make sure that you set the date range so it covers the times you are interested in (the first cruise in the Nansen Legacy was in June 2018).
 
 After clicking search, a table of the results should be shown if there are any results. By clicking on the event ID, detailed information of the sample can be shown. If you want detailed information about all the returned samples, the easiest is to download it via the \emph{Get full information from the search as a tab separated file} link. This gives a tab separated file that can be opened in a spreadsheet viewer like Excel or Libre Office. 
 
@@ -354,7 +354,7 @@ After inputting all the codes, press \emph{Search}. If the IDs exist they should
 
 \subsection{Full sample log} % (fold) {{{
 \label{sub:Full sample log}
-A copy of the full sample log as a tab separated file can be downloaded using the \href{https://www.sios-svalbard.org/cgi-bin/export_search.cgi?&startdate=2018-01-01&enddate=3000-01-01&geartype=&sampletype=&cruisenumber=&parenteventid=&startlat=&startlon=&endlat=&endlon=&stationname=}{\color{blue}\underline{Full sample log as CSV (without metadata)}} link.
+A copy of the full sample log as a tab separated file can be downloaded using the \newline \href{https://www.sios-svalbard.org/cgi-bin/export_search.cgi?&startdate=2018-01-01&enddate=3000-01-01&geartype=&sampletype=&cruisenumber=&parenteventid=&startlat=&startlon=&endlat=&endlon=&stationname=}{\color{blue}\underline{Full sample log as CSV (without metadata)}} link.
 % subsection Full sample log (end) }}}
 
 % subsection find_samples (end) }}}
@@ -394,7 +394,7 @@ Samples are identified by UUIDs in the form of hex numbers, example \emph{388613
 \label{sub:Printer}
 To ensure that the labels can be printed in the field and that the marking stays on, thermal transfer printers are used. One printer is available for each label size. In addition to printing the Data Matrix code, these printers are able to add information from each scientist in human readable format (text), helping to identify the sample without the need to scan it each time.
 
-The chosen printer is a \emph{Zebra GX430t} printer. It was chosen as it puts few limitations on the labels used, and it can be printed to both from software and custom written Python software in the form of a web page. To specify what is printed ZPL codes are used. These support Data Matrix codes following the ECC 200 standard.
+The chosen printer is a \emph{Zebra GX430t} printer. It was chosen as it puts few limitations on the labels used, and it can be printed used both from software and custom written Python software in the form of a web page. ZPL codes are used to specify what to print. These support Data Matrix codes following the ECC 200 standard.
 
 % subsection Printer (end) }}}
 
