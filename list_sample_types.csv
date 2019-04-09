@@ -138,9 +138,10 @@ Trace elements,,
 Trawl haul,"Remove sample type, as gear shows this",Sample type (?) instead of gear
 TS probe,"Remove sample type, as gear shows this",Sample type (?) instead of gear
 Under ice water,,"Sample type (?) instead of ""material"""
+Viral diversity,,
+Viral production,,
 Virus,Viral diversity (FeCl3),Virus abundance or virus diversity?
 Virus diversity,Viral diversity (FeCl3),
-Virus Prod& decay,Viral production or Viral decay ,
 VivaFlow,,"This is a water concentrator, should probably not be here."
 Water,,"Sample type (?) instead of ""material"""
 Water sample,,"Sample type (?) instead of ""material"". Looks like most of it is from a net"
