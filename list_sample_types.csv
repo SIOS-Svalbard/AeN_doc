@@ -1,25 +1,18 @@
 Sample type,Action / Rename to,Comment
 ,,
-5m Under ice 10m NET,Protists <10 um,"Should be split into depth (5m), gear (type of net) & sample type (??)"
-5m Under ice VivaFlow,Protists <10 um,"Should be split into depth (5m), gear (Viva Flow) & sample type (??)"
-5m Under ice VivaFlow + IMR1/2,Protists <10 um ,"Should be split into depth (5m), gear (Viva Flow) & sample type (??) Luka: it´s a water sample concentrated using VivaFlow/Net (what is concentrated of course is protist/phytoplankton cells).  The net was 10µm plankton net"
-aDNA,Ancient DNA,Ancient DNA
+aDNA,,Ancient DNA
 Algae aggregates,,
-Bacteria,Microbial abundance, FCM specified in protocol and Remarks
-Bacterial production,Bacterial production ,3H-Leucine in Remarks  
+Bacterial production,,3H-Leucine in intended Method  
 Bio bulk,,?
 Biological,,Need to specify
-Blood, Rename to tissue and move to tissueType,Sample type (?) instead of tissue
 Bottom ice,,Sample type (?) instead of part of ice core
-Brain, Rename to tissue and move to tissueType,Sample type (?) instead of tissue
 brine,,Sample type (?) instead of material
 Bulk zooplankton,,Sample type (?) instead of taxa
 CARD FISH EPS,,?
 Careproctus,,Sample type (?) instead of species name
 Chlorophyll a,"Rename to Chlorophyll a tot, add Chlorophyll a >10",Size specified in protocol
 CNP,Particulate CN,Carbon:Nitrogen:Phosphorous ratio
-Cod, Rename to Fish and move taxonomy ,Sample type (?) instead of taxa
-Copepods, Rename to Zooplankton and move taxonomy ,Sample type (?) instead of taxa
+Copepods, Rename to ???Zooplankton and move taxonomy ,Sample type (?) instead of taxa
 CTD profile,CTD,CTD or Hydrography ?
 CTD w/bottles,,CTD or Hydrography ?. Using this to distinguish if there were bottles
 Ctenophores, Rename to ???? and move taxonomy,Sample type (?) instead of species name
@@ -28,10 +21,7 @@ dCSP,,dissolved Coomassie stainable particles
 dD and d18O,d18 Oxygen,
 DIC conc,DIC/AT? (d18 Oxygen),
 DIC/Alk,DIC/AT,
-Dilution culture from Ice core, Dilution culture,?
-Dilution culture from net,Dilution culture,?
-Dilution culture from VivaFlow,Dilution culture,?
-Dinocysts, Protist abundance and taxonomy; method = microscope,
+Dinocysts, Protist abundance and taxonomy; method = microscope, Is it correct to rename the old ones?
 Dissolved trace elements,,
 DNA,,
 dO2,,dissolved oxygen
@@ -39,27 +29,21 @@ dTEP,,dissolved Transparent exopolymeric particles
 eDNA,,environmental DNA
 Fatty acids,,
 Fecal pellet abundance,Fecal pellet flux, Taken from sediment traps
-Filter,Seston elemental composition; method = XRF,Sample type instead of filter type
 Fish,,
 FISH-EPS,,"Fluorescent in situ hybridization, EPS is exopolymeric substances"
 FISH-Mixotrophy,,
 fixed net sample,X,Sample type (?) instead of gear and treatment
-Flow cytometry,Microbial abundcance; method = FCM,
 For dating,X,
 GC catcher sample,,
 GC cutter sample,,
-GC section,,
 GC section archive half,,
 GC section working half,,
-Gelatinous seasnail, Rename to ??? and move to taxonomy,Sample type (?) instead of taxa
+GC section,,
 Gel trap,X, Gel collecting particles from short time sediment trap
+Gelatinous seasnail, Rename to ??? and move to taxonomy,Sample type (?) instead of taxa
 GF/F filter,,Sample type (?) instead of filter type
-Gill, Rename to tissue and move to tissueType,Sample type (?) instead of tissue
-Gills and Muscle," Rename to tissue and move as ""gills; muscle"" to tissueType",Sample type (?) instead of tissue
 Glass vial,X,Sample type (?) instead of vial type
-Gonad, Rename to tissue and move to tissueType,Sample type (?) instead of tissue
 Grain size,, Sediment grain size
-Hindgut, Rename to tissue and move to tissueType,Sample type (?) instead of tissue
 HPLC Pigments,,
 Ice core,, Needed to link sections to one common ice core
 Ice meiofauna,,
@@ -71,8 +55,6 @@ Juveniles Rep1,X,Sample type (?) instead of developmental stage
 Juveniles Rep2,X,Sample type (?) instead of developmental stage
 Juveniles sieved 250um,X,Sample type (?) instead of developmental stage
 Limacina/Foraminifera, Rename to ??? and move to taxonomy???,Sample type (?) instead of taxa
-Liver, Rename to tissue and move to tissueType,
-Long rough dab, Rename to Fish and move to taxonomy,
 Macrofauna taxonomy,,
 Macrozooplankton abundance,,
 Macrozooplankton biomass,,
@@ -83,24 +65,20 @@ Meroplankton taxonomy,,
 Mesozooplankton ecotoxology,,
 Mesozooplankton genetics,,
 Mesozooplankton taxonomy,,
-Microbial,Rename to ???,
+Microbial activity (RNA) ,,New
 Microbial biomass production,Bacterial production; method=3H-Leucine,
-Mixrozooplankton taxonomy,Protist abundance and taxonomy; method=microscopy,
+Microbial,Rename to ???,
 Mixotrophy FISH,,Fluorescence in situ hybridization of mixotrophy samples
-Multicore,, One core from a multicore (i.e. a sample)
+Mixrozooplankton taxonomy,Protist abundance and taxonomy; method=microscopy,
 Multicore archive half,, Half a multicore
 Multicore work half,, Half a multicore
-Muscle, Rename to tissue and move to tissueType,
-Muscle and Spleen," Rename to tissue and move as ""muscle; spleen"" to tissueType",
-"Muscle, spleen and gills"," Rename to tissue and move as ""muscle; spleen; gills"" tissueType",
+Multicore,, One core from a multicore (i.e. a sample)
 MZP profile,X,What is this?
 Niskin Bottle,, One bottle from a set of bottles 
 Nutrients,, "Nitrate, nitrite,phosphate and silicic acid"
 O18,d18 Oxygen,
-Only tissue samples,, ? Rename to Tissue?
 Organic matter characterization,,Samples taken from Niskin
-Otholites, Rename to tissue and move to tissueType (otoliths),
-Pale eelpout, Rename to ??? and move to Description???,Sample type (?) instead of taxa
+Pale eelpout,X Rename to ??? and move to Description???,Sample type (?) instead of taxa
 Particulate absorption,,
 Particulate elements,, Needed to differentiate from trace
 PC Bottle,X, From GOFLO?. PC?
@@ -108,58 +86,46 @@ PC section,Piston core section,
 PCR tube,X,Sample type (?) instead of gear
 pCSP,,particulate Coomassie stainable particles
 PET Bottle,X,PET?. From GOFLO
-Phytoplankton taxonomy,Protist abundance and taxonomy; method=microscopy, Gear type should give an indication of where sample is from
-Phytoplankton spores,Protist abundance and taxonomy; method=microscopy,
 Pigments,Sediment pigments,
-Plankton Net, Move to Gear type: Phytoplankton net ? ,
-Plankton sample w/ WP2,Mesozooplankton taxonomy,
-Plankton sample w/ multinet,Mesozooplankton taxonomy,
-Plankton sample,X,
-Plankton metabarcoding,,
 Plankton barcoding,,
-POC/PON/StabIso,,Should be split into POC/PON & Stable isotope Pål: Not possible
+Plankton metabarcoding,,
+Plankton Net, Move to Gear type: Phytoplankton net ? ,
+Plankton sample,X,
 POC/PON,,
+POC/PON/StabIso,,Should be split into POC/PON & Stable isotope Pål: Not possible
 POM,Particulate CN,"Sample type (?) instead of ""material"""
 Pore water d13C,d13C description=pore,
 Pore water nutrients,nutrients description=pore,
 Pore-water ICP,ICP description=pore,
 Porosity,Sediment porosity,
-Profile (40-120m), Rename to profile and move 40-120 m to min/max height , Drone
-Protists,Protist abundance and taxonomy; method = microscopy,
+Primary production (14C-CO2),,New
+Profile,, Drone
 pTEP,,particulate Transparent exopolymeric particles
 Quantitative species records,X,
-Racetracks (80m) & Profile (40-120m), Split into Racetrack  and profile. Altitude to correct place, Drone
+Racetrack,, Drone
 RNA,,
 sea ice,X,"Sample type (?) instead of ""material"""
 Seawater,X,"Sample type (?) instead of ""material"""
-Sediment,X,"Sample type (?) instead of ""material"""
 Sediment incubation,,"Sample type (?) instead of ""material"""
 Sediment slice,, Part of a sediment core used for further splitting
+Sediment,X,"Sample type (?) instead of ""material"""
 SEM filter,Electron microscopy (SEM filter),
+Seston elemental composition,, Method can be XRF
 Silicate,Nutrients; comment = silicate,
-Spleen, Rename to tissue and move to tissueType,
-"Spleen, Liver and Gonades"," Rename to tissue and move as ""spleen; liver; gonades"" to tissueType",
 Spotted snake blenny, Rename to Fish and move to taxonomy???, Species?
 Station,,Needed for defining specific stations (NLEG01….)
 Sterivex filter,Microbial diversity (DNA and RNA),Sample type (?) instead of type of filter
-Stomach, Rename to tissue and move to tissueType,Sample type (?) instead of tissue
 TOC,Total carbon,Total organic carbon
 Total carbon (TC) filter,Particulate CN,Is it the same as total organic carbon
 Total organic carbon,,
 Trace elements,,sampling with GO-FLO in a clean lab
-Trawl haul,"Remove sample type, as gear shows this",Sample type (?) instead of gear
-TS probe,"Remove sample type, as gear shows this",Sample type (?) instead of gear
 Under ice water,X,"Sample type (?) instead of ""material"""
 Viral decay,,
 Viral production,,
-Virus,Viral diversity (FeCl3),
 Virus diversity,Viral diversity (FeCl3),
+Virus,Viral diversity (FeCl3),
 VivaFlow,X,"This is a water concentrator, should probably not be here."
-Water,,"Sample type (?) instead of ""material"""
 Water sample,,"Sample type (?) instead of ""material"". Looks like most of it is from a net"
-Whole fish," Rename to Fish and put ""whole fish"" in tissueType",Sample type (?) instead of tissue
+Water,,"Sample type (?) instead of ""material"""
 Whole individual,,Sample type (?) instead of tissue. Pål: should this be fish etc. instead?
 Whole individuals,,Sample type (?) instead of tissue
-,,
-Microbial activity (RNA) ,,New
-Primary production (14C-CO2),,New
