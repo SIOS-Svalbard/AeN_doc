@@ -57,8 +57,8 @@
  
 \hyphenpenalty=5000
 \tolerance=1000
-\title{Draft: The Nansen Legacy labeling manual}
-\date{\today\\v0.3.2}
+\title{The Nansen Legacy labelling manual}
+\date{\today\\v0.4}
 \author{Pål Ellingsen (\url{data.nleg@unis.no})}
 
 \begin{document}
@@ -69,7 +69,7 @@
 \section{Introduction} % (fold) {{{
 \label{sec:Introduction}
 
-The Nansen Legacy project is aimed at generating samples, data and science relevant during the project and after its conclusion. Additionally it is a collaboration between major marine institutions in Norway. To accommodate the tracking of samples from ship to land and between institutions it was decided to use a unified labeling system. To secure that the project data and metadata follows the FAIR (Findable, Accessible, Interoperable, Reproducible) principle for data management within the project, a first step is to ensure that the collected samples are findable and that relevant metadata are logged
+The Nansen Legacy project is aimed at generating samples, data and science relevant during the project and after its conclusion. Additionally it is a collaboration between major marine institutions in Norway. To accommodate the tracking of samples from ship to land and between institutions it was decided to use a unified labelling system. To secure that the project data and metadata follows the FAIR (Findable, Accessible, Interoperable, Reproducible) principle for data management within the project, a first step is to ensure that the collected samples are findable and that relevant metadata are logged
 along with the sample collection. The metadata needs to be logged in a standardized manner and will be
 made accessible through a search interphase as soon as possible after the cruises.  This manual details how to label samples, log the metadata and how to find information about logged samples in the SIOS database.  
 
@@ -106,8 +106,8 @@ It can be found by opening a browser and going to the address \url{http://10.3.6
        Examples of how event id and parent id works for two different gear types. These should be transferable to other gear types.
     }
 \end{figure}
-\section{Labeling samples} % (fold) {{{
-\label{sec:Labeling samples}
+\section{Labelling samples} % (fold) {{{
+\label{sec:labelling samples}
 
 
 
@@ -226,7 +226,7 @@ When only the UUID is needed, one can be generated through the ''UUID generator'
 \subsection{Generation of sample log spreadsheet} % (fold) {{{
 \label{sub:Sample_log_spreadsheet_generation}
 
-In order to log the samples labeled on a cruise, a standardised spreadsheet is used. The spreadsheet is based on Darwin Core. A generator for the spreadsheet can be found on the SIOS page (or on the ship), specifically at \url{https://www.sios-svalbard.org/cgi-bin/darwinsheet/?setup=aen}. When loading the page, certain parameters are already ticked, these are mandatory and should not be removed.  
+In order to log the samples labelled on a cruise, a standardised spreadsheet is used. The spreadsheet is based on Darwin Core. A generator for the spreadsheet can be found on the SIOS page (or on the ship), specifically at \url{https://www.sios-svalbard.org/cgi-bin/darwinsheet/?setup=aen}. When loading the page, certain parameters are already ticked, these are mandatory and should not be removed.  
 The procedure is then to select the wanted columns and generate the sheet. \textbf{Each group (i.e. microbial, zooplankton, fish, chemistry, ...) should agree upon which columns are compulsory.} If a column is forgotten, a new sheet can be generated and the column copied into an existing spreadsheet.
 
 When working with the spreadsheet the order of columns can be changed, but it is important to move the whole column as the third row contains the key used by the data manager to read the log into the database. 
@@ -415,25 +415,25 @@ The programs uses and their webpages are available through the SIOS GitHub page:
 
 % section Technical details (end) }}}
 
-\section{List of equipment and costs} % (fold) {{{
-\label{sec:Costs}
-Table~\ref{tab:costs} shows the list of the different types of equipment and their approximate cost (on Svalbard). 
-\begin{table}[htb]
-    \rowcolors{3}{cyan!10}{white}
-    \caption{\label{tab:costs}List of equipment and unit costs. For the label if fewer labels are ordered, the unit price goes up. This is based on prices in 2018 to Svalbard, when this equipment was ordered.}
-    \begin{tabular}{lllr}
-        \hline
-        \textbf{Item} & \textbf{Product name} & \textbf{Unit size} & \textbf{Unit price} \\ \hline
-        Small label     & CILS 10 mm diam, 8100X  & Per label  (10 000)   & 0.74 NOK  \\ 
-        Medium label    & CILS Eppendorf, 81000TN & Per label  (20 000)   & 1.33 NOK  \\ 
-        Large label     & CILS, 8100X             & Per label  (10 000)   & 0.83 NOK  \\ 
-        Printer         & Zebra GX430t (GX43-102420-000)            & Per unit              & 5 397 NOK  \\ 
-        Printer ribbon  & Zebra 5095, 84 mm &     $ 12\times74$~m         & 640  NOK   \\ 
-        Opticon scanner & Opticon OPI-3601 USB    & Per unit              & 1 296 NOK  \\ 
-        Datalogic scanner & Datalogic PD9530-DPM  & Per unit              & 5 781 NOK  \\ 
-        \hline
-    \end{tabular}
-\end{table}
+%\section{List of equipment and costs} % (fold) {{{
+%\label{sec:Costs}
+%Table~\ref{tab:costs} shows the list of the different types of equipment and their approximate cost (on Svalbard). 
+%\begin{table}[htb]
+    %\rowcolors{3}{cyan!10}{white}
+    %\caption{\label{tab:costs}List of equipment and unit costs. For the label if fewer labels are ordered, the unit price goes up. This is based on prices in 2018 to Svalbard, when this equipment was ordered.}
+    %\begin{tabular}{lllr}
+        %\hline
+        %\textbf{Item} & \textbf{Product name} & \textbf{Unit size} & \textbf{Unit price} \\ \hline
+        %Small label     & CILS 10 mm diam, 8100X  & Per label  (10 000)   & 0.74 NOK  \\ 
+        %Medium label    & CILS Eppendorf, 81000TN & Per label  (20 000)   & 1.33 NOK  \\ 
+        %Large label     & CILS, 8100X             & Per label  (10 000)   & 0.83 NOK  \\ 
+        %Printer         & Zebra GX430t (GX43-102420-000)            & Per unit              & 5 397 NOK  \\ 
+        %Printer ribbon  & Zebra 5095, 84 mm &     $ 12\times74$~m         & 640  NOK   \\ 
+        %Opticon scanner & Opticon OPI-3601 USB    & Per unit              & 1 296 NOK  \\ 
+        %Datalogic scanner & Datalogic PD9530-DPM  & Per unit              & 5 781 NOK  \\ 
+        %\hline
+    %\end{tabular}
+%\end{table}
 
 
 % section Costs (end) }}}
