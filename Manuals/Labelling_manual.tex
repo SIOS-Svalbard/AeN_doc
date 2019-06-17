@@ -58,7 +58,7 @@
 \hyphenpenalty=5000
 \tolerance=1000
 \title{The Nansen Legacy labelling manual}
-\date{\today\\v0.4}
+\date{\today\\v0.5}
 \author{Pål Ellingsen (\url{data.nleg@unis.no})}
 
 \begin{document}
@@ -69,7 +69,7 @@
 \section{Introduction} % (fold) {{{
 \label{sec:Introduction}
 
-The Nansen Legacy project is aimed at generating samples, data and science relevant during the project and after its conclusion. Additionally it is a collaboration between major marine institutions in Norway. To accommodate the tracking of samples from ship to land and between institutions it was decided to use a unified labelling system. To secure that the project data and metadata follows the FAIR (Findable, Accessible, Interoperable, Reproducible) principle for data management within the project, a first step is to ensure that the collected samples are findable and that relevant metadata are logged
+The Nansen Legacy project is aimed at generating samples, data and science relevant during the project and after its conclusion. Additionally it is a collaboration between major marine institutions in Norway. To accommodate the tracking of samples from ship to land and between institutions it was decided to use a unified labelling system. To secure that the project data and metadata follows the FAIR (Findable, Accessible, Interoperable, Reusable) principle for data management within the project, a first step is to ensure that the collected samples are findable and that relevant metadata are logged
 along with the sample collection. The metadata needs to be logged in a standardized manner and will be
 made accessible through a search interphase as soon as possible after the cruises.  This manual details how to label samples, log the metadata and how to find information about logged samples in the SIOS database.  
 
@@ -290,9 +290,9 @@ In the Nansen Legacy several different labels are available and can be printed o
     \begin{tabular}{l|P{3cm}lP{4cm}P{4cm}}
         \hline
         \textbf{Label} & \textbf{Size} & \textbf{Temp. range} & \textbf{Amount of text} & \textbf{Notes} \\ \hline
-        Small& \SI{10}{\mm} diameter & \SIrange{-80}{135}{\celsius} & No text, only DM & Problems sticking on certain plastic bags in \SI{-20}{\celsius}\\
-        Medium& \SI{19 x 25}{\mm}, fits Eppendorf \SI{2}{\ml} tubes & \SIrange{-196}{155}{\celsius} & 4 lines of 18 characters each & Problems sticking on certain plastic bags in \SI{-20}{\celsius}. \\
-        Large& \SI{25 x 51}{\mm} & \SIrange{-80}{135}{\celsius} & 4 lines of 20 characters each, one with 36 characters. & Problems sticking on certain plastic bags in  \SI{-20}{\celsius}.\\
+        Small& \SI{12.7}{\mm} diameter & \SIrange{-196}{110}{\celsius} & No text, only DM & Problems sticking on certain plastic bags in \SI{-80}{\celsius} (test on the bag before using)\\
+        Medium& \SI{19 x 25}{\mm}, fits Eppendorf \SI{2}{\ml} tubes & \SIrange{-196}{155}{\celsius} & 4 lines of 18 characters each & Do not use on plastic bags. \\
+        Large& \SI{25.4 x 48}{\mm} & \SIrange{-196}{110}{\celsius} & 4 lines of 20 characters each, one with 36 characters. & Problems sticking on certain plastic bags in  \SI{-80}{\celsius} (test on the bag before using).\\
         \hline
     \end{tabular}
 \end{table}
@@ -413,27 +413,28 @@ There are two different types of scanners, the \emph{Opticon OPI-3601} and the \
 The programs uses and their webpages are available through the SIOS GitHub page: \url{https://github.com/SIOS-Svalbard/}. They are written in mostly Python, PHP, JavaScript and PostgreSQL.
 % subsection Programs (end) }}}
 
-% section Technical details (end) }}}
+%section Technical details (end) }}}
 
-%\section{List of equipment and costs} % (fold) {{{
-%\label{sec:Costs}
-%Table~\ref{tab:costs} shows the list of the different types of equipment and their approximate cost (on Svalbard). 
-%\begin{table}[htb]
-    %\rowcolors{3}{cyan!10}{white}
-    %\caption{\label{tab:costs}List of equipment and unit costs. For the label if fewer labels are ordered, the unit price goes up. This is based on prices in 2018 to Svalbard, when this equipment was ordered.}
-    %\begin{tabular}{lllr}
-        %\hline
-        %\textbf{Item} & \textbf{Product name} & \textbf{Unit size} & \textbf{Unit price} \\ \hline
-        %Small label     & CILS 10 mm diam, 8100X  & Per label  (10 000)   & 0.74 NOK  \\ 
-        %Medium label    & CILS Eppendorf, 81000TN & Per label  (20 000)   & 1.33 NOK  \\ 
-        %Large label     & CILS, 8100X             & Per label  (10 000)   & 0.83 NOK  \\ 
-        %Printer         & Zebra GX430t (GX43-102420-000)            & Per unit              & 5 397 NOK  \\ 
-        %Printer ribbon  & Zebra 5095, 84 mm &     $ 12\times74$~m         & 640  NOK   \\ 
-        %Opticon scanner & Opticon OPI-3601 USB    & Per unit              & 1 296 NOK  \\ 
-        %Datalogic scanner & Datalogic PD9530-DPM  & Per unit              & 5 781 NOK  \\ 
-        %\hline
-    %\end{tabular}
-%\end{table}
+\section{List of equipment and costs} % (fold) {{{
+\label{sec:Costs}
+Table~\ref{tab:costs} shows the list of the different types of equipment and their approximate cost (on Svalbard). 
+\begin{table}[htb]
+    \rowcolors{3}{cyan!10}{white}
+    \caption{\label{tab:costs}List of equipment and unit costs. For the label if fewer labels are ordered, the unit price goes up. This is based on prices in 2018 or 2019 to Svalbard, when this equipment was ordered.}
+    \begin{tabular}{lllr}
+        \hline
+        \textbf{Item} & \textbf{Product name} & \textbf{Unit size} & \textbf{Unit price} \\ \hline
+        Small label     & BRADY 12.7 mm diam, TFT-144-492-3  & Per label  (3 000)   & 0.45 NOK  \\ 
+        Medium label    & CILS Eppendorf, 81000TN & Per label  (20 000)   & 1.33 NOK  \\ 
+        Large label     & BRADY $48.26\times 25.4$ mm ,TFT-156-492-3      & Per label  (3 000)   & 1.00 NOK  \\ 
+        Printer         & Zebra GX430t (GX43-102420-000)            & Per unit              & 5 397 NOK  \\ 
+        Printer ribbon (M)  & Zebra 5095, 84 mm &     $ 12\times74$~m         & 640  NOK   \\ 
+        Printer ribbon (S/L)  & BRADY R-6400, 65 mm &     $ 70$~m         & 231  NOK   \\ 
+        Opticon scanner & Opticon OPI-3601 USB    & Per unit              & 1 296 NOK  \\ 
+        Datalogic scanner & Datalogic PD9530-DPM  & Per unit              & 5 781 NOK  \\ 
+        \hline
+    \end{tabular}
+\end{table}
 
 
 % section Costs (end) }}}
