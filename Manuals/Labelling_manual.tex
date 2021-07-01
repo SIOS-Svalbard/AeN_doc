@@ -58,8 +58,8 @@
 \hyphenpenalty=5000
 \tolerance=1000
 \title{The Nansen Legacy labelling manual}
-\date{\today\\v0.5}
-\author{Pål Ellingsen (\url{data.nleg@unis.no})}
+\date{\today\\v0.6}
+\author{Pål Ellingsen, Luke Marsden (\url{data.nleg@unis.no})}
 
 \begin{document}
 \maketitle
@@ -71,7 +71,7 @@
 
 The Nansen Legacy project is aimed at generating samples, data and science relevant during the project and after its conclusion. Additionally it is a collaboration between major marine institutions in Norway. To accommodate the tracking of samples from ship to land and between institutions it was decided to use a unified labelling system. To secure that the project data and metadata follows the FAIR (Findable, Accessible, Interoperable, Reusable) principle for data management within the project, a first step is to ensure that the collected samples are findable and that relevant metadata are logged
 along with the sample collection. The metadata needs to be logged in a standardized manner and will be
-made accessible through a search interphase as soon as possible after the cruises.  This manual details how to label samples, log the metadata and how to find information about logged samples in the SIOS database.  
+made accessible through a search interface as soon as possible after the cruises.  This manual details how to label samples, log the metadata and how to find information about logged samples in the SIOS database.  
 
 % section Introduction (end) }}}
 
@@ -79,14 +79,14 @@ made accessible through a search interphase as soon as possible after the cruise
 \subsection{Hierarchy} % (fold) {{{
 \label{sub:Hirarcy}
 
-One of the backbones of the sample log is the use of parent IDs. A parent ID is the ID of the gear cast or sample which a sample or sub-sample comes from, see figure~\ref{fig:parent_uuid}. By registering the parent, it is possible to keep track of which samples belong together, and any number of levels of sub-samples. Additionally it reduces the amount of information that needs to be registered on a sample, as information like for example position, bottom depth, date and time can be inherited from the parent. 
+One of the backbones of the sample log is the use of parent IDs. A parent ID is the ID of the gear cast or sample which a sample or sub-sample comes from, see Figure~\ref{fig:parent_uuid}. By registering the parent, it is possible to keep track of which samples belong together, and any number of levels of sub-samples. Additionally it reduces the amount of information that needs to be registered on a sample, as information like for example position, bottom depth, date and time can be inherited from the parent. 
 % subsection Hierarchy (end) }}}
 
 \subsubsection{Overview webpage} % (fold) {{{
 \label{ssub:Overview_webpage}
 
 The overview webpage is where all of the tools and printing software on the cruise is located. It runs on the ship and is therefore available during the whole cruise, independent of Internet access. 
-It can be found by opening a browser and going to the address \url{http://10.3.65.20}. What you should then see is something like what is shown in figure~\ref{fig:Printing_overview}.
+It can be found by opening a browser and going to the address \url{http://10.3.65.20}. What you should then see is something like what is shown in Figure~\ref{fig:Printing_overview}.
 
 \begin{figure}[htb]
     \tcbox[colback=white]{
@@ -111,7 +111,7 @@ It can be found by opening a browser and going to the address \url{http://10.3.6
 
 
 
-In order to distinguish samples, samples in the project are assigned a unique id, in the form of a universally unique identifier (UUID). Details about it can be found in subsection~\ref{sub:UUID}. For physical samples this UUID is encoded in the form of a 2D barcode, specifically a Data Matrix (DM) code, details in subsection~\ref{ssub:DM}. An example of such a code can be seen in figure~\ref{fig:data_matrix}. The code is then printed, together with a descriptive text, onto a label which is stuck on the sample or its container.
+In order to distinguish samples, samples in the project are assigned a unique id, in the form of a universally unique identifier (UUID). Details about it can be found in subsection~\ref{sub:UUID}. For physical samples this UUID is encoded in the form of a 2D barcode, specifically a Data Matrix (DM) code, details in subsection~\ref{ssub:DM}. An example of such a code can be seen in Figure~\ref{fig:data_matrix}. The code is then printed, together with a descriptive text, onto a label which is stuck on the sample or its container.
 
 \begin{figure}[htb]
     \centering
@@ -168,7 +168,7 @@ The following steps can be done in any order depending on what is easiest:
 
 
 
-Examples of virtual sample are: gear casts, CTD Niskin bottles, Multicores, Multinets and Ice cores that have been split/melted. None of these samples have a physical/practical place for a label. They still need to be logged in the sample log (database), to ensure traceability of samples from them, see figure~\ref{fig:parent_uuid}. The procedure of logging them involves either printing a sheet of paper with codes or just assigning them a UUID without any Data Matrix code. Which approach is the best depends on the circumstance. These codes are then scanned/copied into the relevant sample log spreadsheet. If the UUID is going to be used by more than one scientist, for example in the case of Niskin bottles, it is often easier to print an A4 page with the codes. 
+Examples of virtual sample are: gear casts, CTD Niskin bottles, Multicores, Multinets and Ice cores that have been split/melted. None of these samples have a physical/practical place for a label. They still need to be logged in the sample log (database), to ensure traceability of samples from them, see Figure~\ref{fig:parent_uuid}. The procedure of logging them involves either printing a sheet of paper with codes or just assigning them a UUID without any Data Matrix code. Which approach is the best depends on the circumstance. These codes are then scanned/copied into the relevant sample log spreadsheet. If the UUID is going to be used as a parent by more than one scientist, for example in the case of Niskin bottles, it is often easier to print an A4 page with the codes. However, each sample should be logged only once in total. 
 
 Below follows two different procedures depending on what is chosen:
 
@@ -208,7 +208,7 @@ If copies are needed for several scientists to work on the same containers, the 
 \subsubsection{Only UUID} % (fold) {{{
 \label{ssub:Only_UUID}
 
-When only the UUID is needed, one can be generated through the ''UUID generator'' on the printing overview (subsection~\ref{ssub:Overview_webpage}), see figure~\ref{fig:uuid_gen}. Pick any one of the UUIDs and continue the registration as in subsection~\ref{sub:spreadsheet_reg}. In order to not reuse UUIDs, remember to use the ''Get new UUID'' button for every time you have used the displayed codes. A good procedure is to get new codes every time you go back to the page.
+When only the UUID is needed, one can be generated through the ''UUID generator'' on the printing overview (subsection~\ref{ssub:Overview_webpage}), see Figure~\ref{fig:uuid_gen}. Pick any one of the UUIDs and continue the registration as in subsection~\ref{sub:spreadsheet_reg}. In order to not reuse UUIDs, remember to use the ''Get new UUID'' button for every time you have used the displayed codes. A good procedure is to get new codes every time you go back to the page.
 
 \begin{figure}[htb]
     \tcbox[colback=white]{
@@ -242,7 +242,7 @@ It is possible to register information in the spreadsheet that does not appear i
 
 The samples taken during a cruise need to be logged in a standardised spreadsheet, see subsection~\ref{sub:Sample_log_spreadsheet_generation} for how to make one. Logging of samples should be done continuously during the cruise. 
 
-When logging the sample you will need its id, for physical samples this id goes in the Sample ID field and should be entered by scanning the Data Matrix code on the sample label. Scanning the Data Matrix is done with a handheld scanner, see figure~\ref{fig:scanner}, that plugs into the USB port on your computer, available on the ship. When it is plugged in you should be able to place the marker in the event id field and push the button when the scanner is pointed at the sample label in question. 
+When logging the sample you will need its id, for physical samples this id goes in the Event ID field and should be entered by scanning the Data Matrix code on the sample label. Scanning the Data Matrix is done with a handheld scanner, see Figure~\ref{fig:scanner}, that plugs into the USB port on your computer, available on the ship. When it is plugged in you should be able to place the marker in the Event ID field and push the button when the scanner is pointed at the sample label in question. 
 
 
 \begin{figure}[h!tb]
@@ -254,9 +254,9 @@ When logging the sample you will need its id, for physical samples this id goes 
 \end{figure}
 
 
-Then its parent, see subsection~\ref{sub:Hirarcy}, needs to be registered, what the parent is depends on what type of sample it is, see figure~\ref{fig:parent_uuid} for some examples. Having registered these two, the rest of the columns in the spreadsheet need to be filled out. Every column has an explanation of what is expected in the given field. 
+Then its parent, see subsection~\ref{sub:Hirarcy}, needs to be registered, what the parent is depends on what type of sample it is, see Figure~\ref{fig:parent_uuid} for some examples. In some cases, this can be taken from the activity log generator, see subsection~\ref{sub:ActivityLog}. Having registered these two, the rest of the columns in the spreadsheet need to be filled out. Every column has an explanation of what is expected in the given field. 
 
-In order for the spreadsheet to be read into the sample log after the cruise, the spreadsheet needs to pass a format checker, see figure~\ref{fig:checker}, that checks all the entered fields for invalid and/or missing values. This checker is available on the ship through the overview page, see subsection~\ref{ssub:Overview_webpage}. It is \textbf{required} to run and pass this checker before uploading your spreadsheet to the data server on the ship at the end of the cruise. It is recommended to run this checker during the cruise, as errors can then easily be fixed.
+In order for the spreadsheet to be read into the sample log after the cruise, the spreadsheet needs to pass a format checker, see Figure~\ref{fig:checker}, that checks all the entered fields for invalid and/or missing values. This checker is available on the ship through the overview page, see subsection~\ref{ssub:Overview_webpage}. It is \textbf{required} to run and pass this checker before uploading your spreadsheet to the data server on the ship at the end of the cruise. It is recommended to run this checker during the cruise, as errors can then easily be fixed.
 
 \emph{Note that the sheet named ''Metadata'' needs to be filled out before running the checker.}
 
@@ -270,6 +270,24 @@ In order for the spreadsheet to be read into the sample log after the cruise, th
 \end{figure}
 
 % subsection Sample log spreadsheet logging (end) }}}
+
+\subsection{Activity Log} % (fold) {{{
+\label{sub:ActivityLog}
+
+Each activity (e.g. CTD cast, drone flight, sea ice work) should be logged in the Toktlogger by the instrument crew onboard the cruise, if communicated by the cruise leader. Some of this information can be harvested into a spreadsheet template, using the activity log generator, see Figure~\ref{fig:activitylog}. This ensures IMR and Nansen Legacy are logging activities with the same UUIDs, and reduces human error.
+
+\begin{figure}[htb]
+    \tcbox[colback=white]{
+    \includegraphics[width=0.8\textwidth]{Activity_Log_Generator.png}
+}
+    \caption{\label{fig:activitylog}
+        Activity log generator page.
+    }
+\end{figure}
+
+Go to the ''Activity log generator'' page on the printing overview (see subsection~\ref{ssub:Overview_webpage}). Anyone can generate a version of the this log by selecting ''Generate new version of activity log'', to copy and paste event IDs to be used as Parent Event IDs. However, only a single person in charge of this log on the cruise should submit their version of the activity log. Station names are not logged in the Toktlogger. However, the cruise leader can specify some text to be added for each activity, and this will be harvested in the 'Event Remarks' column in the activity log. The station name and/or the names of people involved can be listed here.
+
+One person on the cruise should be responsible to checking and filling in any missing information in the activity log. This will include missing columns as well as activities that were not logged in the Toktlogger. Changes can be made at any stage during the cruise. Upload your file by selecting ''Browse'', and select ''Upload and append to this file''. A new version of the activity log will be generated that will include both any rows that have been updated as well as new rows for any activities that were not logged in the version of the file you uploaded. Please also generate a .json file that includes the raw data at the end of the cruise by selecting ''Generate .json file''. Deposit this alongside the rest of the sample logs, see subsection~\ref{sub:end_of_cruise}.  
 
 \subsection{End of cruise} % (fold) {{{
 \label{sub:end_of_cruise}
@@ -307,16 +325,16 @@ In the Nansen Legacy several different labels are available and can be printed o
 \label{sec:Searching_sample}
 
 If you want to find something in the sample log, there are several ways of searching it.
-The sample log is located on the SIOS page, at \url{https://sios-svalbard.org/reports/aen_multi}.
-On the page you will find a list of links under "Nansen Legacy Tools" in addition to links pointing to the sampling protocols, see figure~\ref{fig:sios}.
+The sample log is located on the SIOS page, at \url{https://sios-svalbard.org/aen/tools}.
+On the page you will find a number of options for filtering the sample log, in addition to links pointing to the sampling protocols, see Figure~\ref{fig:sios}.
 
 \begin{figure}[htb]
     \centering
     \tcbox[colback=white]{
-    \includegraphics[width=0.7\textwidth]{SIOS_page}
+    \includegraphics[width=1.0\textwidth]{SIOS_page}
     }
     \caption{\label{fig:sios}
-        Top of page for sample log search at \url{https://sios-svalbard.org/reports/aen_multi}.
+        Top of page for sample log search at \url{https://sios-svalbard.org/aen/tools}.
     }
 \end{figure}
 In the following subsection several scenarios will be explained. 
@@ -324,37 +342,36 @@ In the following subsection several scenarios will be explained.
 \subsection{Searching for individual samples} % (fold) {{{
 \label{sub:search_ind}
 
-If you know the ID of the sample you are interested in, you can use the \href{https://www.sios-svalbard.org/reports/ind_sample}{\color{blue}\underline{Sample ID search}} to find it. Input the ID in the search field by for instance scanning it and press "Search". If there is a sample with the given ID, all its information will be shown together with a map marking its location. At the bottom, a table of its children (if any) is shown. Clicking on different parts of the metadata will preform searches for samples with the same metadata. 
+If you know the ID of the sample you are interested in, you can enter it into the full text search at \url{https://sios-svalbard.org/aen/tools} to find it. Input the ID in the search field by for instance scanning it and press "Search". If there is a sample with the given ID, it will be show, as well as a table below of its children (if any). By selecting the ID,  all its information will be shown together with a map marking its location. Clicking on different parts of the metadata will preform searches for samples with the same metadata. 
 
 % subsection search_ind (end) }}}
 
 \subsection{Find samples} % (fold) {{{
 \label{sub:find_samples}
 
-If you want to find samples based on location, time, cruise, gear type, sample type, parent event ID and/or station name, you want to use the \href{https://sios-svalbard.org/reports/aen_multi}{\color{blue}\underline{Sample Search}} page. Here you can choose one or more parameters to filter the database on. Make sure that you set the date range so it covers the times you are interested in (the first cruise in the Nansen Legacy was in June 2018).
+At \url{https://sios-svalbard.org/aen/tools}, there are options to filter by specific text, date, PI, Institution, gear type, sample type or cruise name or number. Stations can also be selected from a map shown at the top of the page. The filtering is dynamic, so you can first filter by one field, and then add a second and so on.
 
-After clicking search, a table of the results should be shown if there are any results. By clicking on the event ID, detailed information of the sample can be shown. If you want detailed information about all the returned samples, the easiest is to download it via the \emph{Get full information from the search as a tab separated file} link. This gives a tab separated file that can be opened in a spreadsheet viewer like Excel or Libre Office. 
+Please note that currently some stations are positioned at the location on the map. This is because the same station name has been used to represent multiple different locations. In this case an average of the sample locations is used. This will be revised in the near future by presenting a concatenation of cruise name and station name for some stations. This is not a problem for any of the process stations or NLEG transect stations.
+%If you want detailed information about all the %returned samples, the easiest is to download it via %the \emph{Get full information from the search as a %tab separated file} link. This gives a tab separated %file that can be opened in a spreadsheet viewer like %Excel or Libre Office. 
 
 \subsection{Samples from a given station} % (fold) {{{
 \label{sub:station_search}
 
-If you know the station name and want the samples from it, it is possible to use the \href{https://www.sios-svalbard.org/reports/aen_station}{\color{blue}\underline{Station Search}} page. Select the station and press search. It will show the location of the station on a map and its position, either as an average over all the samples taken from it or the defined position, if available. The samples taken at the station is shown in the table.
-
-An overview over all the stations can be found using the \href{https://www.sios-svalbard.org/reports/aen_plot_all_stations}{\color{blue}\underline{Station Overview}} link.
+If you know the station name and want the samples from it, it is possible to use the station search,  \href{https://sios-svalbard.org/aen/stations}{\color{blue}\underline{Station Search}}. Either type its name or select it from the table or map provided. Select the station and press search. It will show the location of the station on a map and its position, either as an average over all the samples taken from it or the defined position, if available. After selecting the station, all samples from that station will be shown in a table.
 
 % subsection station_search (end) }}}
 
 
-\subsection{Search for multiple samples} % (fold) {{{
-\label{sub:search_multi}
-If you have an Excel sheet or a number of samples you want to get the (updated) information about, it is possible to use the multiple search interface. It takes space separated event IDs as an input. This can be inputted in the text box by pasting from a column in a spreadsheet (Excel) or repeatedly scanning codes with a scanner. 
-
-After inputting all the codes, press \emph{Search}. If the IDs exist they should be displayed in a table. By pressing the export button all the information about them can be exported to a tab separated file.
+%\subsection{Search for multiple samples} % (fold) {{{
+%\label{sub:search_multi}
+%If you have an Excel sheet or a number of samples you want to get the (updated) information about, it is possible to use the multiple search interface. It takes space separated event IDs as an input. This can be inputted in the text box by pasting from a column in a spreadsheet (Excel) or repeatedly scanning codes with a scanner. 
+%
+%After inputting all the codes, press \emph{Search}. If the IDs exist they should be displayed in a table. By pressing the export button all the information about them can be exported to a tab separated file.
 % subsection search_multi (end) }}}
 
-\subsection{Full sample log} % (fold) {{{
-\label{sub:Full sample log}
-A copy of the full sample log as a tab separated file can be downloaded using the \newline \href{https://www.sios-svalbard.org/cgi-bin/export_search.cgi?&startdate=2018-01-01&enddate=3000-01-01&geartype=&sampletype=&cruisenumber=&parenteventid=&startlat=&startlon=&endlat=&endlon=&stationname=}{\color{blue}\underline{Full sample log as CSV (without metadata)}} link.
+%\subsection{Full sample log} % (fold) {{{
+%\label{sub:Full sample log}
+%A copy of the full sample log as a tab separated file can be downloaded using the \newline \href{https://www.sios-svalbard.org/cgi-bin/export_search.cgi?&startdate=2018-01-01&enddate=3000-01-01&geartype=&sampletype=&cruisenumber=&parenteventid=&startlat=&startlon=&endlat=&endlon=&stationname=}{\color{blue}\underline{Full sample log as CSV (without metadata)}} link.
 % subsection Full sample log (end) }}}
 
 % subsection find_samples (end) }}}
@@ -385,7 +402,7 @@ The reason for using UUIDs (universally unique identifier) to mark samples is th
 
 \subsubsection{Data Matrix} % (fold) {{{
 \label{ssub:DM}
-Samples are identified by UUIDs in the form of hex numbers, example \emph{388613ee-1a67-11e9-b5cc-a0481c9e7d26}. As these contain 36 characters, it is impractical to manually type these, therefore they are printed in the form of  Data Matrix (DM) codes following the ECC 200 standard. To fit the UUID, the DM code is of size $22\times22$, see figure~\ref{fig:data_matrix}. These DMs can be printed in different sizes and read by 2D barcode readers, webcameras and mobile phones. 
+Samples are identified by UUIDs in the form of hex numbers, example \emph{388613ee-1a67-11e9-b5cc-a0481c9e7d26}. As these contain 36 characters, it is impractical to manually type these, therefore they are printed in the form of  Data Matrix (DM) codes following the ECC 200 standard. To fit the UUID, the DM code is of size $22\times22$, see Figure~\ref{fig:data_matrix}. These DMs can be printed in different sizes and read by 2D barcode readers, webcameras and mobile phones. 
 
 
 % subsection Data Matrix (end) }}}
@@ -417,7 +434,7 @@ The programs uses and their webpages are available through the SIOS GitHub page:
 
 \section{List of equipment and costs} % (fold) {{{
 \label{sec:Costs}
-Table~\ref{tab:costs} shows the list of the different types of equipment and their approximate cost (on Svalbard). 
+Table~\ref{tab:costs} shows the list of the different types of equipment and their approximate cost (on Svalbard). 
 \begin{table}[htb]
     \rowcolors{3}{cyan!10}{white}
     \caption{\label{tab:costs}List of equipment and unit costs. For the label if fewer labels are ordered, the unit price goes up. This is based on prices in 2018 or 2019 to Svalbard, when this equipment was ordered.}
@@ -426,7 +443,7 @@ Table~\ref{tab:costs} shows the list of the different types of equipment and th
         \textbf{Item} & \textbf{Product name} & \textbf{Unit size} & \textbf{Unit price} \\ \hline
         Small label     & BRADY 12.7 mm diam, TFT-144-492-3  & Per label  (3 000)   & 0.45 NOK  \\ 
         Medium label    & CILS Eppendorf, 81000TN & Per label  (20 000)   & 1.33 NOK  \\ 
-        Large label     & BRADY $48.26\times 25.4$ mm ,TFT-156-492-3      & Per label  (3 000)   & 1.00 NOK  \\ 
+        Large label     & BRADY $48.26\times 25.4$ mm ,TFT-156-492-3      & Per label  (3 000)   & 1.00 NOK  \\ 
         Printer         & Zebra GX430t (GX43-102420-000)            & Per unit              & 5 397 NOK  \\ 
         Printer ribbon (M)  & Zebra 5095, 84 mm &     $ 12\times74$~m         & 640  NOK   \\ 
         Printer ribbon (S/L)  & BRADY R-6400, 65 mm &     $ 70$~m         & 231  NOK   \\ 
