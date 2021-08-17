@@ -8,7 +8,7 @@
 \usepackage{graphicx}     
 \usepackage{natbib}
 \usepackage{hyperref}
-\usepackage{url}
+%\usepackage{url}
 \usepackage{tcolorbox}
 \usepackage{titling}
 \usepackage{listings}
@@ -42,7 +42,7 @@
 \section{Introduction}
 \label{s:Introduction}
 
-Publishing your data benefits both you and the broader scientific community. It supports transparency and reproducibility of your research, and allows others to work with your data, thus promoting collaboration. Published datasets are visible and citeable, and can be included on your CV and grant applications. In the Nansen Legacy project, we are committed to publishing FAIR data \citep{wilkinson2016fair}, meaning that data should be:
+Publishing your data benefits both you and the broader scientific community. It supports transparency and reproducibility of your research, and allows others to work with your data, thus promoting collaboration. Published datasets are visible and citeable, and can be included on your CV and grant applications. As outlined in both the data management plan \citep{aendmp2021} and data policy \citep{aendatapolicy2021} we are committed to publishing FAIR data \citep{wilkinson2016fair}, meaning that data should be:
 
 \begin{itemize}
 \item Findable: Data and metadata are findable by humans and computers and assigned a persistent identifier (e.g. DOI).
@@ -109,7 +109,7 @@ A NetCDF file also includes 'variable attributes' (metadata that describe each v
 
 The Climate and Forecast (CF) conventions (hence NetCDF-CF) are 'use' metadata, that instruct someone on how to use the data. They define 'standard names' and units to be used for different variables, with descriptions. The official documentation for the NetCDF-CF conventions can be found here (\url{http://cfconventions.org/}).
 
-We also use the Attribute Convention for Data and Discovery (ACDD), which are 'discovery' metadata that help someone to find the data. They define variable and global attributes that are recommended for use. We will outline which attributes to use for Nansen Legacy datasets in sections \ref{ss:globalattributes} (global attributes) and \ref{ss:variableattributes} (variable attributes). Information on ACDD can be found here (\url{https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3}). Please make sure that this is the latest version.
+We also use the Attribute Convention for Data and Discovery (ACDD), which are 'discovery' metadata that help someone to find the data. They define variable and global attributes that are recommended for use. We will outline which attributes to use for Nansen Legacy datasets in sections \ref{ss:globalattributes} (global attributes) and \ref{ss:variableattributes} (variable attributes). Information on ACDD can be found here (\href{https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3}{https://wiki.esipfed.org/Attribute\_Convention\_for\_Data\_Discovery\_1-3}). Please make sure that this is the latest version.
 
 \subsection{How to structure your data collection}
 \label{ss:structurecollection}
@@ -145,7 +145,7 @@ You should now know what your dimensions and variables will be for each file. Th
 \item Dimensions: 
 TIME SINCE? DIMENSION NAMES FROM COMMON VOCABULARY?
 \item Variables:
-Select a standard name for each variable from \url{https://cfconventions.org/standard-names.html}. Use this as your column header. Pay attention to the description and units. It may be necessary to convert your data to the units listed. If no suitable standard name exists, please email \emailme.  
+Select a standard name for each variable from \href{https://cfconventions.org/standard-names.html}{https://cfconventions.org/standard-names.html}. Use this as your column header. Pay attention to the description and units. It may be necessary to convert your data to the units listed. If no suitable standard name exists, please email \emailme.  
 \end{itemize}
 \item Clean each column that will be used:
 \begin{itemize}
@@ -161,7 +161,7 @@ Select a standard name for each variable from \url{https://cfconventions.org/sta
 Global attributes provide discovery metadata that are related to each NetCDF files as a whole. Each attribute name is taken from a common vocabulary, and has a description associated with it to help you fill it in, and to someone working with your data to understand the contents.
 
 A list of what global attributes must be included can be found here:
-\url{https://adc.met.no/node/4}
+\href{https://adc.met.no/node/4}{https://adc.met.no/node/4}
 
 Here is some extra help for some of the attributes, specific to Nansen Legacy:
 \begin{itemize}
@@ -169,7 +169,7 @@ Here is some extra help for some of the attributes, specific to Nansen Legacy:
 \item keywords: Can be selected from WHERE?
 \item creator: This is the contact person for the data, who is principally responsible for the data, and who will be listed as 'authors' if the data are cited. Can be multiple people separated by commas.  
 \item publisher: Provide details for the data repository where you are publishing your data. See section REF.
-\item license: See section REF.
+\item license: According to the project data policy \citep{aendatapolicy2021}, all data should be published with the Creative Common Attribution license (\href{https://creativecommons.org/licenses/by/4.0/}{https://creativecommons.org/licenses/by/4.0/}). Include this URL for the attribute value. 
 \item acknowledgements: Refer to the Research Council of Norway who fund the project, and anyone involved in recorded, analysing or processing the data up to this point.
 \end{itemize}
 
@@ -178,7 +178,7 @@ Additional global attributes can also be included, defined by the user. Make sur
 \begin{itemize}
 \item sampling$\_$protocols: Cite the published Nansen Legacy sampling protocols. Remember to refer to a specific version and section within.
 \item depth$\_$of$\_$seabed$\_$in$\_$meters: Can be taken from the 'Bottom depth in meters' column in the metadata catalogue.
-\item metadata_link: DOI provided for the file by the data repository.
+\item metadata$\_$link: DOI provided for the file by the data repository.
 \end{itemize}   
 
 Make sure you have all of this information before you proceed to section \ref{ss:convertingnetcdf}.
@@ -204,7 +204,7 @@ Make sure you have all of this information before you proceed to section \ref{ss
 Your input data should now be ready to convert to NetCDF-CF. There a different ways to do this, depending on your data and your experience.
 
 \begin{itemize}
-\item Rosetta (\url{http://tomcat.nersc.no/rosetta/})
+\item Rosetta (\href{http://tomcat.nersc.no/rosetta/}{http://tomcat.nersc.no/rosetta/})
 \begin{itemize}
 \item Creating NetCDF-CF files with a simple graphical user interface. 
 \item Does not require any coding experience.
@@ -228,12 +228,32 @@ Your input data should now be ready to convert to NetCDF-CF. There a different w
 \subsubsection{Rosetta}
 \label{ss:Rosetta}
 
+For people who don't like to code, Rosetta provides a graphical user interface where you can create NetCDF-CF files.
 
+\href{http://tomcat.nersc.no/rosetta/}{http://tomcat.nersc.no/rosetta/}
+
+One disadvantage is that this approach takes a long time if you have lots of similar files. Also, it can be more difficult to create complex multidimensional files. However, for simple files, it can be very effective and easy to learn.
 
 \subsubsection{Creating NetCDF-CF files in Python using xarray}
 \label{ss:xarray}
 
-Examples on how to convert data to NetCDF-CF using xarray can be found on GitHub at \url{https://github.com/SIOS-Svalbard/AeN_doc}.
+Examples on how to convert data to NetCDF-CF using xarray can be found on GitHub at \href{https://github.com/SIOS-Svalbard/AeN_doc}{https://github.com/SIOS-Svalbard/AeN\_doc}. These examples include:
+
+ADD HYPERLINKS
+
+\begin{itemize}
+\item{Depth profiles at a single location}
+\item{A time series of data} 
+\item{Multidimensional data}
+\end{itemize}
+
+
+
+More useful information can be found in these locations:
+\begin{itemize}
+\item \href{http://xarray.pydata.org/en/stable/generated/xarray.Dataset.html}{http://xarray.pydata.org/en/stable/generated/xarray.Dataset.html}
+\item \href{https://rabernat.github.io/research_computing_2018/xarray.html}{https://rabernat.github.io/research\_computing\_2018/xarray.html}
+\end{itemize}
 
 
 \subsubsection{Creating NetCDF-CF files in R}
@@ -242,6 +262,44 @@ Examples on how to convert data to NetCDF-CF using xarray can be found on GitHub
 
 \section{Darwin Core Archive}
 \label{s:DwCA}
+
+\section{Making data available via SIOS}
+\label{s:SIOS}
+
+According to the Nansen Legacy data policy \citep{aendatapolicy2021}, all project data will be available via Svalbard Integrated Arctic Earth Observing System (SIOS). SIOS host a portal that provides single access point to data collected in and around Svalbard (\href{https://sios-svalbard.org/metsis/search}{https://sios-svalbard.org/metsis/search}).
+Note that no data are stored with SIOS. Instead, SIOS provides links to datasets stored with contributing data repositories (Section \ref{s:repository}). 
+
+To make your data available via SIOS, you must select a contributing data repository and email me \emailme to let me know where it has been published. Depending on the data repository, harvesting the data into SIOS happens automatically or requires some work on our side. If the data repository allows, you must also request that they tag the data with "AeN" so that one can filter using the project name when searching for datasets in SIOS. One can isolate Nansen Legacy datasets by filtering by the collection \textit{AeN} \\ 
+(\href{https://sios-svalbard.org/metsis/search?f%5B0%5D=collection%3AAeN}{https://sios-svalbard.org/metsis/search?f\%5B0\%5D=collection\%3AAeN}). 
+Therefore, one can easily access all the data collected across the project from a single place.  
+
+\section{Selecting a data repository}
+\label{s:repository}
+
+There are a number of data repositories that contribute to SIOS. Which one you submit your data to depends on the type of data. There are likely a number of applicable options to choose from.
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| } 
+\hline
+Name & Link & Contact & Automatic tagging for AeN? & Type of data  \\
+\hline
+NIRD research data archive & \href{https://archive.norstore.no/}{https://archive.norstore.no/} & & & \\  
+\hline
+NMDC & \href{https://www.nmdc.no}{https://www.nmdc.no} & & & \\   
+\hline
+NPI & \href{https://data.npolar.no/home/}{https://data.npolar.no/home/} & & & \\   
+\hline
+NorDataNet & \href{https://www.nordatanet.no/}{https://www.nordatanet.no/} & & & \\   
+\hline
+MET & \href{https://adc.met.no/}{https://adc.met.no/} & & & \\   
+\hline
+\end{tabular}
+\end{center}
+ 
+\section{Getting a DOI}
+\label{s:doi}
+
+
 
 
 %1. Preparing data for publication
