@@ -1,0 +1,171 @@
+---
+title: 'Create NetCDF file using R: Depth profile'
+author: "Luke Marsden"
+date: "11/17/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load libraries
+
+Firstly, let's load the libraries that we will use.
+
+For some people ncdf4 might not install without some prerequisites. In Linux, I had to enter in the Linux terminal:
+
+sudo apt install lib netcdf-*
+
+```{r}
+install.packages("readxl")
+library("readxl")
+install.packages("ncdf4")
+library(ncdf4)
+```
+
+## Loading and checking the data
+
+Let's look at the data we are working with first:
+
+```{r}
+data <- read_excel("chlorophyll_a_depth_profiles.xlsx")
+print(data, n=Inf)
+```
+
+We have Chlorophyll A data from 3 stations, one depth profile at each. Therefore, we will create one dataset per station (per depth profile). Most of the column headers are taken from the spreadsheet templates generators that were used to log the metadata.
+
+https://www.sios-svalbard.org/cgi-bin/darwinsheet/?setup=aen
+
+Other columns headers, for the data, are taken from the CF standard names. This is a common vocabulary, where parameter names can be searched for online, with descriptions, so that everyone is clear what the data represent.
+
+http://cfconventions.org/standard-names.html
+
+Let's isolate data from one station. If you are doing this in your own script, you might want to use a for loop to run the rest of the script for all of the stations.
+
+```{r}
+stations <- unique(data["stationName"])[[1]]
+station <- stations[1]
+
+data_station <- data[data$stationName %in% c(station), ] 
+data_station
+```
+
+```{r}
+plot(data_station$sampleDepthInMeters, data_station$mass_concentration_of_chlorophyll_a_in_sea_water, type ="l")
+```
+
+##  Creating NetCDF file
+
+### Defining dimensions
+
+A NetCDF file has dimensions that define the shape of the data. In this case, our only dimension is the sample depth, and we have 10 depths for each station. 'depth' is a commonly defined dimension name, so to be CF-compliant, let's use that as our sample depth.
+
+```{r}
+depthdim <- ncdim_def("depth","meters",as.double(data_station$sampleDepthInMeters))
+```
+
+### Defining Variables
+
+A NetCDF has both coordinate variables and data variables. Dimensions define how many grid points there are, coordinate variables define what the actual values are. The depth coordinate variable has already been defined above when we defined the dimension of the same name.
+
+Let's now create a data variable for chlorophyll a concentration.
+
+Firstly, we need a fill value. This is a value that is used at grid points where no data exists. We usually choose an unrealistically large value that will obviously appear as a spike to the data user. The fill value is later specified as a variable attribute.
+
+```{r}
+fillvalue <- 1e32
+chla <- ncvar_def("chlorophyll_a", units="kg m-3", dim=list(depthdim), missval=fillvalue, longname="Mass concentration of Chlorophyll A in sea water, after acid correction")
+```
+
+### Putting variables
+
+Now we need to put the values into that variable
+
+```{r}
+
+ncfile <- "chlorophyll_a_P1_(NLEG01).nc"
+
+# create netCDF file and put arrays
+ncout <- nc_create(ncfile,list(chla),force_v4=TRUE)
+
+ncvar_put(ncout, chla, data_station$mass_concentration_of_chlorophyll_a_in_sea_water)
+```
+
+### Additional variable attributes
+
+To be compliant with the CF conventions, other variable attributes must be added.
+
+The standard_name should be selected from here: http://cfconventions.org/standard-names.html. Standard names are commonly accepted parameter names with descriptions. By selecting appropriate standard names for your variable, the data user will be clear exactly what the data represent.
+
+The units should match what is provided for the standard name as listed above. You may need to convert your data.
+
+The long_name is more descriptive and can be in your own words.
+
+The coverage_content_type describes what type of data the variable contains
+
+Some help on these variable attributes can be found here: https://commons.esipfed.org/acdd_1-3_references
+
+```{r}
+ncatt_put(ncout,"chlorophyll_a", "standard_name", "mass_concentration_of_chlorophyll_a_in_sea_water")
+ncatt_put(ncout,"chlorophyll_a", "coverage_content_type", "physicalMeasurement")
+```
+
+### Gloabl attributes
+
+Global attributes describe the dataset as a whole. A list of what global attributes must be included can be found here:
+
+https://adc.met.no/node/4
+
+Additional global attributes can also be included, defined by the user. Make sure that the attribute names you select are understandable. In the Nansen Legacy project, we recommend also including the following global attributes are included as a minimum.
+
+    sampling_protocols: Cite the published Nansen Legacy sampling protocols. Remember to refer to a specific version and section within.
+    sea_floor_depth_below_sea_surface: Can be taken from the 'Bottom depth in meters' column in the metadata catalogue.
+    metadata_link: DOI provided for the file by the data repository.
+    metadata catalogue: https://sios-svalbard.org/aen/tools
+
+The ID must be unique to this dataset, but also reproducible if you need to generate it again (e.g. if updating the dataset). We can use a version 5 UUID for this. There is a nice explanation here on what a version 5 UUID is: https://uuid.ramsey.dev/en/latest/rfc4122/version5.html
+
+```{r}
+
+dtnow <- format(Sys.time(), tz = "UTC", "%FT%R:%SZ")
+
+ncatt_put(ncout,0,attname="title",attval="Chlorophyll A measurements from the P1 (NLEG01) station in the Northern Barents Sea")
+ncatt_put(ncout,0,attname="naming_authority",attval="University Centre in Svalbard (UNIS)")
+ncatt_put(ncout,0,"id",'')
+ncatt_put(ncout,0,"summary","analagous to an abstract in a paper, long and descriptive")
+ncatt_put(ncout,0,"keywords","Oceans > Ocean Chemistry > Chlorophyll")
+ncatt_put(ncout,0,"keywords_vocabulary","GCMD")
+ncatt_put(ncout,0,"geospatial_lat_min",min(data_station$decimalLatitude))
+ncatt_put(ncout,0,"geospatial_lat_max",max(data_station$decimalLatitude))
+ncatt_put(ncout,0,"geospatial_lon_min",min(data_station$decimalLongitude))
+ncatt_put(ncout,0,"geospatial_lon_max",min(data_station$decimalLongitude))
+ncatt_put(ncout,0,"time_coverage_start",min(data_station$eventTime))
+ncatt_put(ncout,0,"time_converage_end",max(data_station$eventTime))
+ncatt_put(ncout,0,"Conventions","ACDD-1.3, , CF-1.8")
+ncatt_put(ncout,0,"history",paste("File created using ncdf4 at",dtnow))
+ncatt_put(ncout,0,"source","Chlorophyll A from water sample from CTD with Niskin bottles")
+ncatt_put(ncout,0,"processing_level","Acid correction applied")
+ncatt_put(ncout,0,"date_created",dtnow)
+ncatt_put(ncout,0,"creator_type","person; person")
+ncatt_put(ncout,0,"creator_institution","The University Centre in Svalbard; The University Centre in Svalbard")
+ncatt_put(ncout,0,"creator_name","Luke Marsden; John Doe")
+ncatt_put(ncout,0,"creator_email","lukem@unis.no; jodoe@unis.no")
+ncatt_put(ncout,0,"creator_url","https://www.unis.no/staff/luke-marsden/; https://www.unis.no/staff/john-doe/")
+ncatt_put(ncout,0,"institution","The University Centre in Svalbard (UNIS)")
+ncatt_put(ncout,0,"publisher_name","Norwegian Meteorological Institute - Arctic Data Centre")
+ncatt_put(ncout,0,"publisher_email","adc-suppoort@met.no")
+ncatt_put(ncout,0,"publisher_url","https://adc.met.no/")
+ncatt_put(ncout,0,"publisher_type","institution")
+ncatt_put(ncout,0,"project","The Nansen Legacy (RCN # 276730)")
+ncatt_put(ncout,0,"license","https://creativecommons.org/licenses/by/4.0/")
+ncatt_put(ncout,0,"metadata_link","") # Enter DOI provided by data centre
+ncatt_put(ncout,0,"metadata_catalogue","https://sios-svalbard.org/aen/tools")
+ncatt_put(ncout,0,"acknowledgements","Funded by the Research Council of Norway. John Smith was involved in collecting the data")
+```
+
+### Checking the file
+
+```{r}
+ncout
+```
