@@ -1,0 +1,185 @@
+---
+title: 'Create NetCDF file using R: Depth profile'
+author: "Luke Marsden"
+date: "11/17/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load libraries
+
+Firstly, let's load the libraries that we will use.
+
+For some people ncdf4 might not install without some prerequisites. In Linux, I had to enter in the Linux terminal:
+
+sudo apt install lib netcdf-*
+
+```{r}
+install.packages("readxl")
+library("readxl")
+install.packages("ncdf4")
+library(ncdf4)
+```
+
+## Loading and checking the data
+
+Let's look at the data we are working with first:
+
+```{r}
+data <- read_excel("meteorlogical_measurements_time_series.xlsx")
+print(data, n=Inf)
+```
+
+We have a time series of meteorlogical data; air_temperature, wind_speed and relative_humidity, each recorded at 1 hour intervals. We can ignore that an incorrect date has been added by default. We will see later that we only need the time anyway. 
+
+Most columns headers are taken from the CF standard names. This is a common vocabulary, where parameter names can be searched for online, with descriptions, so that everyone is clear what the data represent.
+
+http://cfconventions.org/standard-names.html
+
+Let's plot the data.
+
+```{r}
+plot(data$Time, data$`air_temperature (degC)`, type ="l")
+plot(data$Time, data$`wind_speed (m s-1)`, type ="l")
+plot(data$Time, data$`relative_humidity (%)`, type ="l")
+```
+
+##  Creating NetCDF file
+
+### Defining dimensions: About time
+
+This dataset will have a single dimension, time. There are specific recommendations on how time should be stored in netCDF files. I will try to explain briefly here, and there is a nice explanation here too: https://www.unidata.ucar.edu/software/netcdf/time/recs.html
+
+It is most common to have a dimension named "time" as well as a coordinate variable with the same name. Let's discuss the variable first.
+
+The "time" variable has units that count from a user defined origin, for example "hours since 2020-01-01 00:00 UTC" or "days since 2014-01-01". The units may be in years, days, seconds, nanoseconds, etc. Whilst this approach may seem strange at a glance, it allows the times to be stored in conventional numerical formats such as integers, and to our desired precision. This is much more efficient than using a long datetime string for each coordinate.
+
+And what about the time dimension? Well this defines the shape or grid of the data. In this dataset, we will have 4 variables (time, air_temperature, relative_humidity, wind_speed), and they will all have the same dimension "time". Therefore, the dimension helps the data user to link each of the variables together.
+
+So let's create a new time column in our dataframe that meets these requirements. How you do this will depend on how your dates or times are stored.
+
+```{r}
+data$Hour <- format(data$Time, format="%H")
+```
+
+Now let's create a time dimension, with units of hours since the start of the day.
+```{r}
+timedim <- ncdim_def("time","hours since 2021-02-21T00:00:00Z",as.double(data$Hour))
+```
+
+### Defining Variables
+
+A NetCDF has both coordinate variables and data variables. Dimensions define how many grid points there are, coordinate variables define what the actual values are. The time coordinate variable has already been defined above when we defined the dimension of the same name.
+
+Let's now create our data variables.
+
+In each case, we need a fill value. This is a value that is used at grid points where no data exists. We usually choose an unrealistically large value that will obviously appear as a spike to the data user. The fill value is specified as a variable attribute (provided by the 'missval' argument). The fill value doesn't have to be the same for each variable, but using the same one here for convenience.
+
+```{r}
+fillvalue <- 1e32
+
+airtemp <- ncvar_def("air_temperature", units="K", dim=list(timedim), missval=fillvalue, longname="Air temperature in degrees kelvin, measured at an elevation of 2 meters")
+humidity <- ncvar_def("relative_humidity", units="1", dim=list(timedim), missval=fillvalue, longname="Relative humidity of air, the amount of moisture in the air at a certain temperature compared to what the air can hold at that temperature")
+windspeed <- ncvar_def("wind_speed", units="ms-1", dim=list(timedim), missval=fillvalue, longname="Wind speed, magnitude of the 2 horizontal components of velocity, measured at an elevation of 2 meters")
+```
+
+### Putting variables
+
+Now we need to put the values into that variable
+
+```{r}
+
+data$air_temp_kelvin <- data$`air_temperature (degC)` + 273.15 # Converting to preferred units defined by the standard_name
+
+ncfile <- "meteorological_time_series.nc"
+
+# create netCDF file and put arrays
+ncout <- nc_create(ncfile,list(airtemp, humidity, windspeed),force_v4=TRUE)
+
+ncvar_put(ncout, airtemp, data$air_temp_kelvin)
+ncvar_put(ncout, humidity, data$`relative_humidity (%)`)
+ncvar_put(ncout, windspeed, data$`wind_speed (m s-1)`)
+```
+
+### Additional variable attributes
+
+To be compliant with the CF conventions, other variable attributes must be added.
+
+The standard_name should be selected from here: http://cfconventions.org/standard-names.html. Standard names are commonly accepted parameter names with descriptions. By selecting appropriate standard names for your variable, the data user will be clear exactly what the data represent.
+
+The units should match what is provided for the standard name as listed above. You may need to convert your data.
+
+The long_name is more descriptive and can be in your own words.
+
+The coverage_content_type describes what type of data the variable contains
+
+Some help on these variable attributes can be found here: https://commons.esipfed.org/acdd_1-3_references
+
+```{r}
+ncatt_put(ncout,"wind_speed", "standard_name", "wind_speed") # It is just coincidence that I have used the same variable name (first argument) as the standard name (last argument) here.
+ncatt_put(ncout,"air_temperature", "standard_name", "air_temperature")
+ncatt_put(ncout,"relative_humidity", "standard_name", "relative_humidity")
+ncatt_put(ncout,"wind_speed", "coverage_content_type", "physicalMeasurement")
+ncatt_put(ncout,"air_temperature", "coverage_content_type", "physicalMeasurement")
+ncatt_put(ncout,"relative_humidity", "coverage_content_type", "physicalMeasurement")
+```
+
+### Gloabl attributes
+
+Global attributes describe the dataset as a whole. A list of what global attributes must be included can be found here:
+
+https://adc.met.no/node/4
+
+Additional global attributes can also be included, defined by the user. Make sure that the attribute names you select are understandable. In the Nansen Legacy project, we recommend also including the following global attributes are included as a minimum.
+
+    sampling_protocols: Cite the published Nansen Legacy sampling protocols. Remember to refer to a specific version and section within.
+    sea_floor_depth_below_sea_surface: Can be taken from the 'Bottom depth in meters' column in the metadata catalogue.
+    metadata_link: DOI provided for the file by the data repository.
+    metadata_catalogue: https://sios-svalbard.org/aen/tools
+
+```{r}
+
+dtnow <- format(Sys.time(), tz = "UTC", "%FT%R:%SZ")
+
+ncatt_put(ncout,0,attname="title",attval="Meteorological measurements from 78.4365 °N, 78.4365 °E the the Northern Barents Sea, 2021-02-21")
+ncatt_put(ncout,0,attname="naming_authority",attval="University Centre in Svalbard (UNIS)")
+ncatt_put(ncout,0,"id",'1b8a577c-9601-5056-9b81-9e7b802da117') # This could be the ID you used in the sample log for the weather station deployement
+ncatt_put(ncout,0,"summary","analagous to an abstract in a paper, long and descriptive")
+ncatt_put(ncout,0,"keywords","'Earth Science > Atmosphere > Atmospheric Winds > Surface Winds > Wind Speed; Earth Science > Atmosphere > Atmospheric Water Vapor > Water Vapor Indicators > Relative Humidity; Earth Science > Atmosphere > Atmospheric Winds > Surface temperature > Air Temperature")
+ncatt_put(ncout,0,"keywords_vocabulary","GCMD")
+ncatt_put(ncout,0,"geospatial_lat_min",78.4365)
+ncatt_put(ncout,0,"geospatial_lat_max",78.4365)
+ncatt_put(ncout,0,"geospatial_lon_min",31.0124)
+ncatt_put(ncout,0,"geospatial_lon_max",31.0124)
+ncatt_put(ncout,0,"time_coverage_start","2021-02-21T10:00:00Z")
+ncatt_put(ncout,0,"time_converage_end","2021-02-21T23:00:00Z")
+ncatt_put(ncout,0,"Conventions","ACDD-1.3, , CF-1.8")
+ncatt_put(ncout,0,"history",paste("File created using ncdf4 in R at",dtnow))
+ncatt_put(ncout,0,"source","Meteorological measurements from temporary station deployed on the sea ice")
+ncatt_put(ncout,0,"processing_level","raw")
+ncatt_put(ncout,0,"date_created",dtnow)
+ncatt_put(ncout,0,"creator_type","person; person")
+ncatt_put(ncout,0,"creator_institution","The University Centre in Svalbard; The University Centre in Svalbard")
+ncatt_put(ncout,0,"creator_name","Luke Marsden; John Doe")
+ncatt_put(ncout,0,"creator_email","lukem@unis.no; jodoe@unis.no")
+ncatt_put(ncout,0,"creator_url","https://www.unis.no/staff/luke-marsden/; https://www.unis.no/staff/john-doe/")
+ncatt_put(ncout,0,"institution","The University Centre in Svalbard (UNIS)")
+ncatt_put(ncout,0,"publisher_name","Norwegian Meteorological Institute - Arctic Data Centre")
+ncatt_put(ncout,0,"publisher_email","adc-suppoort@met.no")
+ncatt_put(ncout,0,"publisher_url","https://adc.met.no/")
+ncatt_put(ncout,0,"publisher_type","institution")
+ncatt_put(ncout,0,"project","The Nansen Legacy (RCN # 276730)")
+ncatt_put(ncout,0,"license","https://creativecommons.org/licenses/by/4.0/")
+ncatt_put(ncout,0,"metadata_link","") # Enter DOI provided by data centre
+ncatt_put(ncout,0,"metadata_catalogue","https://sios-svalbard.org/aen/tools")
+ncatt_put(ncout,0,"acknowledgements","Funded by the Research Council of Norway. John Smith was involved in collecting the data")
+```
+
+### Checking the file
+
+```{r}
+ncout
+```

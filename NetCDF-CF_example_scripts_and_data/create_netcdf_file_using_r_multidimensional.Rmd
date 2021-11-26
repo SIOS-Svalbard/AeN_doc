@@ -1,0 +1,177 @@
+---
+title: 'Create NetCDF file using R: Depth profile'
+author: "Luke Marsden"
+date: "11/17/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load libraries
+
+Firstly, let's load the libraries that we will use.
+
+For some people ncdf4 might not install without some prerequisites. In Linux, I had to enter in the Linux terminal:
+
+sudo apt install lib netcdf-*
+
+```{r}
+install.packages("readxl")
+library("readxl")
+install.packages("ncdf4")
+library(ncdf4)
+```
+
+## Creating the data
+
+Let's imagine we are interested in surface sea water temperatures recorded daily across a grid of longitudes and latitudes. 
+
+```{r}
+time <- seq(0,10)
+print(time)
+latitude <- seq(75,80)
+print(latitude)
+longitude <- seq(30,33)
+print(longitude)
+```
+
+Now, let's create a multidimensional grid for our sea_surface_skin_temperature variable. Firstly, we will fill it with zeros. The shape of the grid will be determined by the length of all the other dimensions.
+
+```{r}
+sea_water_temp <- array(rexp(5), dim=c(length(longitude), length(latitude), length(time))) # 3d array with random numbers, the values are nonesense!
+sea_water_temp <- sea_water_temp + 273.15 # Converting to kelvin
+```
+Let's also imagine that a value was not recorded at certain points. I'll pick these at random, and assign a NaN. We will talk about how we handle these missing values later.
+```{r}
+sea_water_temp[1,3,8] <- NaN
+sea_water_temp[4,2,1] <- NaN
+```
+
+##  Creating NetCDF file
+
+### Defining dimensions
+
+This dataset will have three dimensions; longitude, latitude and time. There are specific recommendations on how time should be stored in netCDF files. I will try to explain briefly here, and there is a nice explanation here too: https://www.unidata.ucar.edu/software/netcdf/time/recs.html
+
+It is most common to have a dimension named "time" as well as a coordinate variable with the same name. Let's discuss the variable first.
+
+The "time" variable has units that count from a user defined origin, for example "hours since 2020-01-01 00:00 UTC" or "days since 2014-01-01". The units may be in years, days, seconds, nanoseconds, etc. Whilst this approach may seem strange at a glance, it allows the times to be stored in conventional numerical formats such as integers, and to our desired precision. This is much more efficient than using a long datetime string for each coordinate.
+
+And what about the time dimension? Well this defines the shape or grid of the data. In this dataset, we will have 3 dimensions longitude, latitude and time. The data variable sea water temperature is a multidimensional array with all three dimensions listed. Time, longitude and latitude are coordinate variables that have only one dimension with the same name. Therefore, the dimension helps the data user to link each of the variables together.
+
+Now let's create our dimensions.
+```{r}
+timedim <- ncdim_def("time","days since 2020-07-10T12:00:00Z",as.double(time))
+longitudedim <- ncdim_def("longitude","decimal longitude in degrees east",as.double(longitude))
+latitudedim <- ncdim_def("latitude","decimal latitude in degrees north",as.double(latitude))
+```
+
+### Defining Variables
+
+A NetCDF has both coordinate variables and data variables. Dimensions define how many grid points there are, coordinate variables define what the actual values are. The coordinate variables have already been defined above when we defined the dimensions of the same name.
+
+Let's now create our data variable for sea water temperature.
+
+In each case, we need a fill value. This is a value that is used at grid points where no data exists. We usually choose an unrealistically large value that will obviously appear as a spike to the data user. The fill value is specified as a variable attribute (provided by the 'missval' argument). The fill value doesn't have to be the same for each variable, but using the same one here for convenience.
+
+```{r}
+fillvalue <- 1e32
+
+sea_water_temp_def <- ncvar_def("sea_surface_skin_temperature", units="K", dim=list(longitudedim, latitudedim, timedim), missval=fillvalue, longname="Temperature of the sea water directly below the surface")
+```
+
+### Putting variables
+
+Now we need to put the values into that variable
+
+```{r}
+
+ncfile <- "sea_water_temperature_multidimensional.nc"
+
+# create netCDF file and put arrays
+ncout <- nc_create(ncfile,list(sea_water_temp_def),force_v4=TRUE)
+
+ncvar_put(ncout, sea_water_temp_def, sea_water_temp)
+```
+
+### Additional variable attributes
+
+To be compliant with the CF conventions, other variable attributes must be added.
+
+The standard_name should be selected from here: http://cfconventions.org/standard-names.html. Standard names are commonly accepted parameter names with descriptions. By selecting appropriate standard names for your variable, the data user will be clear exactly what the data represent.
+
+The units should match what is provided for the standard name as listed above. You may need to convert your data.
+
+The long_name is more descriptive and can be in your own words.
+
+The coverage_content_type describes what type of data the variable contains
+
+Some help on these variable attributes can be found here: https://commons.esipfed.org/acdd_1-3_references
+
+```{r}
+ncatt_put(ncout,"sea_surface_skin_temperature", "standard_name", "sea_surface_skin_temperature") # It is just coincidence that I have used the same variable name (first argument) as the standard name (last argument) here.
+ncatt_put(ncout,"sea_surface_skin_temperature", "coverage_content_type", "physicalMeasurement")
+```
+
+### Gloabl attributes
+
+Global attributes describe the dataset as a whole. A list of what global attributes must be included can be found here:
+
+https://adc.met.no/node/4
+
+Additional global attributes can also be included, defined by the user. Make sure that the attribute names you select are understandable. In the Nansen Legacy project, we recommend also including the following global attributes are included as a minimum.
+
+    sampling_protocols: Cite the published Nansen Legacy sampling protocols. Remember to refer to a specific version and section within.
+    sea_floor_depth_below_sea_surface: Can be taken from the 'Bottom depth in meters' column in the metadata catalogue.
+    metadata_link: DOI provided for the file by the data repository.
+    metadata_catalogue: https://sios-svalbard.org/aen/tools
+
+If the entire dataset corresponds to a single event ID in the metadata catalogue (https://sios-svalbard.org/aen/tools). We must refer to this to link the dataset to the metadata catalogue, that includes some supplementary metadata that won't be included in the dataset.
+
+The ID must be unique to this dataset.
+
+```{r}
+
+dtnow <- format(Sys.time(), tz = "UTC", "%FT%R:%SZ")
+
+ncatt_put(ncout,0,attname="title",attval="Sea surface skin temperature measurements from the Northern Barents Sea in July 2020")
+ncatt_put(ncout,0,attname="naming_authority",attval="University Centre in Svalbard (UNIS)")
+ncatt_put(ncout,0,"id",'554b5b10-8675-500c-9ecd-9b23998c0b74') # This could be the ID you used in the sample log for the weather station deployement
+ncatt_put(ncout,0,"summary","analagous to an abstract in a paper, long and descriptive")
+ncatt_put(ncout,0,"keywords","'Earth Science > Oceans > Ocean Temperature > Sea Surface Temperature > Sea Surface Skin Temperature")
+ncatt_put(ncout,0,"keywords_vocabulary","GCMD")
+ncatt_put(ncout,0,"geospatial_lat_min",min(latitude))
+ncatt_put(ncout,0,"geospatial_lat_max",max(latitude))
+ncatt_put(ncout,0,"geospatial_lon_min",min(longitude))
+ncatt_put(ncout,0,"geospatial_lon_max",max(longitude))
+ncatt_put(ncout,0,"time_coverage_start","2020-07-10T12:00:00Z")
+ncatt_put(ncout,0,"time_converage_end","2020-07-19T12:00:00Z")
+ncatt_put(ncout,0,"Conventions","ACDD-1.3, , CF-1.8")
+ncatt_put(ncout,0,"history",paste("File created using ncdf4 in R at",dtnow))
+ncatt_put(ncout,0,"source","Meteorological measurements from temporary station deployed on the sea ice")
+ncatt_put(ncout,0,"processing_level","raw")
+ncatt_put(ncout,0,"date_created",dtnow)
+ncatt_put(ncout,0,"creator_type","person; person")
+ncatt_put(ncout,0,"creator_institution","The University Centre in Svalbard; The University Centre in Svalbard")
+ncatt_put(ncout,0,"creator_name","Luke Marsden; John Doe")
+ncatt_put(ncout,0,"creator_email","lukem@unis.no; jodoe@unis.no")
+ncatt_put(ncout,0,"creator_url","https://www.unis.no/staff/luke-marsden/; https://www.unis.no/staff/john-doe/")
+ncatt_put(ncout,0,"institution","The University Centre in Svalbard (UNIS)")
+ncatt_put(ncout,0,"publisher_name","Norwegian Meteorological Institute - Arctic Data Centre")
+ncatt_put(ncout,0,"publisher_email","adc-suppoort@met.no")
+ncatt_put(ncout,0,"publisher_url","https://adc.met.no/")
+ncatt_put(ncout,0,"publisher_type","institution")
+ncatt_put(ncout,0,"project","The Nansen Legacy (RCN # 276730)")
+ncatt_put(ncout,0,"license","https://creativecommons.org/licenses/by/4.0/")
+ncatt_put(ncout,0,"metadata_link","") # Enter DOI provided by data centre
+ncatt_put(ncout,0,"metadata_catalogue","https://sios-svalbard.org/aen/tools")
+ncatt_put(ncout,0,"acknowledgements","Funded by the Research Council of Norway. John Smith was involved in collecting the data")
+```
+
+### Checking the file
+
+```{r}
+ncout
+```
