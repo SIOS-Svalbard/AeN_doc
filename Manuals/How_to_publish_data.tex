@@ -8,11 +8,13 @@
 \usepackage{graphicx}     
 \usepackage{natbib}
 \usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue, linktocpage}
 \usepackage{tcolorbox}
 \usepackage{titling}
 \usepackage{listings}
 \usepackage{color}
 \usepackage{textcomp}
+\usepackage{float}
 
 \newcommand{\subtitle}[1]{%
   \posttitle{%
@@ -188,14 +190,14 @@ EARTH SCIENCE $>$ ATMOSPHERE $>$ ATMOSPHERIC WINDS $>$ SURFACE WINDS $>$  WIND S
 \item \textbf{creator}: This is the contact person for the data, who is principally responsible for the data, and who will be listed as authors if the data are cited. Can be multiple people separated by commas. creator\_institution, creator\_email, creator\_url should be provided for every creator, again comma-separated, even if they are from the same institution. It is otherwise ambiguous whether for example a single creator\_institution refers to all the creators or just the first.  
 \item \textbf{publisher}: Provide details for the data centre where you are publishing your data. See section \ref{s:datacentre}.
 \item \textbf{license}: According to the project data policy \citep{aendatapolicy2021}, all data should be published with the Creative Common Attribution license (\url{https://creativecommons.org/licenses/by/4.0/}). Include this URL for the attribute value. 
-\item \textbf{acknowledgements}: Refer to the Research Council of Norway who fund the project (The Nansen Legacy (RCN 276730), and anyone you want to acknowledge involved in recording, analysing or processing the data up to this point for example.
+\item \textbf{acknowledgements}: Refer to the Research Council of Norway who fund the project (The Nansen Legacy (RCN 276730)), and anyone you want to acknowledge involved in recording, analysing or processing the data up to this point for example.
 \end{itemize}
 
 Additional global attributes can also be included, defined by the user. Try to use attribute names that will be understandable to someone outside of the project, but they don't have to be standardised. In the Nansen Legacy project, we recommend also including the following global attributes are included as a minimum. 
 
 \begin{itemize}
-\item {sampling$\_$protocols}: Cite the published Nansen Legacy sampling protocols. Remember to refer to a specific version and section within. You may refer to other published work that outlines the methods if not included in the sampling protocols.
-\item {sea$\_$floor$\_$depth$\_$below$\_$sea$\_$surface}: Can be taken from the 'Bottom depth in meters' column in the metadata catalogue.
+\item {sampling$\_$protocols}: Cite the published Nansen Legacy sampling protocols, including the DOI. Remember to refer to a specific version and section within. You may refer to other published work that outlines the methods if not included in the sampling protocols.
+\item {sea$\_$floor$\_$depth$\_$below$\_$sea$\_$surface}: Can be taken from the `Bottom depth in meters' column in the metadata catalogue.
 \item {metadata$\_$link}: DOI provided for the file by the data repository.
 \end{itemize}   
 
@@ -422,7 +424,7 @@ For more information on DwCA, see \url{https://ipt.gbif.org/manual/en/ipt/2.5/dw
 
 This is a common question, but we are not trying to make things needlessly complicated! This allows a many-to-one relationship to be logged, for example multiple species (occurrences) logged for a single sampling event. Hierarchical information can be stored clearly, so the data user can understand which samples were collected from the same sampling event.
 
-This method is also more efficient. Certain metadata are consistent between the sampling event and all the samples collected from it, e.g. time, date etc. These metadata can be logged only once for each sampling event in an event core. They therefore do not need to be included for every single sample, which would lead to a lot of duplication of in some cases!
+This method is also more efficient. Certain metadata are consistent between the sampling event and all the samples collected from it, e.g. time, date etc. These metadata can be logged only once for each sampling event in an event core. They therefore do not need to be included for every single sample, which would lead to a lot of duplication in some cases!
 
 \subsection{How many Darwin Core Archives should I create?}\label{ss:dwcacollection}
 
@@ -434,13 +436,14 @@ In some cases, it might be beneficial to divide your data into several Darwin Co
 \item Each file is easier to understand.
 \item If someone is interested in only a subset of the data, they can easily access these without having to download and open the rest of the data too.
 \item Each file gets its own DOI. You can also get a DOI for the full data collection for those who want to cite everything.
-\item Imagine you have multiple depth profiles. To store them all in the same file, you would have to have a longitude and latitude dimension. If using separate files, each file can state the longitude and latitude in the metadata, and only one dimension (depth) is required.
 \end{itemize}   
+
+You may choose to divide you data by cruise or even by station.
 
 \subsection{Darwin Core terms}
 \label{ss:dwcterms}
 
-Darwin Core includes a controlled volcabulary of terms for sharing information about biological diversity. Darwin Core terms should be used for each column header in the CSV core and extension files should. Many of the terms in the Nansen Legacy sample log template generator (\url{https://sios-svalbard.org/cgi-bin/darwinsheet/?setup=aen}) are taken from Darwin Core, so that researchers can more easily create Darwin Core Archives from their sample logs.
+Darwin Core includes a controlled vocabulary of terms for sharing information about biological diversity. Darwin Core terms should be used for each column header in the CSV core and extension files should. Many of the terms in the Nansen Legacy sample log template generator (\url{https://sios-svalbard.org/cgi-bin/darwinsheet/?setup=aen}) are taken from Darwin Core, so that researchers can more easily create Darwin Core Archives from their sample logs.
 
 A full list of Darwin Core terms including definitions can be found at \url{https://dwc.tdwg.org/terms/}.
 
@@ -455,7 +458,7 @@ It is worth noting that Darwin Core is a fairly flexible standard. This makes st
 
 The recommended approaches are based on a proposal by \cite[][option 6]{de2017toward}. Their paper is great extra reading material for those who want to learn more. They include examples specific to marine sciences, and show how their proposal is a particularly efficient way to organise data obtained by sensors, where many specimens are sampled in a single sampling event.
 
-Following this approach, your Darwin Core Archive will consist of the following CSV files (Figure \ref{fig:dwca_aen}). Examples within the subsections that follow:
+Following this approach, your Darwin Core Archive will consist of the following CSV files (examples within the subsections that follow):
 
 \begin{itemize}
 \item A central event core (section \ref{ss:eventcore}):
@@ -475,7 +478,7 @@ Following this approach, your Darwin Core Archive will consist of the following 
 Many people will require additional extensions, depending on their data:
 
 \begin{itemize}
-\item extendedMeasurementOrFact (eMoF) extension.
+\item extendedMeasurementOrFact (eMoF) extension (section \ref{ss:emofextension}).
 \begin{itemize}
 \item One row = one measurement or one fact relating to an event or occurrence.
 \item Contains a measurementID column that is unique for each row
@@ -484,7 +487,7 @@ Many people will require additional extensions, depending on their data:
 \item Can include abiotic measurements (e.g. water temperature, salinity, chlorophyll a concentration, TOC...)
 \item Can include community measurements (based on multiple occurrences/specimens), but then should use a ResourceRelationship extenion too. 
 \end{itemize}
-\item ResourceRelationship extension
+\item ResourceRelationship extension (section \ref{ss:resourcerelationship}).
 \begin{itemize}
 \item One row = one relationship
 \item Contains a resourceRelationshipID column that is unique for each row
@@ -501,6 +504,7 @@ The subsections below might help you decide what you need.
 \begin{itemize}
 \item List of species only, section \ref{ss:listspeciesonly}
 \item List of species and measurements (measurements relate to one occurrence/specimen only), section \ref{ss:speciesmeasurementsoneoccurrence}
+\item List of species and abiotic measurements \ref{ss:abioticmeasurements}
 \item List of species and community measurements (measurements relate to multiple occurrences), section \ref{ss:speciesmeasurementsmultipleoccurrence}
 \end{itemize}
 
@@ -516,12 +520,12 @@ The subsections below might help you decide what you need.
 \end{itemize}
 \end{itemize}
 
-\begin{figure}[h!tb]
+\begin{figure}[H]
     \tcbox[colback=white]{
     \includegraphics[width=1.0\textwidth]{dwca_aen_eg1.png}
     }
     \caption{\label{fig:dwca_aen_eg1}
-        Proposed DwCA setup relevant for many Nansen Legacy datasets, based on a proposal by \cite{de2017toward} - option 6.
+        Proposed DwCA setup relevant for many Nansen Legacy datasets, based on a proposal by \cite{de2017toward} - option 6. List of species only
     }
 \end{figure}
 
@@ -538,17 +542,17 @@ The subsections below might help you decide what you need.
 \end{itemize}
 \end{itemize}
 
-\begin{figure}[h!tb]
+\begin{figure}[H]
     \tcbox[colback=white]{
     \includegraphics[width=1.0\textwidth]{dwca_aen_eg2.png}
     }
     \caption{\label{fig:dwca_aen_eg2}
-        Proposed DwCA setup relevant for many Nansen Legacy datasets, based on a proposal by \cite{de2017toward} - option 6.
+        Proposed DwCA setup relevant for many Nansen Legacy datasets, based on a proposal by \cite{de2017toward} - option 6. List of species and measurements (measurements relate to one occurrence/specimen only).
     }
 \end{figure}
 
 \subsubsection{List of species and abiotic measurements}
-\label{ss:speciesmeasurementsoneoccurrence}
+\label{ss:abioticmeasurements}
 
 \begin{itemize}
 \item Event core (sampling events)
@@ -560,12 +564,12 @@ The subsections below might help you decide what you need.
 \end{itemize}
 \end{itemize}
 
-\begin{figure}[h!tb]
+\begin{figure}[H]
     \tcbox[colback=white]{
     \includegraphics[width=1.0\textwidth]{dwca_aen_eg3.png}
     }
     \caption{\label{fig:dwca_aen_eg3}
-        Proposed DwCA setup relevant for many Nansen Legacy datasets, based on a proposal by \cite{de2017toward} - option 6.
+        Proposed DwCA setup relevant for many Nansen Legacy datasets, based on a proposal by \cite{de2017toward} - option 6. List of species and abiotic measurements.
     }
 \end{figure}
 
@@ -587,16 +591,16 @@ The subsections below might help you decide what you need.
 \end{itemize}
 \end{itemize}  
 
-\begin{figure}[h!tb]
+\begin{figure}[H]
     \tcbox[colback=white]{
     \includegraphics[width=1.0\textwidth]{dwca_aen_eg4.png}
     }
     \caption{\label{fig:dwca_aen_eg4}
-        Proposed DwCA setup relevant for many Nansen Legacy datasets, based on a proposal by \cite{de2017toward} - option 6.
+        Proposed DwCA setup relevant for many Nansen Legacy datasets, based on a proposal by \cite{de2017toward} - option 6. List of species and community measurements (measurements relate to multiple occurrences).
     }
 \end{figure}
 
-If easier for you, each component can be created as separate sheets in and Excel file (or similar) that can be converted to CSV later.
+If you prefer, each component can be created as separate sheets in and Excel file (or similar) that can be converted to CSV later.
 
 Each of these components is described in more detail below, along with how to create them.
 
@@ -871,7 +875,7 @@ The Integrated Publishing Toolkit (IPT) is developed and maintained by \href{htt
 A 24 minute video tutorial on how to use the IPT can be found here:\\ 
 \url{https://www.youtube.com/watch?v=eDH9IoTrMVE}
 
-We are hopeful that we will soon be able to provide you with access to an IPT server. In the meantime, email \emailme if you want to create a Darwin Core Archive if you have trouble doing this manually.
+We are hopeful that we will soon be able to provide you with access to an IPT server. In the meantime, email \emailme \ if you want to create a Darwin Core Archive if you have trouble doing this manually.
 
 \subsubsection{Darwin Core Archive XML files}
 \label{ss:xml}
@@ -882,7 +886,7 @@ The meta.xml file describes the structure of the Darwin Core Archive. It describ
 
 \url{https://dwc.tdwg.org/text/}
 
-The eml.xml includes metadata describing the dataset as a whole (e.g. abstract, authors). For guideslines on how to create this, with examples, visit
+The eml.xml includes metadata describing the dataset as a whole (e.g. abstract, authors). For guidelines on how to create this, with examples, visit
 
 \url{https://ipt.gbif.org/manual/en/ipt/2.4/dwca-guide#publishing-dwc-a-manually}
 
@@ -893,7 +897,7 @@ You can also email \emailme or \href{mailto:helpdesk@gbif.no}{helpdesk@gbif.no} 
 \label{s:SIOS}
 
 According to the Nansen Legacy data policy \citep{aendatapolicy2021}, all published project data will be accessible via Svalbard Integrated Arctic Earth Observing System (SIOS). SIOS host a portal that provides single access point to data collected in and around Svalbard (\url{https://sios-svalbard.org/metsis/search}).
-Note that no data are stored with SIOS. Instead, SIOS provides links to datasets stored with contributing data repositories (Section \ref{s:repository}). 
+Note that no data are stored with SIOS. Instead, SIOS provides links to datasets stored with contributing data centres (Section \ref{s:datacentre}). 
 
 Data access portals are important for increasing the visibility of your data. Without a data access portal, one will only find your data if they are referred to them (e.g. via a published paper) or if they happen to be browsing through the data centre. But there are many data centres that could potentially contain your data. Your data might also be useful to someone who hasn't read your paper. The SIOS data access portal provides a single searchable access point to all the data collected in and around Svalbard.
 
@@ -910,8 +914,8 @@ Published data in a different data centre can be made accessible via the SIOS da
 The importance of selecting a good data centre to host your data is often overlooked. You should choose a data centre that will make your data as visible as possible. There are a number of things to consider here:
 
 \begin{itemize}
-\item Some data centres are well used (or even the default) for a specific type of data (e.g. GBIF for biodiversity data, GenBank for DNA sequence data). Therefore, it is likely that someone interested in a certain type of data will browse through this data centre. It is unlikely that someone will browse through a data centre that accepts any type of data but is the default for nothing.
-\item Data access portals greatly increase the visibility of your data, by providing a link to where your data are stored. SIOS provides an access point to data collected in and around Svalbard. Other data access portals specialise on other things. For example, data access portals are now being developed for one to search for data across the whole Arctic! Unfortunately, it is not possible to make data from certain data centres available via a data access portal. Therefore, you should always publish to one of the data centres below.
+\item Some data centres are well used (or even the default) for a specific type of data (e.g. GBIF for biodiversity data, GenBank for DNA sequence data). Therefore, it is likely that someone interested in a certain type of data will browse through certain data centres. It is unlikely that someone will browse through a data centre that accepts any type of data but is the default for nothing - e.g. Zenodo or DataVerse.
+\item Data access portals greatly increase the visibility of your data, by providing a link to where your data are stored. SIOS provides an access point to data collected in and around Svalbard. Other data access portals specialise on other things. Data access portals are now being developed for one to search for data across the whole Arctic for example! Unfortunately, it is not possible to make data from certain data centres available via a data access portal. Therefore, you should always publish to one of the data centres below.
 \end{itemize}
 
 For Nansen Legacy data, the only requirement when selecting a data centre is that it contributes to SIOS. Of the Norwegian data centres, this currently includes only: 
